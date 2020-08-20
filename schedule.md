@@ -706,7 +706,6 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 
 
-
 <!--- 
 #########################################
 #########################################
@@ -718,7 +717,92 @@ Note that the length of addresses can change, so you will need to use regular ex
 -->
 
 
-# Week 4 - GitHub Pages
+
+
+# Week 4 - Text Analysis 
+
+**Due {{page.labs.lab-04}}** 
+
+Lab 04
+
+
+<br>
+<br>
+
+
+
+## Lab-04 - Text Analysis
+
+
+<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">LAB-04 Instructions</a>
+
+## Submit Solutions to Canvas:
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+
+<br>
+<br>
+
+
+
+## YellowDig Discussion
+
+<br>
+<br>
+
+# The Crisis of Scientific Reproducibility
+
+The topic this week is an introduction to the hugely important topic of reproducibility in science, the ability to reproduce results from ground-breaking scientific work that was published in top journals. For a long-time there was an assumption that peer-review meant that each scientist subjected their work to fellow scientists that were experts on their topic, and thus it provides a solid barrier to error-prone and work from being published. 
+
+The notion of reproducibility, however, grew from fields like physics and chemistry where early lab experiments could be described with enough precision for another scientist to mix the same chemicals, or recreate the same conditions for a gravity experiment, and easily verify whether the claims in the paper were defensible. 
+
+Things get a lot more complicated now that (1) the data requirements necessary to publish in top journals have expanded, (2) methods have become much more complicated, and (3) science is very competitive with high-stakes rewards for winning grants or covetted endowed professor positions, resulting in proprietary data, data collection techniques, or lab conditions like stem cell lines or bacteria strains that cannot be easily replicated. As a result, peer reviewers have to take a lot of what authors say on face value without having enough information to challenge certain assertions, or without having access to the raw data and thousands of lines of code that produces the results that are being defended in the paper. Furthermore, weaknesses in how statistical methods are reported have introduced systematic bias into the types of research that gets published in top journals (it has to be splashy, and thus more likely to be anomoly studies than reproducible work). 
+
+If you are not going into academics, should you care? Yes, because the problems with reproducibility in science are just a proxy for problems with data analysis that will arise in any organization outside of academics as well. Scientists experience pressure to publish. Consultants also experience pressure to do work fast, and to identify patterns that will impress clients. These sorts of issues will arise in any environment where data brings value. In science we care about making the process transparent so that others can replicate work. If you are a manager or project lead for a team of analysts, you should care about transparency because it allows you to ensure your team is doing the job correctly, especially if your name is going on the report! 
+
+This week's topic introduces you to the fascinating topic of the replication crisis in science. Your task will be to read two articles on reproduciblity in science: 
+
+[When the Revolution Came for Amy Cuddy, New York Times Magazine, 2017](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/articles/when-the-revolution-came-for-amy-cuddy.pdf)
+
+[How Quality Control Could Save Science](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/articles/how-quality-control-could-save-science.pdf)
+
+You are welcome to skim additional articles on the topic conveniently catalogued by Nature Magazine:
+
+[Challenges in irreproducible research](https://www.nature.com/collections/prbfkwmwvz)
+
+For the discussion topic this week, I would like you to argue either: 
+
+(1) that the reproducibiilty crisis can be effectively ended if science adopts new technologies and better practices, or
+
+(2) that the problems with reproducibility are so engrained in the limits of science and in the DNA of academic institutions that there will always be problems with reproducility, and attempts to address it are insufficient in their ability to get to the root of the problem, or naive about human nature.
+
+Pick a side and make your case! 
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 05
+##########
+#########################################
+#########################################
+-->
+
+
+# Week 5 - GitHub Pages
 
 
 
@@ -818,9 +902,9 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 
 
-## Lab 04
+## Lab 05
 
-**Due {{page.labs.lab-04}}**
+**Due {{page.labs.lab-05}}**
 
 
 
@@ -1031,89 +1115,16 @@ And share your page link on YellowDig:
 
 
 
+
 <!--- 
 #########################################
 #########################################
 ##########
-##########         WEEK 04
+##########         WEEK 06
 ##########
 #########################################
 #########################################
 -->
-
-
-
-
-# Week 4 - Text Analysis 
-
-**Due {{page.labs.lab-05}}** 
-
-Lab 04
-
-
-<br>
-<br>
-
-
-
-## Lab-04 - Text Analysis
-
-
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">LAB-04 Instructions</a>
-
-## Submit Solutions to Canvas:
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
-
-<br>
-<br>
-
-
-
-## YellowDig Discussion
-
-<br>
-<br>
-
-# The Crisis of Scientific Reproducibility
-
-The topic this week is an introduction to the hugely important topic of reproducibility in science, the ability to reproduce results from ground-breaking scientific work that was published in top journals. For a long-time there was an assumption that peer-review meant that each scientist subjected their work to fellow scientists that were experts on their topic, and thus it provides a solid barrier to error-prone and work from being published. 
-
-The notion of reproducibility, however, grew from fields like physics and chemistry where early lab experiments could be described with enough precision for another scientist to mix the same chemicals, or recreate the same conditions for a gravity experiment, and easily verify whether the claims in the paper were defensible. 
-
-Things get a lot more complicated now that (1) the data requirements necessary to publish in top journals have expanded, (2) methods have become much more complicated, and (3) science is very competitive with high-stakes rewards for winning grants or covetted endowed professor positions, resulting in proprietary data, data collection techniques, or lab conditions like stem cell lines or bacteria strains that cannot be easily replicated. As a result, peer reviewers have to take a lot of what authors say on face value without having enough information to challenge certain assertions, or without having access to the raw data and thousands of lines of code that produces the results that are being defended in the paper. Furthermore, weaknesses in how statistical methods are reported have introduced systematic bias into the types of research that gets published in top journals (it has to be splashy, and thus more likely to be anomoly studies than reproducible work). 
-
-If you are not going into academics, should you care? Yes, because the problems with reproducibility in science are just a proxy for problems with data analysis that will arise in any organization outside of academics as well. Scientists experience pressure to publish. Consultants also experience pressure to do work fast, and to identify patterns that will impress clients. These sorts of issues will arise in any environment where data brings value. In science we care about making the process transparent so that others can replicate work. If you are a manager or project lead for a team of analysts, you should care about transparency because it allows you to ensure your team is doing the job correctly, especially if your name is going on the report! 
-
-This week's topic introduces you to the fascinating topic of the replication crisis in science. Your task will be to read two articles on reproduciblity in science: 
-
-[When the Revolution Came for Amy Cuddy, New York Times Magazine, 2017](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/articles/when-the-revolution-came-for-amy-cuddy.pdf)
-
-[How Quality Control Could Save Science](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/articles/how-quality-control-could-save-science.pdf)
-
-You are welcome to skim additional articles on the topic conveniently catalogued by Nature Magazine:
-
-[Challenges in irreproducible research](https://www.nature.com/collections/prbfkwmwvz)
-
-For the discussion topic this week, I would like you to argue either: 
-
-(1) that the reproducibiilty crisis can be effectively ended if science adopts new technologies and better practices, or
-
-(2) that the problems with reproducibility are so engrained in the limits of science and in the DNA of academic institutions that there will always be problems with reproducility, and attempts to address it are insufficient in their ability to get to the root of the problem, or naive about human nature.
-
-Pick a side and make your case! 
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
-<br>
-<br>
-
-
-
-
-
-
-
 
 
 #  Week 6 - Data APIs & Tidy Data
@@ -1253,7 +1264,7 @@ Which pattern would you use to match all state names with a W, no matter if the 
 
 
 
-## Lab 05
+## Lab 06
 
 <br>
 
@@ -1388,7 +1399,7 @@ plot( msp_dorling )
 
 ![](file:///C:/Users/jdlecy/Dropbox/00%20-%20PEDA/00%20-%20GITHUB/COURSE-CPP-529-PRACTICUM/cpp-529-master/LABS/lab-04-instructions_files/figure-html/unnamed-chunk-9-2.png)
 
-## Instructions: 
+**Instructions:** 
 
 1. Create an R script that will convert all US Metro Area shapefiles into Dorling cartograms, one new shapefile for each metro area.  
 2. Save each Dorling cartogram as a geoJSON file. 
@@ -1431,7 +1442,7 @@ for( i in city.names )
 <br>
 
 
-## Submit Solutions to Canvas:
+**Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
@@ -1467,7 +1478,7 @@ for( i in city.names )
 
 <br>
 
-### Code-Through
+**Code-Through**
 
 Since you are sharing your code-through with your classmates on Yellowdig, it will serve as your discussion topic this week.
 
@@ -1475,11 +1486,11 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/code-through-assignment.html">Code-Through Instructions</a>
 
-### Submit to Canvas:
+**Submit to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT CODE-THROUGH</a>
 
-### Post on Yellowdig
+**Post on Yellowdig:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
@@ -1491,7 +1502,7 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 
 <br>
 
-### Build an R Package
+**Build an R Package**
 
 This tutorial will teach you how to build and share a package in R. At some point you might develop a tool that you want to upload to the CRAN so it is widely available. More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. At some point it will be more efficient for the team to create a package to maintain the project code so that team members can update or enhance the functions, and others can easily update the functions by re-installing the package. 
 
@@ -1499,7 +1510,7 @@ Complete the tuturial on "packaging" your R code from Labs 01 and 02 into a new 
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/create-r-package.html">Final Project Instructions</a>
 
-### Submit to Canvas:
+**Submit to Canvas:**
 
 To receive credit for the assignment, submit the URL to your package on GitHub.
 
@@ -1514,7 +1525,7 @@ To receive credit for the assignment, submit the URL to your package on GitHub.
 
 <br>
 
-### Automating Report Generation
+**Automating Report Generation**
 
 This assignment teaches you to use RMD templates to simplify and automate the process of generating reports. 
 
@@ -1528,7 +1539,7 @@ Begin by reading about the process:
 [Automated Reporting](https://ds4ps.org/cpp-527-spr-2020/lectures/report-automation.html)
 
 
-### Instructions 
+**Instructions** 
 
 For this assignment you will need to clone Nick Strayer's CV project: 
 
@@ -1548,7 +1559,7 @@ A quick note on the [difference between "cloning" a project and "forking" a GitH
 
 In this instance we are not contributing back to the project to improve it. We just want our own local copy to work with, so cloning is the best option. 
 
-### Build Your Resume
+**Build Your Resume**
 
 After cloning the files, you should have local copies on your desktop. You will need to edit at least two files: 
 
@@ -1576,7 +1587,7 @@ For the assignment submit the following:
 Consider creating a GitHub site to host a portfolio of projects you are working on. You can add the CV and your code-through assignments to the site. 
 
 
-### Submit to Canvas:
+**Submit to Canvas:****
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
