@@ -340,8 +340,8 @@ Recall that logical statements are used to construct groups. Group membership is
 
 ```r
 these <- downtown$landuse == "Commercial"
-group.colors <- ifelse( these, "firebrick", "gray90" )     # don't change this
-plot( downtown,  border="gray70", col=group.colors )       # don't change this
+group.colors <- ifelse( these, "firebrick", "gray90" )     
+plot( downtown,  border="gray70", col=group.colors )     
 ```
 ![](https://ds4ps.org/cpp-526-sum-2020/labs/lab-02-instructions-v2_files/figure-html/unnamed-chunk-26-1.png)
 
