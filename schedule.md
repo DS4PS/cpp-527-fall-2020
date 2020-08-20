@@ -182,6 +182,18 @@ Make sure you are clear about:
 * Return values in R 
 * Function scope 
 
+## Readings 
+
+**Control Structures**
+
+Skim:
+
+[Quick Reference on Control Structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) 
+
+[Control Structures in R](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html)
+
+
+
 **Scope**
 
 What does the following return and why? 
@@ -202,16 +214,8 @@ x
 [Scope](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
 
 
-**Control Structures**
 
-Skim:
-
-[Quick Reference on Control Structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) 
-
-[Control Structures in R](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html)
-
-
-Advanced:  
+**Advanced:** 
 
 These readings are a slightly more advanced treatment of loops and control structures: 
 
@@ -325,7 +329,7 @@ Although there was much debate about the correct solution when it was initially 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9vRUxbzJZ9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Using Computing Logic to Build the Game 
+**Using Computing Logic to Build the Game**
 
 The Monty Hall Problem is a great example of a mathematical problem that might be hard to solve using proofs, but it is fairly easy to solve using simulation. 
 
@@ -336,7 +340,7 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 <a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
 
-### Submit Solutions to Canvas:
+**Submit Solutions to Canvas:** 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
@@ -1592,29 +1596,53 @@ Consider creating a GitHub site to host a portfolio of projects you are working 
 
 
 
-<style> 
-body {
-   font-family: "Roboto", sans-serif;
-}
- 
-p.italic {
-  font-style: italic;
-  color: black !important;
-}
-td {
-  text-align: left;
-}
-td.i {
-  text-align: center;
-}
-iframe {
-  align: middle;
-}
-article {
-  padding-left:20%;
-}
+<style>
 em {
-  color: black !important;
+    color: black;
+} 
+h2{
+  font-size:calc(2em + 0.25vw) !important;
+  color: #995c00;
+  font-weight:300;
+  margin-top:40px !important;
+  margin-bottom:20px;
+  } 
+
+h3{
+  font-size:calc(1.4em + 0.25vw);
+  font-weight:300;
+  margin-top:20px !important;
+  margin-bottom:10px;} 
+   
+
+ul a:hover {
+  color: #337ab7;
+  text-decoration: none;
+  font-weight: normal;
+} 
+
+#markdown-toc ul {
+  font-size:calc(0.85em + 0.25vw);
+  line-height:1.2;
+  font-weight: bold;
+} 
+#markdown-toc ul li {
+  list-style-type: disc !important;
+  font-size:calc(0.65em + 0.25vw);
+  line-height:1.2;
+  margin-left: 20px;
+}  
+#markdown-toc a {
+  color: black;
+  font-size:calc(0.65em + 0.25vw);
+  line-height:1.2;
+  font-weight: normal;
+}  
+#markdown-toc a:hover {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
+
 </style>
 
