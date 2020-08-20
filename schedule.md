@@ -243,11 +243,15 @@ This section introduces [control structures](https://intellipaat.com/blog/tutori
 
 Once you have completed this unit you will be able to: 
 
-* factor your code into distinct tasks 
+* divide or "factor" your code into distinct tasks 
 * use functions as steps in problem-solving 
+* review compound statements 
 * implement if-else statements 
-* use for and while loops 
+* identify "edge cases" and their impact on code 
 
+
+
+## Readings 
 
 **Functions**
 
@@ -259,27 +263,78 @@ Make sure you are clear about:
 
 * Arguments 
 * Object assignment (arrow) versus argument assignment (equals) 
-* Muliple assignment (need for concatenation) 
-* Default arguments 
+* When are quotation marks needed around arguments? 
+* Single-value arguments (one number or string) versus compound arguments (use `c()` or pass existing objects)  
+* Argument defaults
 * Explicit and implicit use of argument names and positions 
 * Return values in R 
 * Function scope 
 
-## Readings 
+
+**Logical Statements**
+
+Recall that logical operators like EQUALS (==), NOT EQUAL (!=), AND (&), OR (|), and OPPOSITE (!) are used identify sets of cases that belong to a desired group, and sets of cases outside of the desired group.  
+
+Recall that logical statements are used to construct groups. Group membership is encoded into logical vectors, where TRUE indicates membership and FALSE indicates cases that do not belong to the group. For example, identifying commercial properties in downtown Syracuse: 
+
+```r
+these <- downtown$landuse == "Commercial"
+group.colors <- ifelse( these, "firebrick", "gray90" )     # don't change this
+plot( downtown,  border="gray70", col=group.colors )       # don't change this
+```
+![](https://ds4ps.org/cpp-526-sum-2020/labs/lab-02-instructions-v2_files/figure-html/unnamed-chunk-26-1.png)
+
+Compound logical statements require combining multiple criteria to define a group:
+
+```r
+study.group == "TREATMENT" & gender == "FEMALE" 
+```
+
+If you need a refresher, review the chapter on [LOGICAL STATEMENTS](http://ds4ps.org/dp4ss-textbook/p-050-business-logic.html).
+
 
 **Control Structures**
 
-Skim:
+Control structures are functions that allow you to implement logic or process in your code. They structure and implement the rules which govern our world. For example: 
+
+```r
+# pseudocode example
+IF 
+  the ATM password is correct
+  check whether the requested amount is smaller than account balance
+  IF
+    account balance > requested amount 
+    return requested amount 
+```
+
+The most frequent control structures do the following: 
+
+* Only implement code if certain requirements are met (if-then or if-else functions) 
+* Implement code as long as a requirement is met (while loops) 
+* Repeat the same code for each item in a set (for loops) 
+
+Skim the following chapters for an introduction to a varietiy of control structures in R: 
 
 [Quick Reference on Control Structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) 
 
 [Control Structures in R](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html)
 
+In this lab we will focus on **IF-THEN** statements. 
+
+Next week we will introduce **FOR LOOPS** in order to build a simulation. 
 
 
 **Scope**
 
-What does the following return and why? 
+Many people are familiar with the expression "What happens in Las Vegas stays in Vegas."
+
+Scope is the rule that "what happens inside of functions stays inside of functions". 
+
+It is very common to use variables like **X** or **dat** to represent objects in R. If you have defined a variable called X, and a different object called X is defined inside of a function you just called, how does R manage the conflict of having two objects X active at the same time? 
+
+Scope prevents actions inside of a function from impacting your active work environment. 
+
+For example, why is X not altered here except through assignment? 
 
 ```r
 x <- 10 
@@ -291,20 +346,47 @@ two.plus.two <- function()
 }
 
 two.plus.two()
+# [1] 4
 x
+# [1] 10
+ 
+x <- two.plus.two()
+x
+# [1] 4
 ```
+
+Note that the function **two.plus.two()** returns the object **x**, but after calling the function it does not replace the object **x=10** that is active in the main environment. The function is returning values held by the variable x, but not exporting the object x itself. 
+
+In order to replace the X that is active in the environment, you need to assign the function results to the object. 
+
+```r
+x <- "iNiGo MoNtoyA"
+
+fix_names <- function( x )
+{
+  x <- toupper( x )
+  return( x )
+}
+
+fix_names( x )
+# [1] "INIGO MONTOYA"
+x
+# [1] "iNiGo MoNtoyA"
+ 
+x <- fix_names( x )
+x
+# [1] "INIGO MONTOYA"
+```
+
+You need to be familiar with the general concept of **scope** (what happens inside functions stays inside functions), but only at a superficial level for now. 
+
+For more details see: 
 
 [Scope](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
 
 
 
-**Advanced:** 
 
-These readings are a slightly more advanced treatment of loops and control structures: 
-
-[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
-
-[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
 
 
 
@@ -474,7 +556,7 @@ Once you have completed this section you will be able to
 <br>
 
 
-**Assigned Reading**
+## Assigned Reading
 
 Required:
 
@@ -482,7 +564,13 @@ Required:
 
 [Creating Animations with Loops](https://ds4ps.org/cpp-527-spr-2020/lectures/Animations.html)
 
-Background reading:
+Recommended: these readings are a slightly more advanced treatment of loops and control structures used in simulations. Dive in or bookmark them for later. 
+
+[Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
+
+[Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
+
+Examples of loops used to create effective data visualization:
 
 [Why Americans Are So Damn Unhealthy, In 4 Shocking Charts](https://www.buzzfeednews.com/article/peteraldhous/american-health-care)
 
