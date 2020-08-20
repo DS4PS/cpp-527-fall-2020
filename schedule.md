@@ -137,7 +137,7 @@ Use **dput()** to share R objects in a format that can be copied from the forum 
 
 ## Practice Problem Warmup
 
-**{{Post by {{page.yellowdig.post-01}}**
+**Post by {{page.yellowdig.post-01}}**
 
 Explain the following unexpected behaviors: 
 
