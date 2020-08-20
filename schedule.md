@@ -4,6 +4,8 @@ title: Schedule
 
 canvas: 
   assignment_url: 'https://canvas.asu.edu/courses/67637/assignments'
+  
+yellowdig: 'https://www.yellowdig.com/board/47455'
 
 labs:
   lab-01:  'Saturday, August 29th' 
@@ -410,6 +412,10 @@ In mean.default(grade.levels) :
 ```
 
 
+**Post your ideas to YellowDig** 
+
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig}}">YELLOWDIG</a>
 
 
 
