@@ -5,7 +5,10 @@ title: Schedule
 canvas: 
   assignment_url: 'https://canvas.asu.edu/courses/67637/assignments'
   
-yellowdig: 'https://www.yellowdig.com/board/47455'
+yellowdig_url: 'https://www.yellowdig.com/board/47455'
+
+yellowdig: 
+  post-01: 'Monday, Aug 24'
 
 labs:
   lab-01:  'Saturday, August 29th' 
@@ -129,6 +132,74 @@ Use **dput()** to share R objects in a format that can be copied from the forum 
 <br>
 <br>
 
+
+
+
+## Practice Problem Warmup
+
+**{{Post by {{page.yellowdig.post-01}}**
+
+Explain the following unexpected behaviors: 
+
+**Q1: When is 5 larger than 10?**
+
+```r
+> (1:10) > 5
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+> (1:10) > "5"
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+```
+
+
+**Q2: Invisible Dogs**
+
+x is a factor cataloging animals in a shelter, recording the type of animal. 
+
+Why can't I count dogs? 
+
+```r
+> x  # TYPE OF ANIMAL (FACTOR)
+[1] cat   dog   mouse
+Levels: cat dog  mouse
+
+> x == "cat" 
+[1]  TRUE FALSE FALSE
+> x == "dog"
+[1] FALSE FALSE FALSE
+> x == "mouse" 
+[1] FALSE FALSE  TRUE
+```
+
+
+**Q3: Average Years of Edu** 
+
+I have a sample of 10 people and am trying to determine their average level of education. 12= high school degree, 16 = four-year college degree, etc. 
+
+My data is stored as a factor (which it should be since it is a categorical variable. But that makes it hard to calculate averages. 
+
+What is going wrong here? 
+
+```r
+grade.levels <- factor( c(12, 16, 12, 7, 7, 5, 6, 5, 9, 10) )
+
+> # want to know average level of 
+> # schooling for sample:
+> mean( grade.levels )
+[1] NA
+Warning message:
+In mean.default(grade.levels) :
+  argument is not numeric or logical: returning NA
+> 
+> # mean requires a numeric variable
+> mean( as.numeric( grade.levels ) )
+[1] 3.8
+```
+
+
+**Post your ideas to YellowDig** 
+
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 
 
@@ -351,71 +422,6 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 
 
-## YellowDig Practice Problems 
-
-
-
-Explain the following unexpected behaviors: 
-
-**Q1: When is 5 larger than 10?**
-
-```r
-> (1:10) > 5
- [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
-> (1:10) > "5"
- [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-```
-
-
-**Q2: Invisible Dogs**
-
-x is a factor cataloging animals in a shelter, recording the type of animal. 
-
-Why can't I count dogs? 
-
-```r
-> x  # TYPE OF ANIMAL (FACTOR)
-[1] cat   dog   mouse
-Levels: cat dog  mouse
-
-> x == "cat" 
-[1]  TRUE FALSE FALSE
-> x == "dog"
-[1] FALSE FALSE FALSE
-> x == "mouse" 
-[1] FALSE FALSE  TRUE
-```
-
-
-**Q3: Average Years of Edu** 
-
-I have a sample of 10 people and am trying to determine their average level of education. 12= high school degree, 16 = four-year college degree, etc. 
-
-My data is stored as a factor (which it should be since it is a categorical variable. But that makes it hard to calculate averages. 
-
-What is going wrong here? 
-
-```r
-grade.levels <- factor( c(12, 16, 12, 7, 7, 5, 6, 5, 9, 10) )
-
-> # want to know average level of 
-> # schooling for sample:
-> mean( grade.levels )
-[1] NA
-Warning message:
-In mean.default(grade.levels) :
-  argument is not numeric or logical: returning NA
-> 
-> # mean requires a numeric variable
-> mean( as.numeric( grade.levels ) )
-[1] 3.8
-```
-
-
-**Post your ideas to YellowDig** 
-
-
-<a class="uk-button uk-button-primary" href="{{page.yellowdig}}">YELLOWDIG</a>
 
 
 
