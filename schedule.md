@@ -139,6 +139,16 @@ Use **dput()** to share R objects in a format that can be copied from the forum 
 
 **Post by {{page.yellowdig.post-01}}**
 
+Note that these are non-obvious bugs that can EASILY work there way into your code. Once you see the problem, it will seem obvious. But until you see it the code often looks fine and it's unclear why it is not working as expected. 
+
+These practice problems are largely an opportunity to review content from CPP 526 and develop a sensitivity for the importance of writing robust and sustainable code, and testing your code for unexpected behaviors. 
+
+Many of these questions are similar to riddles or brain teasers that help sharpen your critical thinking skills when working with code. Work through them on your own, then discuss your ideas on YellowDig with classmates. 
+
+For the topics this week, you will find that reviewing the lecture notes on one-dimensional data types useful: [VECTORS IN R](http://ds4ps.org/dp4ss-textbook/ch-050-vectors.html).
+
+------
+
 Explain the following unexpected behaviors: 
 
 **Q1: When is 5 larger than 10?**
