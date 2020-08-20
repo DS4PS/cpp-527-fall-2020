@@ -3,7 +3,7 @@ layout: default
 title: Schedule
 
 canvas: 
-  assignment_url: 'https://canvas.asu.edu/courses/67637/assignments'
+  assignment_url: 'https://canvas.asu.edu/courses/67635/assignments'
   
 yellowdig_url: 'https://www.yellowdig.com/board/47455'
 
