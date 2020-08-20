@@ -1600,6 +1600,13 @@ Consider creating a GitHub site to host a portfolio of projects you are working 
 em {
     color: black;
 } 
+  
+h1{
+  font-size:calc(2em + 0.25vw) !important;
+  margin-top:80px !important;
+  margin-bottom:20px;
+  } 
+  
 h2{
   font-size:calc(2em + 0.25vw) !important;
   color: #995c00;
