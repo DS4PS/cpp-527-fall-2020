@@ -14,13 +14,13 @@ info:
  course_number: CPP 527 
  course_level: Graduate 
  course_website: 'https://canvas.asu.edu/courses/41575'
- course_start_end_dates: Jan 13th to March 02, 2020
+ course_start_end_dates: Aug 20th to Oct 9th, 2020
  course_prerequisites:  
  class_meets_when:  Asynchronous  
- class_meets_where:  'https://asu.zoom.us/j/944016877'
+ class_meets_where:  'https://asu.zoom.us/j/93504639301'
  review_sessions_when: TBD 
  review_sessions_where: Zoom
- discussion_board_url: 'https://ds4ps.org/cpp-527-spr-2020/help/'
+ discussion_board_url: 'https://ds4ps.org/cpp-527-fall-2020/help/'
 
 instructor:
 -  name: Jesse Lecy
