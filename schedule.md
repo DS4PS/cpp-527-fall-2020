@@ -151,12 +151,12 @@ Use **dput()** to share R objects in a format that can be copied from the forum 
 
 ## Unit Overview 
 
-### Description
+**Description**
 
 This section introduces [control structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) that will allow you to incorporate decision-making into computer code. It enables things like *if-then* logic to determine what code should be used based upon whether specified conditions are met. 
 
 
-### Learning Objectives
+**Learning Objectives**
 
 Once you have completed this unit you will be able to: 
 
@@ -165,10 +165,6 @@ Once you have completed this unit you will be able to:
 * implement if-else statements 
 * use for and while loops 
 
-
-
-
-## Required Reading
 
 **Functions**
 
@@ -229,7 +225,7 @@ These readings are a slightly more advanced treatment of loops and control struc
 <br>
 
 
-## Planning Your Code with Pseudo-Code
+**Planning Your Code with Pseudo-Code**
 
 Typically as you start a specific task in programming there are two things to consider. 
 
@@ -355,7 +351,7 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 Explain the following unexpected behaviors: 
 
-### When is 5 larger than 10? 
+**Q1: When is 5 larger than 10?**
 
 ```r
 > (1:10) > 5
@@ -365,7 +361,7 @@ Explain the following unexpected behaviors:
 ```
 
 
-### Invisible Dogs 
+**Q2: Invisible Dogs**
 
 x is a factor cataloging animals in a shelter, recording the type of animal. 
 
@@ -385,7 +381,7 @@ Levels: cat dog  mouse
 ```
 
 
-### Average Years of Edu
+**Q3: Average Years of Edu** 
 
 I have a sample of 10 people and am trying to determine their average level of education. 12= high school degree, 16 = four-year college degree, etc. 
 
@@ -417,6 +413,8 @@ In mean.default(grade.levels) :
 
 
 
+
+
 <!--- 
 #########################################
 #########################################
@@ -435,11 +433,11 @@ In mean.default(grade.levels) :
 
 ## Unit Overview 
 
-### Description
+**Description**
 
 This section introduces loops. We will use them to create simulations. 
 
-### Learning Objectives
+**Learning Objectives**
 
 Once you have completed this section you will be able to 
 * use a loop responsibly in your code 
@@ -450,7 +448,7 @@ Once you have completed this section you will be able to
 <br>
 
 
-### Assigned Reading
+**Assigned Reading**
 
 Required:
 
@@ -511,7 +509,7 @@ for( i in 1:1000 )
 
 ![](https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2020/master/lectures/gifs/brownian_motion.gif)
 
-### Questions 
+QUESTIONS: 
 
 Consider the two following problems. 
 
@@ -560,6 +558,10 @@ Please review the instructions at the end of the lecture notes:
 
 <br>
 <br>
+
+
+
+
 
 
 
