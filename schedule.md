@@ -1,62 +1,100 @@
 ---
-layout: schedule
+layout: default
 title: Schedule
 
 canvas: 
-  assignment_url: 'https://canvas.asu.edu/courses/41575/assignments'
-  yellowdig_url: 'https://canvas.asu.edu/courses/41575/assignments/959520'
+  assignment_url: 'https://canvas.asu.edu/courses/67637/assignments'
+
+labs:
+  lab-01:  'Saturday, August 29th' 
+  lab-02:  'Saturday, September 5th'
+  lab-03:  'Saturday, September 12th'
+  lab-04:  'Saturday, September 19th'
+  lab-05:  'Saturday, September 26th'
+  lab-06:  'Saturday, October 3rd'
+  
+assessments:
+  mini-assessment-01:  'Sat Aug 29 - Tues Sept 01'
+  mini-assessment-02:  'Sat Sept 05 - Tues Sept 08'
+  mini-assessment-03:  'Sat Sept 12 - Tues Sept 15'
+  mini-assessment-04:  'Sat Sept 19 - Tues Sept 22'
+  mini-assessment-05:  'Sat Sept 26 - Tues Sept 29'
+  mini-assessment-06:  'Thurs Oct 01 - Tues Oct 06'
+  
+final: 
+  exam-date:  'Sat Oct 3rd - Fri Oct 9th' 
+  
 ---
- 
+
 <!--- 
-New sections start with 2 stars:  ** Section Title
-New units start with 3 stars:     *** {Unit Metadata}
------------------------------start example
-** Section-I
-*** { @unit = "15th Nov", @title = "Course Overview", @reading, @lecture, @assignment, @foldout }
------------------------------end example
-Unit Metadata is comprised of:
-@unit - date or number
-@title - unit name
-@reading - turn on reading icon
-@assignment - turn on lecture icon
-@lecture - turn on lecture icon
-@foldout - activate unit content (allow foldout)
-Submit Buttons - 
-  <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">Submit Lab</a>
-  <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+Submit Button - <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 -->
 
 
 
 
-** Welcome
 
 
-*** { @unit = "", @title = "Course Overview",  @foldout   }
+<div class = "uk-container uk-container-small">
+  
+<br><br>
+<br><br>
 
-<br> 
+**COURSE CONTENT:**
 
-## Welcome Back!
+-----------------------
 
-CPP 527 is the second course in the Foundations of Data Science sequence. This semester extends work done in CPP 526 by introducing programming topics like control structures, loops, and regular expressions that are necessary for building simulations and specialized applications in R. We will also cover the foundations of document design using both GitHub pages (free websites like this one) and customized RMD templates so that you can begin developing custom reporting formats so that enable you to better structure results from analytical projects or automate tasks. 
+* TOC
+{:toc}
+
+-----------------------
+
+<br>
+
+
+
+
+# Course Overview 
+
+
+
+CPP 527 is the second course in the Foundations of Data Science sequence. 
+
+This semester is designed to extend your working knowledge of data programming by introducing programming topics that will make you a more adaptive and creative analyst. 
+
+This course will cover: 
+
+* control structures like loops
+* new data structures like lists 
+* regular expressions for working with text 
+* creation of packages in R 
+* creating of websites in GitHub 
+* building RMD templates to automate reporting 
+
+We will also cover the foundations of document design using both GitHub pages (free websites like this one) and customized RMD templates to enable you to better structure results from analytical projects. 
+
+The skills you learn this term can be used to build simulations in R, codify common workflows, and create specialized applications. 
 
 <br>
 <br>
-
-
-
-*** { @unit = "", @title = "Getting Help", @assignment, @foldout  }
 
 
 ## Getting Help
 
-Note that the discussion board is hosted by the GitHub issues feature. It is a great forum because:
+Note that similar to other courses the discussion board is run through the GitHub issues feature. It is a great forum tool because:
 
 * You can format code and math using standard markdown syntax. 
 * You can cut and paste images directly into the message. 
 * You can direction responses using @username mentions. 
 
-Please preview your responses before posting to ensure proper formatting. Note that you format code by placing fences around the code:
+Please use the discussion boards to practice your social coding etiquette. 
+
+* Ask clear questions. 
+* Provide sufficient code for the reader to diagnose the problem. 
+* When possible, use reproducible examples. 
+* Preview your responses before posting to ensure proper formatting. 
+
+Recall that you format code by placing fences around the code:
 
 ````
 ```
@@ -67,7 +105,9 @@ lm( y ~ x1 + x2 )
 
 The fences are three back-ticks. These look like quotation marks, but are actually the character at the top left of your keyboard (if you have a US or European keyboard). 
 
-GitHub does not have a native math rendering language (RMD documents, on the other hand, [support formulas](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html)). So you have two options, type formulas as regular text and use code formatting to make them clear (this option is usually sufficient). Or you can type your formula in a formula editor and copy and paste an image of the nicely-formatted example.  
+GitHub does not have a native math rendering language (RMD documents, on the other hand, [support formulas](https://www.calvin.edu/~rpruim/courses/s341/S17/from-class/MathinRmd.html)). 
+
+You have two options when using formulas: type them as regular text and use code formatting to make them clear (this option is usually sufficient). 
 
 ````
 ```
@@ -77,10 +117,13 @@ b1 = cov(x,y) / var(x)
 ```
 ````
 
+Or type your formula in a formula editor and copy and paste an image.
+
+Use **dput()** to share R objects in a format that can be copied from the forum and pasted into R to recreate the vectors or data frames. 
+
 ----
 
 
-
 <br>
 <br>
 
@@ -92,75 +135,99 @@ b1 = cov(x,y) / var(x)
 
 
 
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 01
+##########
+#########################################
+#########################################
+-->
+
+# Week 1 - Control Structures  
 
 
-** Week 1 - Control Structures  
 
-*** { @unit = "", @title = "Unit Overview", @foldout  }
+## Unit Overview 
 
+### Description
 
-## Description
-
-This section introduces [control structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) that serves to incorporate decision-making into computer code. It enables things like *if-then* logic to determine what code should be used based upon specified conditions. 
+This section introduces [control structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) that will allow you to incorporate decision-making into computer code. It enables things like *if-then* logic to determine what code should be used based upon whether specified conditions are met. 
 
 
-## Learning Objectives
+### Learning Objectives
 
-Once you have completed this section you will be able to 
-* implement if-else statements 
-* use while loops 
+Once you have completed this unit you will be able to: 
+
+* factor your code into distinct tasks 
 * use functions as steps in problem-solving 
-
-## Lab
-
-Your assignment this week will be to design computer code to simulate the steps in the game show Let's Make a Deal. 
-
-<br>
-<br>
+* implement if-else statements 
+* use for and while loops 
 
 
 
-*** { @unit = "", @title = "Readings", @reading, @foldout  }
 
-<br>
-<br>
+## Required Reading
 
-## Review
+**Functions**
 
-Please revisit the following chapter from last semester:
+Revisit the following chapter from last semester:
 
 [Functions](http://ds4ps.org/dp4ss-textbook/ch-040-functions.html)
 
+Make sure you are clear about: 
 
-## Assigned Reading
+* Arguments 
+* Object assignment (arrow) versus argument assignment (equals) 
+* Muliple assignment (need for concatenation) 
+* Default arguments 
+* Explicit and implicit use of argument names and positions 
+* Return values in R 
+* Function scope 
 
-Required:
+**Scope**
+
+What does the following return and why? 
+
+```r
+x <- 10 
+
+two.plus.two <- function()
+{
+  x <- 2 + 2
+  return( x )
+}
+
+two.plus.two()
+x
+```
+
+[Scope](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
+
+
+**Control Structures**
+
+Skim:
 
 [Quick Reference on Control Structures](https://intellipaat.com/blog/tutorial/r-programming/decision-making-and-loops/) 
 
 [Control Structures in R](https://bookdown.org/rdpeng/rprogdatascience/control-structures.html)
 
 
+Advanced:  
 
-## Recommended Reading 
-
-This topic builds off of the use of loops and thus is a little more advanced - we will cover it in CPP 528. It would not hurt to preview the topic now, though. 
+These readings are a slightly more advanced treatment of loops and control structures: 
 
 [Don't Loop - Apply](https://bookdown.org/rdpeng/rprogdatascience/loop-functions.html)
 
 [Simulation](https://bookdown.org/rdpeng/rprogdatascience/simulation.html) 
 
-[Scope](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
+
 
 <br>
 <br>
 
-
-
-
-*** { @unit = "", @title = "Psuedo-Code", @lecture, @foldout  }
-
-<br>
 
 ## Planning Your Code with Pseudo-Code
 
@@ -252,16 +319,9 @@ Here are some helpful examples:
 <br>
 
 
-
-
-
-
-
-*** { @unit = "Due Jan 21th", @title = "Lab 01", @assignment, @foldout  }
-
-<br>
-
 ## Lab-01 - Control Structures 
+
+**Due {{page.labs.lab-01}}**
 
 This lab is based upon the famous [Monty Hall Problem](http://www.montyhallproblem.com/). 
 
@@ -269,14 +329,18 @@ Although there was much debate about the correct solution when it was initially 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9vRUxbzJZ9Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-The Monty Hall Problem is a great example of a mathematical problem that might be hard to solve using a mathematical proof, but it is fairly easy to solve using simulation. Since it is just a game with simple and explicit rules we can build our own virtual version. Then we can compare how outcomes differ when we deploy the two different strategies for selecting doors. 
+### Using Computing Logic to Build the Game 
+
+The Monty Hall Problem is a great example of a mathematical problem that might be hard to solve using proofs, but it is fairly easy to solve using simulation. 
+
+Since it is a game with simple and explicit rules we can build our own virtual version. Then we can compare how outcomes differ when we deploy the two different strategies for selecting doors. 
 
 In Lab 01 we will use control structures to build a virtual version of the game. In Lab 02 we will use simulation to play the game thousands of times so that we can get stable estimates of the payoff of each strategy. 
 
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-01-instructions.html">LAB-01 Instructions</a>
+<a class="uk-button uk-button-default" href="../labs/lab-01-instructions.html">LAB-01 Instructions</a>
 
-## Submit Solutions to Canvas:
+### Submit Solutions to Canvas:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
@@ -285,6 +349,65 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 
 
+## YellowDig Practice Problems 
+
+
+
+Explain the following unexpected behaviors: 
+
+### When is 5 larger than 10? 
+
+```r
+> (1:10) > 5
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
+> (1:10) > "5"
+ [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
+```
+
+
+### Invisible Dogs 
+
+x is a factor cataloging animals in a shelter, recording the type of animal. 
+
+Why can't I count dogs? 
+
+```r
+> x  # TYPE OF ANIMAL (FACTOR)
+[1] cat   dog   mouse
+Levels: cat dog  mouse
+
+> x == "cat" 
+[1]  TRUE FALSE FALSE
+> x == "dog"
+[1] FALSE FALSE FALSE
+> x == "mouse" 
+[1] FALSE FALSE  TRUE
+```
+
+
+### Average Years of Edu
+
+I have a sample of 10 people and am trying to determine their average level of education. 12= high school degree, 16 = four-year college degree, etc. 
+
+My data is stored as a factor (which it should be since it is a categorical variable. But that makes it hard to calculate averages. 
+
+What is going wrong here? 
+
+```r
+grade.levels <- factor( c(12, 16, 12, 7, 7, 5, 6, 5, 9, 10) )
+
+> # want to know average level of 
+> # schooling for sample:
+> mean( grade.levels )
+[1] NA
+Warning message:
+In mean.default(grade.levels) :
+  argument is not numeric or logical: returning NA
+> 
+> # mean requires a numeric variable
+> mean( as.numeric( grade.levels ) )
+[1] 3.8
+```
 
 
 
@@ -294,21 +417,29 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 
 
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 02
+##########
+#########################################
+#########################################
+-->
 
 
-** Week 2 - Simulations 
+# Week 2 - Simulations 
 
 
-*** { @unit = "", @title = "Unit Overview", @lecture, @foldout }
 
 
-<br>
+## Unit Overview 
 
-## Description
+### Description
 
 This section introduces loops. We will use them to create simulations. 
 
-## Learning Objectives
+### Learning Objectives
 
 Once you have completed this section you will be able to 
 * use a loop responsibly in your code 
@@ -319,12 +450,7 @@ Once you have completed this section you will be able to
 <br>
 
 
-*** { @unit = "", @title = "Readings", @reading, @foldout }
-
-<br>
-<br>
-
-## Assigned Reading
+### Assigned Reading
 
 Required:
 
@@ -344,7 +470,7 @@ Background reading:
 
 
 
-*** { @unit = "FRI Jan 24th", @title = "YellowDig Practice Problems", @assignment, @foldout }
+## YellowDig Practice Problems
 
 <br>
 
@@ -352,7 +478,11 @@ How can you make interesting animations in R?
 
 We covered a very basic animation - a random walk - in the lecture notes. 
 
-Start game with $10 in cash and see how long you last. At each step you flip a coin and win a dollar, lose a dollar, or stay the same. How long does the average player survive before going bankrupt? 
+Start game with $10 in cash. At each step you flip a coin and win a dollar, lose a dollar, or stay the same. 
+
+How long will the average player survive before going bankrupt? 
+
+While loops are useful when we repeat a process until a condition is met. 
 
 ```r
 cash <- 10  
@@ -381,7 +511,7 @@ for( i in 1:1000 )
 
 ![](https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2020/master/lectures/gifs/brownian_motion.gif)
 
-## Questions 
+### Questions 
 
 Consider the two following problems. 
 
@@ -395,7 +525,9 @@ What is the code to make this work?
 
 **Post your ideas or solutions on YellowDig:**
 
-Share your ideas about these problems with your classmates. Or share another animation that you found that uses loops. 
+Share your ideas about solutions to these problems with your classmates. 
+
+Or alternatively, share another animation you can create using loops. 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
@@ -406,19 +538,21 @@ Share your ideas about these problems with your classmates. Or share another ani
 
 
 
-*** { @unit = "FRI Jan 31st", @title = "Lab 02", @assignment, @foldout }
+## Lab 02
+
+**Due {{page.labs.lab-02}}**
 
 <br>
 
 Please review the instructions at the end of the lecture notes: 
 
-[Building Simulations in R: Mastering Loops](https://ds4ps.org/cpp-527-spr-2020/lectures/p-02-loops.html)
+[Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
 
 <br>
 
 
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-02-instructions.html">LAB-02 Instructions</a>
+<a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
 ## Submit Solutions to Canvas:
 
@@ -431,21 +565,163 @@ Please review the instructions at the end of the lecture notes:
 
 
 
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 03
+##########
+#########################################
+#########################################
+-->
 
 
 
+# Week 3 - Regular Expressions 
 
 
-** Week 3 - GitHub Pages
-
-
-
-*** { @unit = "", @title = "Unit Overview", @foldout }
 
 
 <br>
 
-## Customized Reporting
+### Text as Data
+
+So this week comes with an up-front warning. You can get a PhD in Natural Language Processing, which is an entire field devote to computation tools used to process and analyze text as data. We have one week to cover the topic!
+
+We obviously cannot go too deep into this interesting field, but let's at least motivate some of the R functionality with a couple of cool examples. 
+
+[Which Hip-Hop Artist Has the Largest Vocabulary?](https://pudding.cool/projects/vocabulary/index.html)
+
+[Who is the Anonymous Op-Ed Writer inside the Trump Administration?](http://varianceexplained.org/r/op-ed-text-analysis/)
+
+[Sentiment Analysis](https://www.kaggle.com/rtatman/tutorial-sentiment-analysis-in-r)
+
+These examples all demonstrate interesting uses of text as data. They are also examples of the types of insight that can come from analysis with big data - the patterns are hiding in plain sight but our brains cannot hold enough information at one time to see it.  Once we can find a system to extract hidden patterns from language we can go beyond seeking large public databases to generate insights, and we can start using all of Twitter, all published news stories, or all of the internet to identify trends and detect outliers. 
+
+### String Processing & Regular Expressions
+
+The core of all text analysis requires two sets of skills. Text is computer science is referred to as "strings", a reference to the fact that spoken languages mean nothing to computers so they just treat them as strings of letters (words) or strings of words (sentences). String processing refers to a set of functions and conventions that are used to manipulate text as data. If you think about the data steps for regular data, we clean combine, transform, and merge data inside of data frames. Similarly there are operations for important text datasets (often lots of documents full of words), cleaning them (removing words, fixing spelling errors), merging documents, etc. Core R contains many string processing functions, and there are lots of great packages. 
+
+"Regular expression" are a set of functions used to aid in processing text by defining very precise ways to query a text database by looking for specific strings, or more often strings that match some specific pattern that has meaning. For example, if I gave you the following text with everything but punctuation replaced by X, you could still tell me what the word are for: 
+
+* xxxxx@xxx.com   (email address) 
+* www.xxxxxxxx.xxx   (web URL)
+* @xxxxxxx  (social media handle) 
+
+So regular expressions can be very useful for searching large databases for general classes of text, or alternatively for searching for generic text that occurs only in a very specific context (at the beginning or end of a word, in the middle of a phrase, etc.). 
+
+[Chapter](https://ds4ps.org/cpp-527-spr-2020/lectures/string-processing.html)
+
+[Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
+
+### Helpful Reference Material: 
+
+[stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
+
+[One Page RegEx Cheat Sheet](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/regular-expressions%20one-page-cheat-sheet.pdf) 
+
+[RegEx cheat sheet in R](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/RegExCheatsheetInR.pdf)
+
+
+## Practice
+
+The function **grep( pattern, string )** works as follows:
+
+> Search for the pattern in each of the strings in the character vector at the top, *strings*. 
+
+The search pattern in each case below represents a regular expression. 
+
+What will the following cases return? 
+
+
+```r
+
+strings <- c("through","rough","thorough","throw","though","true","threw","thought","thru","trough")
+
+# what will the following return? 
+
+grep( pattern="th?rough", strings, value = TRUE)
+
+grep( pattern=".ough", strings, value = TRUE)
+
+grep( pattern="^.ough", strings, value = TRUE)
+
+grep( pattern="ough.", strings, value = TRUE)
+
+grep( pattern="[^r]ough", strings, value = TRUE)
+
+# these are not as useful
+
+grep( pattern="tr*", strings, value = TRUE)
+
+grep( pattern="t*o", strings, value = TRUE)
+```
+
+<br>
+<br>
+
+
+
+
+
+
+*** { @unit = "FRI Feb 7th", @title = "YellowDig Practice Problems", @assignment, @foldout  }
+
+<br>
+
+
+### RegEx Example
+
+We have an large database where all of the addresses and geographic coordinates are stored as follows:
+
+```r
+x <- c("100 LANGDON ST
+MADISON, WI
+(43.07794869500003, -89.39083342499998)", "00 N STOUGHTON RD E WASHINGTON AVE
+MADISON, WI
+(43.072951239000076, -89.38668964199996)")
+```
+
+Write a function that accepts the address vector **x** as the input, and returns a vector of numeric coordinates.
+
+Note that the length of addresses can change, so you will need to use regular expressions (instead of just a substr() function) to generate proper results. 
+
+<br>
+
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 04
+##########
+#########################################
+#########################################
+-->
+
+
+# Week 4 - GitHub Pages
+
+
+
+## Unit Overview
+
+
+<br>
+
+### Customized Reporting
 
 A big part of every analysts job is trying to find ways to distill large volumes of data and information down to meaningful bites of knowledge, often for diverse stakeholder audiences that have varying degrees of technical expertise. For this reason, communication skills are extremely valuable for data scientists. You will constantly be challenged to find the interesting story that emerges from an overwhelming amount of data, and find creative ways to tell the story so that information becomes actionable. 
 
@@ -463,7 +739,7 @@ We will also practice automation by the separation of the design elements of rep
 
 And they are added to the document templates using some custom functions which filter positions and loop through the list to iteratively build the document. 
 
-## GitHub Pages Set-Up
+### GitHub Pages Set-Up
 
 This week's lab will ask you to configure a GitHub page within a repository on your account. GitHub pages are an amazing resource because (1) they allow you to create an unlimited number of websites related to your projects FOR FREE, and (2) they can be created and maintained using Markdown, which simplifies a lot of the complexity of websites. You will learn to link HTML files generated from R Studio so that you can start sharing analytical projects with external audiences. 
 
@@ -487,7 +763,7 @@ And the **pagedown** package in R allows you to develop a variety of templates u
 
 Similar to other work we have done in R, we will start by using some working examples then reverse engineer them so you can see how the pieces fit together. You are not expected to master any of these topics in the short time-frame of the semester. The proper benchmark of knowledge is can you take an existing open source project and adapt it as necessary. 
 
-## Cascading Style Sheets
+### Cascading Style Sheets
 
 You will not be required to learn web programming languages like HTML and Javascript (though they are super useful if you invest the time). You do, however, need to become familiar with very basic CSS as it is impossible to do customization without it. CSS started as a somewhat modest project but has evolved into a powerful language. R Markdown documents support CSS, which makes them fully customizable. It will also become more important so you begin to develop dashboards or custom interactive Shiny apps, since CSS is the primary means of controlling layouts and other style elements. 
 
@@ -497,7 +773,7 @@ These two pages on the example GitHub site have the same content, but CSS elemen
 
 [Style Added with CSS](http://ds4ps.org/barebones-jekyll/page1) 
 
-## Required Reading
+### Required Reading
 
 Skim the following chapters, reading to get a general sense of concepts and the basics of how each might function. You can skip sections that explain the code in detail. I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
 
@@ -519,7 +795,7 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 
 
-*** { @unit = "FRI Jan 31st", @title = "YellowDig Practice Problems", @assignment, @foldout }
+## YellowDig Practice Problems
 
 <br>
 
@@ -536,16 +812,13 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 
 
-*** { @unit = "TUE Feb 11th", @title = "Lab 03", @assignment, @foldout  }
+## Lab 04
 
-<br>
-<br>
+**Due {{page.labs.lab-04}}**
 
-# Lab-03 - Creating a GitHub Page
 
-<br>
 
-## Instructions 
+### Instructions for Creating a GitHub Page
 
 The animation in the Unit Overview above shows how simple it is to activate GitHub pages for any project repository so that you can turn markdown files into web-hosted HTML files and share tutorials or reports created from RMD files. 
 
@@ -626,7 +899,7 @@ Demonstrate that you are able to apply CSS styles to specific elements of a page
 Create a new **div** section around Step 1 on the Getting Started page. 
 
 ```
-## Overview of steps required
+### Overview of steps required
 
 There are only three simple steps, ....  
 
@@ -706,7 +979,7 @@ gosling:
 
 ![](img/ryan-v-ryan.jpg)  
 
-## Lorem Ipsum
+### Lorem Ipsum
 
 Lorem ipsum dolor sit amet....
 ```
@@ -726,7 +999,7 @@ navbar-links:
 
 When these steps are done, submit a link to (1) your live site and (2) your GitHub repo where the website lives. 
 
-## Submit Solutions to Canvas:
+### Submit Solutions to Canvas:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
@@ -745,197 +1018,31 @@ And share your page link on YellowDig:
 
 
 
-** Week 4 - Regular Expressions 
 
 
 
-*** { @unit = "", @title = "Unit Overview", @reading, @foldout }
 
-<br>
 
-## Text as Data
 
-So this week comes with an up-front warning. You can get a PhD in Natural Language Processing, which is an entire field devote to computation tools used to process and analyze text as data. We have one week to cover the topic!
 
-We obviously cannot go too deep into this interesting field, but let's at least motivate some of the R functionality with a couple of cool examples. 
+<!--- 
+#########################################
+#########################################
+##########
+##########         WEEK 04
+##########
+#########################################
+#########################################
+-->
 
-[Which Hip-Hop Artist Has the Largest Vocabulary?](https://pudding.cool/projects/vocabulary/index.html)
 
-[Who is the Anonymous Op-Ed Writer inside the Trump Administration?](http://varianceexplained.org/r/op-ed-text-analysis/)
 
-[Sentiment Analysis](https://www.kaggle.com/rtatman/tutorial-sentiment-analysis-in-r)
 
-These examples all demonstrate interesting uses of text as data. They are also examples of the types of insight that can come from analysis with big data - the patterns are hiding in plain sight but our brains cannot hold enough information at one time to see it.  Once we can find a system to extract hidden patterns from language we can go beyond seeking large public databases to generate insights, and we can start using all of Twitter, all published news stories, or all of the internet to identify trends and detect outliers. 
+# Week 4 - Text Analysis 
 
-## String Processing & Regular Expressions
+**Due {{page.labs.lab-05}}** 
 
-The core of all text analysis requires two sets of skills. Text is computer science is referred to as "strings", a reference to the fact that spoken languages mean nothing to computers so they just treat them as strings of letters (words) or strings of words (sentences). String processing refers to a set of functions and conventions that are used to manipulate text as data. If you think about the data steps for regular data, we clean combine, transform, and merge data inside of data frames. Similarly there are operations for important text datasets (often lots of documents full of words), cleaning them (removing words, fixing spelling errors), merging documents, etc. Core R contains many string processing functions, and there are lots of great packages. 
-
-"Regular expression" are a set of functions used to aid in processing text by defining very precise ways to query a text database by looking for specific strings, or more often strings that match some specific pattern that has meaning. For example, if I gave you the following text with everything but punctuation replaced by X, you could still tell me what the word are for: 
-
-* xxxxx@xxx.com   (email address) 
-* www.xxxxxxxx.xxx   (web URL)
-* @xxxxxxx  (social media handle) 
-
-So regular expressions can be very useful for searching large databases for general classes of text, or alternatively for searching for generic text that occurs only in a very specific context (at the beginning or end of a word, in the middle of a phrase, etc.). 
-
-[Chapter](https://ds4ps.org/cpp-527-spr-2020/lectures/string-processing.html)
-
-[Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
-
-### Helpful Reference Material: 
-
-[stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
-
-[One Page RegEx Cheat Sheet](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/regular-expressions%20one-page-cheat-sheet.pdf) 
-
-[RegEx cheat sheet in R](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/RegExCheatsheetInR.pdf)
-
-
-## Practice
-
-The function **grep( pattern, string )** works as follows:
-
-> Search for the pattern in each of the strings in the character vector at the top, *strings*. 
-
-The search pattern in each case below represents a regular expression. 
-
-What will the following cases return? 
-
-
-```r
-
-strings <- c("through","rough","thorough","throw","though","true","threw","thought","thru","trough")
-
-# what will the following return? 
-
-grep( pattern="th?rough", strings, value = TRUE)
-
-grep( pattern=".ough", strings, value = TRUE)
-
-grep( pattern="^.ough", strings, value = TRUE)
-
-grep( pattern="ough.", strings, value = TRUE)
-
-grep( pattern="[^r]ough", strings, value = TRUE)
-
-# these are not as useful
-
-grep( pattern="tr*", strings, value = TRUE)
-
-grep( pattern="t*o", strings, value = TRUE)
-```
-
-<br>
-<br>
-
-
-
-
-
-
-*** { @unit = "FRI Feb 7th", @title = "YellowDig Practice Problems", @assignment, @foldout  }
-
-<br>
-
-Explain the following unexpected behaviors: 
-
-### When is 5 larger than 10? 
-
-```r
-> (1:10) > 5
- [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE
-> (1:10) > "5"
- [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE FALSE
-```
-
-
-### Invisible Dogs 
-
-x is a factor cataloging animals in a shelter, recording the type of animal. 
-
-Why can't I count dogs? 
-
-```r
-> x  # TYPE OF ANIMAL (FACTOR)
-[1] cat   dog   mouse
-Levels: cat dog  mouse
-
-> x == "cat" 
-[1]  TRUE FALSE FALSE
-> x == "dog"
-[1] FALSE FALSE FALSE
-> x == "mouse" 
-[1] FALSE FALSE  TRUE
-```
-
-
-### Average Years of Edu
-
-I have a sample of 10 people and am trying to determine their average level of education. 12= high school degree, 16 = four-year college degree, etc. 
-
-My data is stored as a factor (which it should be since it is a categorical variable. But that makes it hard to calculate averages. 
-
-What is going wrong here? 
-
-```r
-grade.levels <- factor( c(12, 16, 12, 7, 7, 5, 6, 5, 9, 10) )
-
-> # want to know average level of 
-> # schooling for sample:
-> mean( grade.levels )
-[1] NA
-Warning message:
-In mean.default(grade.levels) :
-  argument is not numeric or logical: returning NA
-> 
-> # mean requires a numeric variable
-> mean( as.numeric( grade.levels ) )
-[1] 3.8
-```
-
-### RegEx Example
-
-We have an large database where all of the addresses and geographic coordinates are stored as follows:
-
-```r
-x <- c("100 LANGDON ST
-MADISON, WI
-(43.07794869500003, -89.39083342499998)", "00 N STOUGHTON RD E WASHINGTON AVE
-MADISON, WI
-(43.072951239000076, -89.38668964199996)")
-```
-
-Write a function that accepts the address vector **x** as the input, and returns a vector of numeric coordinates.
-
-Note that the length of addresses can change, so you will need to use regular expressions (instead of just a substr() function) to generate proper results. 
-
-<br>
-
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
-<br>
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-** Week 5 - Text Analysis 
-
-
-*** { @unit = "MON Feb 24th", @title = "Lab 04", @assignment, @foldout  }
+Lab 04
 
 
 <br>
@@ -957,7 +1064,7 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 
 
-*** { @unit = "FRI Feb 21st", @title = "YellowDig Discussion", @assignment, @foldout }
+## YellowDig Discussion
 
 <br>
 <br>
@@ -1003,19 +1110,19 @@ Pick a side and make your case!
 
 
 
-** Week 6 - Data APIs & Tidy Data
+#  Week 6 - Data APIs & Tidy Data
 
 
 
-*** { @unit = "", @title = "Unit Overview", @foldout }
+## Unit Overview
 
 <br>
 
-## Nice Overview of APIs
+### Nice Overview of APIs
 
 [Data journalists describe the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
 
-## Tutorial on DataUSA APIs
+### Tutorial on DataUSA APIs
 
 Members of the MIT Media Lab spun out a company called Datawheel. Their goal is to make public data more accessible as well as useful. Their team boasts a number of graphic design experts and data visualization geniuses. They have found ways to take large and confusing government datasets, and make them interesting and accessible. 
 
@@ -1037,7 +1144,7 @@ This tool is not technically an API, but you can still automate calls by writing
 
 
 
-*** { @unit = "FRI Feb 28th", @title = "YellowDig Practice Problems", @assignment, @foldout  }
+## YellowDig Practice Problems
 
 <br>
 
@@ -1140,7 +1247,7 @@ Which pattern would you use to match all state names with a W, no matter if the 
 
 
 
-*** { @unit = "OPTIONAL", @title = "Lab 05", @assignment, @foldout  }
+## Lab 05
 
 <br>
 
@@ -1344,17 +1451,17 @@ for( i in city.names )
 
 
 
-** Week 7 - Customized Reporting
+# Week 7 - Customized Reporting
 
 
 
 
 
-*** { @unit = "MON Mar 2nd", @title = "Code-Through Assignment", @assignment, @foldout }
+## Code-Through Assignment
 
 <br>
 
-## Code-Through
+### Code-Through
 
 Since you are sharing your code-through with your classmates on Yellowdig, it will serve as your discussion topic this week.
 
@@ -1362,11 +1469,11 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/code-through-assignment.html">Code-Through Instructions</a>
 
-## Submit to Canvas:
+### Submit to Canvas:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT CODE-THROUGH</a>
 
-## Post on Yellowdig
+### Post on Yellowdig
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
@@ -1374,11 +1481,11 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 <br>
 
 
-*** { @unit = "MON Mar 2nd", @title = "Build an R Package", @assignment, @foldout  }
+## Build an R Package
 
 <br>
 
-## Build an R Package
+### Build an R Package
 
 This tutorial will teach you how to build and share a package in R. At some point you might develop a tool that you want to upload to the CRAN so it is widely available. More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. At some point it will be more efficient for the team to create a package to maintain the project code so that team members can update or enhance the functions, and others can easily update the functions by re-installing the package. 
 
@@ -1386,7 +1493,7 @@ Complete the tuturial on "packaging" your R code from Labs 01 and 02 into a new 
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/create-r-package.html">Final Project Instructions</a>
 
-## Submit to Canvas:
+### Submit to Canvas:
 
 To receive credit for the assignment, submit the URL to your package on GitHub.
 
@@ -1397,11 +1504,11 @@ To receive credit for the assignment, submit the URL to your package on GitHub.
 
 
 
-*** { @unit = "MON Mar 2nd", @title = "Report Template Assignment", @assignment, @foldout }
+## Build a Report Template
 
 <br>
 
-## Automating Report Generation
+### Automating Report Generation
 
 This assignment teaches you to use RMD templates to simplify and automate the process of generating reports. 
 
@@ -1415,7 +1522,7 @@ Begin by reading about the process:
 [Automated Reporting](https://ds4ps.org/cpp-527-spr-2020/lectures/report-automation.html)
 
 
-## Instructions 
+### Instructions 
 
 For this assignment you will need to clone Nick Strayer's CV project: 
 
@@ -1435,7 +1542,7 @@ A quick note on the [difference between "cloning" a project and "forking" a GitH
 
 In this instance we are not contributing back to the project to improve it. We just want our own local copy to work with, so cloning is the best option. 
 
-## Build Your Resume
+### Build Your Resume
 
 After cloning the files, you should have local copies on your desktop. You will need to edit at least two files: 
 
@@ -1463,7 +1570,7 @@ For the assignment submit the following:
 Consider creating a GitHub site to host a portfolio of projects you are working on. You can add the CV and your code-through assignments to the site. 
 
 
-## Submit to Canvas:
+### Submit to Canvas:
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
