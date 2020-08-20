@@ -206,6 +206,59 @@ In mean.default(grade.levels) :
 ```
 
 
+**String Sorting: Alphabetilization in R"
+
+Note that just as we compare numbers using greater-than, less-than, and equal-to operators, we can also compare strings. 
+
+Greater-than means that something occurs further along in the alphabet. 
+
+```r
+"b" > "a"
+[1] TRUE
+"a" > "b"
+[1] FALSE
+> "b" == "a"
+[1] FALSE
+```
+
+Strings (words) that begin with identical letters are compared using subsequent letters:
+
+```r
+"adam" > "abram"
+[1] TRUE
+```
+
+When there is a tie capitalization also matters: 
+
+```r
+"A" > "a"
+[1] TRUE
+"a" > "A"
+[1] FALSE
+> "A" == "a"
+[1] FALSE
+
+"Aaron" > "aaron"
+[1] TRUE
+"aaron" > "Aaron" 
+[1] FALSE
+
+"b" > "a"
+[1] TRUE
+> "b" > "A"
+[1] TRUE
+```
+
+Considering these rules above, what will the following statement return? 
+
+```r
+"Aaron" > "abram"
+```
+
+And what does this tell us about how alphabetization occurs using logical operators? 
+
+-----
+
 **Post your ideas to YellowDig** 
 
 
