@@ -1421,11 +1421,11 @@ And share your page link on YellowDig:
 
 <br>
 
-**Nice Overview of APIs
+**Nice Overview of APIs**
 
 [Data journalists describe the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
 
-### Tutorial on DataUSA APIs
+**Tutorial on DataUSA APIs**
 
 Members of the MIT Media Lab spun out a company called Datawheel. Their goal is to make public data more accessible as well as useful. Their team boasts a number of graphic design experts and data visualization geniuses. They have found ways to take large and confusing government datasets, and make them interesting and accessible. 
 
@@ -1451,7 +1451,7 @@ This tool is not technically an API, but you can still automate calls by writing
 
 <br>
 
-## Casting
+**Casting**
 
 If you recall some of the rules with implicit casting, R will try to select the data type that preserves the most information. 
 
@@ -1519,7 +1519,7 @@ as.logical( x5 )
 ```
 
 
-## RegEx Practice 
+**RegEx Practice** 
 
 ```r
 # How many of these state names contain a W? 
@@ -1563,7 +1563,7 @@ Which pattern would you use to match all state names with a W, no matter if the 
 <br>
 
 
-## Scaling Your Analysis w Functions and Loops
+**Scaling Your Analysis w Functions and Loops**
 
 If you recall from CPP 526 we discussed the example where Ben Balter, [GitHub’s official government evangelist](https://readwrite.com/2014/08/14/github-government-ben-balter-open-source/), created a project to make Washington DC open GIS files more accessible and useful by converting them all to a format more amenable to open-source projects (geoJSON files).
 
