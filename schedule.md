@@ -441,9 +441,7 @@ x
 
 You need to be familiar with the general concept of **scope** (what happens inside functions stays inside functions), but only at a superficial level for now. 
 
-For more details see: 
-
-[Scope](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html)
+For more details see: [Scoping Rules of R](https://bookdown.org/rdpeng/rprogdatascience/scoping-rules-of-r.html).
 
 
 
