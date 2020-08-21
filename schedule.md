@@ -26,8 +26,9 @@ assessments:
   mini-assessment-05:  'Sat Sept 26 - Tues Sept 29'
   mini-assessment-06:  'Thurs Oct 01 - Tues Oct 06'
   
-final: 
-  exam-date:  'Sat Oct 3rd - Fri Oct 9th' 
+final-projects: 
+  r-package:  'Saturday, September 19th'
+  
   
 ---
 
@@ -756,10 +757,10 @@ Please review the instructions at the end of the lecture notes:
 
 
 
-
+## Unit Overview 
 <br>
 
-### Text as Data
+**Text as Data:**
 
 So this week comes with an up-front warning. You can get a PhD in Natural Language Processing, which is an entire field devote to computation tools used to process and analyze text as data. We have one week to cover the topic!
 
@@ -773,7 +774,9 @@ We obviously cannot go too deep into this interesting field, but let's at least 
 
 These examples all demonstrate interesting uses of text as data. They are also examples of the types of insight that can come from analysis with big data - the patterns are hiding in plain sight but our brains cannot hold enough information at one time to see it.  Once we can find a system to extract hidden patterns from language we can go beyond seeking large public databases to generate insights, and we can start using all of Twitter, all published news stories, or all of the internet to identify trends and detect outliers. 
 
-### String Processing & Regular Expressions
+## Required Reading
+
+**String Processing & Regular Expressions:**
 
 The core of all text analysis requires two sets of skills. Text is computer science is referred to as "strings", a reference to the fact that spoken languages mean nothing to computers so they just treat them as strings of letters (words) or strings of words (sentences). String processing refers to a set of functions and conventions that are used to manipulate text as data. If you think about the data steps for regular data, we clean combine, transform, and merge data inside of data frames. Similarly there are operations for important text datasets (often lots of documents full of words), cleaning them (removing words, fixing spelling errors), merging documents, etc. Core R contains many string processing functions, and there are lots of great packages. 
 
@@ -789,7 +792,7 @@ So regular expressions can be very useful for searching large databases for gene
 
 [Slides](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/string-processing-slides.pdf)
 
-### Helpful Reference Material: 
+**Helpful Reference Material:**
 
 [stringR package](https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html)
 
@@ -798,7 +801,9 @@ So regular expressions can be very useful for searching large databases for gene
 [RegEx cheat sheet in R](https://github.com/DS4PS/cpp-527-spr-2020/raw/master/lectures/RegExCheatsheetInR.pdf)
 
 
-## Practice
+
+
+## YellowDig Practice Problems
 
 The function **grep( pattern, string )** works as follows:
 
@@ -838,14 +843,7 @@ grep( pattern="t*o", strings, value = TRUE)
 
 
 
-
-
-*** { @unit = "FRI Feb 7th", @title = "YellowDig Practice Problems", @assignment, @foldout  }
-
-<br>
-
-
-### RegEx Example
+**RegEx Example:**
 
 We have an large database where all of the addresses and geographic coordinates are stored as follows:
 
@@ -868,6 +866,43 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 <br>
 <br>
+
+
+
+## Build Your Own R Package
+
+**Due {{page.final-projects.r-package}}**
+
+<br>
+
+**Building Packages in R**
+
+At some point you might develop a tool that you want to upload to the CRAN so it is widely available.
+
+More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. 
+
+Even if not sharing the package widely it is often a more efficient method for the team to maintain project code so that it can be easily updated and functions enhanced. Project updates are then easily shared simply by re-installing the package. 
+
+This tutorial will teach you how to build and share a package in R. You will "package" your R code from Labs 01 and 02 into a new **montyhall** package to make it easier to run simulations to evaluate game strategies. 
+
+<a class="uk-button uk-button-default" href="../labs/create-r-package.html">Final Project Instructions</a>
+
+**Submit to Canvas:**
+
+To receive credit for the assignment, submit the URL to your package on GitHub.
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
+
+<br>
+
+**Grading:**
+
+Your package will be installed and submitted to a series of testing scripts that ensure each function operates as expected. 
+
+The documentation will also be inspected to ensure there are complete instructions and sample code available for each of the functions. 
+
+You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
+
 
 
 
@@ -1667,26 +1702,7 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 <br>
 
 
-## Build an R Package
 
-<br>
-
-**Build an R Package**
-
-This tutorial will teach you how to build and share a package in R. At some point you might develop a tool that you want to upload to the CRAN so it is widely available. More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. At some point it will be more efficient for the team to create a package to maintain the project code so that team members can update or enhance the functions, and others can easily update the functions by re-installing the package. 
-
-Complete the tuturial on "packaging" your R code from Labs 01 and 02 into a new **montyhall** package to make it easier to run simulations to evaluate game strategies. 
-
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/create-r-package.html">Final Project Instructions</a>
-
-**Submit to Canvas:**
-
-To receive credit for the assignment, submit the URL to your package on GitHub.
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
-
-<br>
-<br>
 
 
 
