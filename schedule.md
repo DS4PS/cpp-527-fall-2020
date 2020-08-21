@@ -85,6 +85,23 @@ The skills you learn this term can be used to build simulations in R, codify com
 <br>
 
 
+## Course Cadence 
+
+The class is designed around labs each week and practice problems that you will discuss with classmates on YellowDig. 
+
+![](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/course-cadence.png)
+
+I will schedule review sessions early in the week so that you have a chance to start the new lab and come with questions. 
+
+You can post to YellowDig and participate in discussions throughout the week. I would request that you refrain from posting solutions to each week's questions until Monday, though, so that everyone has a chance to share solutions. You can discuss the problems throughout the week. 
+
+There are three additional projects you must complete throughout the term. They are small projects, but require more autonomy than labs. Keep an eye out for these deadlines. 
+
+* Building an R package from code you develop on Labs 01-02 (due mid term) 
+* Build a report template (due end of term) 
+* Create a code-through tutorial (due end of term) 
+
+
 ## Getting Help
 
 Note that similar to other courses the discussion board is run through the GitHub issues feature. It is a great forum tool because:
