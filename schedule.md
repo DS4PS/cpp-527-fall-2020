@@ -326,7 +326,7 @@ Make sure you are clear about:
 
 **Logical Statements**
 
-Recall that logical operators like EQUALS, NOT EQUAL (!=), AND (&), OR (|), and OPPOSITE (!) are used identify sets of cases that belong to a desired group, and sets of cases outside of the desired group.  
+Recall that logical operators like EQUALS, NOT EQUAL, AND, OR, and OPPOSITE are used identify sets of cases that belong to a desired group, and sets of cases outside of the desired group.  
 
 ```
 ==    EQUALS 
