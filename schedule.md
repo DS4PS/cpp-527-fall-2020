@@ -1447,91 +1447,6 @@ This tool is not technically an API, but you can still automate calls by writing
 
 
 
-## YellowDig Practice Problems
-
-<br>
-
-**Casting**
-
-If you recall some of the rules with implicit casting, R will try to select the data type that preserves the most information. 
-
-```r
-> x <- 1:3
-> y <- c("a","b","c")
-> c( x, y )
-[1] "1" "2" "3" "a" "b" "c"
-
-> x.as.string <- as.character( x )
-> x.as.string
-[1] "1" "2" "3"
-> as.numeric( x.as.string )
-[1] 1 2 3
-
-> as.numeric( y )
-[1] NA NA NA
-Warning message:
-NAs introduced by coercion 
-```
-
-Note the rules for conversion when you combine numeric and logical vectors: 
-
-```r
-> x <- c(TRUE,FALSE,TRUE)
-> c( x, FALSE )
-[1]  TRUE FALSE  TRUE FALSE
-
-> c( x, 1 )
-[1] 1 0 1 1
-
-> c( x, "ONE" )
-[1] "TRUE"  "FALSE" "TRUE"  "ONE"  
-
-> x2 <- c( x, 1 )
-> as.logical( x2 )
-[1]  TRUE FALSE  TRUE  TRUE
-
-> x3 <- c( x, 2 )
-> as.logical( x3 )
-[1]  TRUE FALSE  TRUE  TRUE
-
-> x4 <- c( x, 0 )
-> as.logical( x4 )
-[1]  TRUE FALSE  TRUE FALSE
-```
-
-Try to guess how it treats the following cases before you run the code:
-
-```r
-x <- c(TRUE,FALSE,TRUE)
-c( x, 2 )
-
-x2 <- c( x, 1.1 )
-as.logical( x2 )
-
-x3 <- c( x, 0.9 )
-as.logical( x3 )
-
-x4 <- c( x, log(1) )
-as.logical( x4 )
-
-x5 <- c( x, -1 )
-as.logical( x5 )
-```
-
-
-**RegEx Practice** 
-
-```r
-# How many of these state names contain a W? 
-> states <- c("New Mexico","New York","Washington","West Virginia")
-> grep( pattern = "w", x = states, value = TRUE )
-[1] "New Mexico" "New York"  
-> grep( pattern = "W", x = states, value = TRUE )
-[1] "Washington"    "West Virginia"
-```
-
-Which pattern would you use to match all state names with a W, no matter if the W is capital or lowercase? You are not allowed to use the *ignore.case* argument in **grep()**. 
-
 
 
 
@@ -1736,6 +1651,93 @@ for( i in city.names )
 <br>
 
 
+
+
+
+## YellowDig Practice Problems
+
+<br>
+
+**Casting**
+
+If you recall some of the rules with implicit casting, R will try to select the data type that preserves the most information. 
+
+```r
+> x <- 1:3
+> y <- c("a","b","c")
+> c( x, y )
+[1] "1" "2" "3" "a" "b" "c"
+
+> x.as.string <- as.character( x )
+> x.as.string
+[1] "1" "2" "3"
+> as.numeric( x.as.string )
+[1] 1 2 3
+
+> as.numeric( y )
+[1] NA NA NA
+Warning message:
+NAs introduced by coercion 
+```
+
+Note the rules for conversion when you combine numeric and logical vectors: 
+
+```r
+> x <- c(TRUE,FALSE,TRUE)
+> c( x, FALSE )
+[1]  TRUE FALSE  TRUE FALSE
+
+> c( x, 1 )
+[1] 1 0 1 1
+
+> c( x, "ONE" )
+[1] "TRUE"  "FALSE" "TRUE"  "ONE"  
+
+> x2 <- c( x, 1 )
+> as.logical( x2 )
+[1]  TRUE FALSE  TRUE  TRUE
+
+> x3 <- c( x, 2 )
+> as.logical( x3 )
+[1]  TRUE FALSE  TRUE  TRUE
+
+> x4 <- c( x, 0 )
+> as.logical( x4 )
+[1]  TRUE FALSE  TRUE FALSE
+```
+
+Try to guess how it treats the following cases before you run the code:
+
+```r
+x <- c(TRUE,FALSE,TRUE)
+c( x, 2 )
+
+x2 <- c( x, 1.1 )
+as.logical( x2 )
+
+x3 <- c( x, 0.9 )
+as.logical( x3 )
+
+x4 <- c( x, log(1) )
+as.logical( x4 )
+
+x5 <- c( x, -1 )
+as.logical( x5 )
+```
+
+
+**RegEx Practice** 
+
+```r
+# How many of these state names contain a W? 
+> states <- c("New Mexico","New York","Washington","West Virginia")
+> grep( pattern = "w", x = states, value = TRUE )
+[1] "New Mexico" "New York"  
+> grep( pattern = "W", x = states, value = TRUE )
+[1] "Washington"    "West Virginia"
+```
+
+Which pattern would you use to match all state names with a W, no matter if the W is capital or lowercase? You are not allowed to use the *ignore.case* argument in **grep()**. 
 
 
 
