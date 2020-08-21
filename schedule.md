@@ -11,6 +11,10 @@ yellowdig:
   post-01: 'Monday, Aug 24th'
   post-02: 'Monday, Aug 31st' 
   post-03: 'Monday, Sept 7th' 
+  post-04: 'Monday, Sept 14th' 
+  post-05: 'Monday, Sept 21st' 
+  post-06: 'Monday, Sept 28th' 
+  post-07: 'Monday, Oct 5th' 
   
 
 labs:
