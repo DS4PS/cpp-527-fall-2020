@@ -14,12 +14,14 @@ Live review sessions will be held each week in order to:
 * Introduce new topics 
 * Answer questions on the the current week's lab 
 
-> **Wednesdays, 5pm AZ time**  
+> **Wednesdays, 4pm AZ time**  
 > [**ZOOM MEETING LINK**](https://asu.zoom.us/j/93504639301)  
+
+To make the best use of sessions I recommend starting labs ahead of time so that you can come with questions. 
 
 For those that cannot attend recordings of each session will be posted below. 
 
-Feel free to schedule virtual office hours as well. 
+Feel free to schedule virtual office hours as well.   
 
 <br> 
 <hr>
