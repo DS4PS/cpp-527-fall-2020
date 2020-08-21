@@ -8,7 +8,10 @@ canvas:
 yellowdig_url: 'https://canvas.asu.edu/courses/67635/assignments/1615962'
 
 yellowdig: 
-  post-01: 'Monday, Aug 24'
+  post-01: 'Monday, Aug 24th'
+  post-02: 'Monday, Aug 31st' 
+  post-03: 'Monday, Sept 7th' 
+  
 
 labs:
   lab-01:  'Saturday, August 29th' 
@@ -18,15 +21,8 @@ labs:
   lab-05:  'Saturday, September 26th'
   lab-06:  'Saturday, October 3rd'
   
-assessments:
-  mini-assessment-01:  'Sat Aug 29 - Tues Sept 01'
-  mini-assessment-02:  'Sat Sept 05 - Tues Sept 08'
-  mini-assessment-03:  'Sat Sept 12 - Tues Sept 15'
-  mini-assessment-04:  'Sat Sept 19 - Tues Sept 22'
-  mini-assessment-05:  'Sat Sept 26 - Tues Sept 29'
-  mini-assessment-06:  'Thurs Oct 01 - Tues Oct 06'
   
-final-projects: 
+projects: 
   r-package:  'Saturday, September 19th'
   
   
@@ -155,7 +151,7 @@ Use **dput()** to share R objects in a format that can be copied from the forum 
 
 ## Practice Problem Warmup
 
-**Post by {{page.yellowdig.post-01}}**
+**Post on {{page.yellowdig.post-01}}**
 
 Note that these are non-obvious bugs that can EASILY work there way into your code. Once you see the problem, it will seem obvious. But until you see it the code often looks fine and it's unclear why it is not working as expected. 
 
@@ -587,10 +583,14 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
 <br>
-<br>
 
 
 
+## YellowDig Questions
+
+**Post on {{page.yellowdig.post-02}}**
+
+[coming soon]
 
 
 
@@ -654,12 +654,39 @@ Examples of loops used to create effective data visualization:
 [Buzzfeed Replication Files](https://github.com/BuzzFeedNews/2017-05-us-health-care)
 
 <br>
+
+
+
+## Lab 02
+
+**Due {{page.labs.lab-02}}**
+
+<br>
+
+Please review the instructions at the end of the lecture notes: 
+
+[Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
+
+<br>
+
+
+
+<a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
+
+**Submit Solutions to Canvas:**
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+
+<br>
 <br>
 
 
 
 
+
 ## YellowDig Practice Problems
+
+**Post on {{page.yellowdig.post-03}}**
 
 <br>
 
@@ -727,36 +754,6 @@ Or alternatively, share another animation you can create using loops.
 
 
 
-## Lab 02
-
-**Due {{page.labs.lab-02}}**
-
-<br>
-
-Please review the instructions at the end of the lecture notes: 
-
-[Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
-
-<br>
-
-
-
-<a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
-
-**Submit Solutions to Canvas:**
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
-
-<br>
-<br>
-
-
-
-
-
-
-
-
 
 <!--- 
 #########################################
@@ -774,8 +771,8 @@ Please review the instructions at the end of the lecture notes:
 
 
 
+
 ## Unit Overview 
-<br>
 
 **Text as Data:**
 
@@ -819,8 +816,30 @@ So regular expressions can be very useful for searching large databases for gene
 
 
 
+## Lab-03: Regular Expressions 
+
+**Due {{page.labs.lab-03}}**
+
+<br>
+
+Instructions 
+
+<a class="uk-button uk-button-default" href="">LAB-03 Instructions</a>
+
+**Submit Solutions to Canvas:**
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
+
+<br>
+
+
+
+
+
 
 ## YellowDig Practice Problems
+
+**Post on {{page.yellowdig.post-04}}**
 
 The function **grep( pattern, string )** works as follows:
 
@@ -886,9 +905,14 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 
 
-## Build Your Own R Package
 
-**Due {{page.final-projects.r-package}}**
+
+
+
+
+# Build Your Own R Package
+
+**Due {{page.projects.r-package}}**
 
 <br>
 
@@ -942,18 +966,56 @@ You will receive a grade of zero if you package cannot be installed or run, and 
 
 # Week 4 - Text Analysis 
 
-**Due {{page.labs.lab-04}}** 
+## Unit Overview 
 
-Lab 04
+This week will use regular expressions you developed during the prior week and some additional text analysis tools from the package **quanteda** to practice working with text as data. 
+
+## Required Reading 
+
+Review some of the examples from last week in order to see content analysis (counts and pattens of words) and sentiment analysis in practice: 
+
+[Which Hip-Hop Artist Has the Largest Vocabulary?](https://pudding.cool/projects/vocabulary/index.html)
+
+[Who is the Anonymous Op-Ed Writer inside the Trump Administration?](http://varianceexplained.org/r/op-ed-text-analysis/)
+
+[Sentiment Analysis](https://www.kaggle.com/rtatman/tutorial-sentiment-analysis-in-r)
+
+**Quanteda**
+
+There are several text analysis packages in R, but Quanteda is one of the most popular and robust.
+
+Text analysis packages contain functions that assist in the manipulation of text as data in order to convert raw text files into structured databases, apply a variety of pre-processing steps that clean and standardize the data, and functions that assist in identifying patterns in text. 
+
+Read the [Quanteda Quick-start Guide](https://quanteda.io/articles/quickstart.html) to familiarize your self with some basic components of text analysis. 
+
+Focus on: 
+
+* Vocabulary: 
+  - Document: a file consisting primarily of text 
+  - Corpus: a collection of documents in a study 
+  - Tokens: single words or phrases 
+* Cleaning text: 
+  - Removing punctuation and often numbers and symbols 
+* Pre-Processing Steps: 
+  - Stemming words to remove variant components:  running, runner, runs -> run
+  - Identify proper nouns 
+  - Combine compound words into single words:  George Bush -> george_bush 
+* Analysis 
+  - Tokenization of pre-processed documents 
+  - Identification of patterns in use of words 
 
 
 <br>
 <br>
+
+
+
 
 
 
 ## Lab-04 - Text Analysis
 
+**Due {{page.labs.lab-04}}**
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">LAB-04 Instructions</a>
 
@@ -966,12 +1028,17 @@ Lab 04
 
 
 
-## YellowDig Discussion
+## YellowDig Practice Problems 
+
+**Post on {{page.yellowdig.post-05}}**
 
 <br>
+
+This week's YellowDig component is a little different. You are asked to read some recent work looking at the crisis of reproducibility in research, and some possible explanations for low reproducibility in specific fields. 
+
 <br>
 
-# The Crisis of Scientific Reproducibility
+**The Crisis of Scientific Reproducibility**
 
 The topic this week is an introduction to the hugely important topic of reproducibility in science, the ability to reproduce results from ground-breaking scientific work that was published in top journals. For a long-time there was an assumption that peer-review meant that each scientist subjected their work to fellow scientists that were experts on their topic, and thus it provides a solid barrier to error-prone and work from being published. 
 
@@ -1029,11 +1096,6 @@ Pick a side and make your case!
 
 ## Unit Overview
 
-
-<br>
-
-### Customized Reporting
-
 A big part of every analysts job is trying to find ways to distill large volumes of data and information down to meaningful bites of knowledge, often for diverse stakeholder audiences that have varying degrees of technical expertise. For this reason, communication skills are extremely valuable for data scientists. You will constantly be challenged to find the interesting story that emerges from an overwhelming amount of data, and find creative ways to tell the story so that information becomes actionable. 
 
 Although it might not sound as edgy as building a machine learning classifier, the ability to create customized reporting formats and automate various steps of analysis will both make you more efficient and also more effective at communication. 
@@ -1050,7 +1112,7 @@ We will also practice automation by the separation of the design elements of rep
 
 And they are added to the document templates using some custom functions which filter positions and loop through the list to iteratively build the document. 
 
-### GitHub Pages Set-Up
+**GitHub Pages Set-Up**
 
 This week's lab will ask you to configure a GitHub page within a repository on your account. GitHub pages are an amazing resource because (1) they allow you to create an unlimited number of websites related to your projects FOR FREE, and (2) they can be created and maintained using Markdown, which simplifies a lot of the complexity of websites. You will learn to link HTML files generated from R Studio so that you can start sharing analytical projects with external audiences. 
 
@@ -1074,7 +1136,7 @@ And the **pagedown** package in R allows you to develop a variety of templates u
 
 Similar to other work we have done in R, we will start by using some working examples then reverse engineer them so you can see how the pieces fit together. You are not expected to master any of these topics in the short time-frame of the semester. The proper benchmark of knowledge is can you take an existing open source project and adapt it as necessary. 
 
-### Cascading Style Sheets
+**Cascading Style Sheets**
 
 You will not be required to learn web programming languages like HTML and Javascript (though they are super useful if you invest the time). You do, however, need to become familiar with very basic CSS as it is impossible to do customization without it. CSS started as a somewhat modest project but has evolved into a powerful language. R Markdown documents support CSS, which makes them fully customizable. It will also become more important so you begin to develop dashboards or custom interactive Shiny apps, since CSS is the primary means of controlling layouts and other style elements. 
 
@@ -1084,7 +1146,7 @@ These two pages on the example GitHub site have the same content, but CSS elemen
 
 [Style Added with CSS](http://ds4ps.org/barebones-jekyll/page1) 
 
-### Required Reading
+## Required Reading
 
 Skim the following chapters, reading to get a general sense of concepts and the basics of how each might function. You can skip sections that explain the code in detail. I am more concerned that you understand how these basic pieces fit together, and when you hear terms like "responsive" you conceptually know what people are talking about. 
 
@@ -1096,28 +1158,6 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 [Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 
-
-
-<br>
-<br>
-
-
-
-
-
-
-## YellowDig Practice Problems
-
-<br>
-
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/challenge-question-02.html">PRACTICE QUESTION</a>
-
-<br>
-
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
-<br>
 <br>
 
 
@@ -1127,9 +1167,7 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 **Due {{page.labs.lab-05}}**
 
-
-
-### Instructions for Creating a GitHub Page
+**Instructions for Creating a GitHub Page**
 
 The animation in the Unit Overview above shows how simple it is to activate GitHub pages for any project repository so that you can turn markdown files into web-hosted HTML files and share tutorials or reports created from RMD files. 
 
@@ -1143,7 +1181,7 @@ Follow the instructions in the README file to begin customizing your page.
 
 In the **`_config.yml`** file in the default directory do the following: 
 
-### Change the website name and description. 
+**Change the website name and description.**
 
 ```
 # Name of website
@@ -1155,7 +1193,7 @@ description: A virtual proof that I'm awesome
 
 You can update social network IDs if you like, or replace Dean's info with empty quotes `""` so the social media icons are present but not active. 
 
-### Change the color scheme for the website: 
+**Change the color scheme for the website:**
 
 ```
 # Personalize the colors in your website. Colour values can be any valid CSS colour
@@ -1171,7 +1209,7 @@ footer-text-col: "#777777"
 footer-link-col: "#404040"
 ```
 
-### Add Page and Update Navigation
+**Add Page and Update Navigation**
 
 You have forked the master branch of the website, which does not include the "getting started" page on the live site menu:
 
@@ -1203,7 +1241,7 @@ use-site-title: true
 
 
   
-### Change the Text Style on the Getting Started Page
+**Change the Text Style on the Getting Started Page**
 
 Demonstrate that you are able to apply CSS styles to specific elements of a page. 
 
@@ -1245,7 +1283,7 @@ Follow the [Barebones Jekyll example](http://ds4ps.org/barebones-jekyll/page1) f
 
 Similarly, add new **div** sections around Step 02 and Step 03 on the page so that each step has different header styles and text. It doesn't have to look nice - just show you are able to selectively change the style on a page. 
 
-### Create a Liquid Table
+**Create a Liquid Table** 
 
 Using the [Barebones Jekyll Custom Table example](http://ds4ps.org/barebones-jekyll/page2) add a page with a custom table. 
 
@@ -1310,7 +1348,7 @@ navbar-links:
 
 When these steps are done, submit a link to (1) your live site and (2) your GitHub repo where the website lives. 
 
-### Submit Solutions to Canvas:
+**Submit Solutions to Canvas:** 
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
@@ -1324,6 +1362,19 @@ And share your page link on YellowDig:
 
 
 
+## YellowDig Practice Problems
+
+<br>
+
+<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/challenge-question-02.html">PRACTICE QUESTION</a>
+
+<br>
+
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+
+<br>
+<br>
 
 
 
@@ -1356,7 +1407,7 @@ And share your page link on YellowDig:
 
 <br>
 
-### Nice Overview of APIs
+**Nice Overview of APIs
 
 [Data journalists describe the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
 
