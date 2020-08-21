@@ -726,7 +726,7 @@ Please review the instructions at the end of the lecture notes:
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
-## Submit Solutions to Canvas:
+**Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
