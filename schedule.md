@@ -1033,7 +1033,7 @@ Focus on:
 
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/lab-04-instructions.html">LAB-04 Instructions</a>
 
-## Submit Solutions to Canvas:
+**Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
