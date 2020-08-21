@@ -206,7 +206,7 @@ In mean.default(grade.levels) :
 ```
 
 
-**String Sorting: Alphabetilization in R"
+**Q4: String Sorting and Alphabetilization in R**
 
 Note that just as we compare numbers using greater-than, less-than, and equal-to operators, we can also compare strings. 
 
