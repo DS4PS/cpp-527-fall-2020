@@ -28,6 +28,8 @@ labs:
   
 projects: 
   r-package:  'Saturday, September 19th'
+  report-template:  'Friday, October 9th'
+  code-through:  'Friday, October 9th'
   
   
 ---
@@ -926,6 +928,7 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 **Due {{page.projects.r-package}}**
 
+
 <br>
 
 ## Building Packages in R
@@ -1764,7 +1767,9 @@ Which pattern would you use to match all state names with a W, no matter if the 
 
 ## Code-Through Assignment
 
-<br>
+**Due {{page.projects.code-through}}**
+
+
 
 **Code-Through**
 
@@ -1792,7 +1797,7 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 
 ## Build a Report Template
 
-<br>
+**Due {{page.projects.report-template}}**
 
 **Automating Report Generation**
 
