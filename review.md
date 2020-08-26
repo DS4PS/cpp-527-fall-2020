@@ -27,10 +27,14 @@ Feel free to schedule virtual office hours as well.
 <br> 
 <hr>
 <br>
+<br>
 
 ## Week 1 - Wed Aug 26
 
-[SAMPLE CODE](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R)
+<a class="uk-button uk-button-primary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+
+
+<br>
 <br>
 <hr>
 <br>
