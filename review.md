@@ -106,14 +106,19 @@ Feel free to schedule virtual office hours as well.
   
 <p align="center">
   <a href="">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
 </p>
-
-
-<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
-
-<a class="uk-button uk-button-default" href="">R SESSION</a>
 
 
 <br>
@@ -148,14 +153,75 @@ Feel free to schedule virtual office hours as well.
   
 <p align="center">
   <a href="">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
 </p>
 
 
-<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+<br>
+<br>
+<hr>
+<br>
+<br>
 
-<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+## Week 6
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+
+
+
+## Week 7
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
 
 
 <br>
