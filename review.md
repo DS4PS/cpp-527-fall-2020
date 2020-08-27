@@ -18,7 +18,7 @@ Live review sessions will be held each week in order to:
 > [**ZOOM MEETING LINK**](https://asu.zoom.us/j/93504639301)   
 > **4pm AZ time** 
 
-<button class="zoom">JOIN ZOOM MEETING</button>
+<button class="zoom" href="https://asu.zoom.us/j/93504639301">JOIN ZOOM MEETING</button>
 
 
 
