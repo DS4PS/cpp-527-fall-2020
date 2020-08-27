@@ -46,17 +46,19 @@ Feel free to schedule virtual office hours as well.
 <br>
 <br>
 
+
+
 ## Week 1 - Wed Aug 26
   
 <p align="center">
   <a href="https://asu.zoom.us/rec/share/1Z1FMbXCyXxLfYnCwUePVZUMEIToaaa813QX8vNbmUyHem5oOERd-dJXXY93Ahd8">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  Passcode: <b>?wsk2Xx1</b>
+  <br> Passcode: <b>?wsk2Xx1</b>
     
   <br>
 
-  <a class="uk-button uk-button-danger" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
 
   <br>
 
@@ -76,16 +78,19 @@ Feel free to schedule virtual office hours as well.
   
 <p align="center">
   <a href="">
-  <img width="200" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
 </p>
-
-
-
-<a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
-
-<a class="uk-button uk-button-default" href="">R SESSION</a>
-
 
 <br>
 <br>
@@ -94,46 +99,7 @@ Feel free to schedule virtual office hours as well.
 <br>
 
 
-## Week 2 - Wed Sept 2
-  
-<p align="center">
-  <a href="">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
-  <a>
-</p>
 
-
-<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
-
-<a class="uk-button uk-button-default" href="">R SESSION</a>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
-
-
-## Week 2 - Wed Sept 2
-  
-<p align="center">
-  <a href="">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
-  <a>
-</p>
-
-
-<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
-
-<a class="uk-button uk-button-default" href="">R SESSION</a>
-
-
-<br>
-<br>
-<hr>
-<br>
-<br>
 
 
 ## Week 3
