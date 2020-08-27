@@ -14,13 +14,10 @@ Live review sessions will be held each week in order to:
 * Introduce new topics 
 * Answer questions on the the current week's lab 
 
-> **Wednesdays**  
-> [**ZOOM MEETING LINK**](https://asu.zoom.us/j/93504639301)   
+> **Wednesdays**    
 > **4pm AZ time** 
 
-<button class="zoom" onclick="href='https://asu.zoom.us/j/93504639301'">JOIN ZOOM MEETING</button>
-
-<a href='https://asu.zoom.us/j/93504639301'> <button class="zoom">JOIN ZOOM MEETING</button></a>
+<a href='https://asu.zoom.us/j/93504639301' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
 
 
