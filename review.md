@@ -53,8 +53,135 @@ Passcode: **?wsk2Xx1**
 <br>
 <hr>
 <br>
+<br>
 
 
+## Week 2 - Wed Sept 2
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+Passcode: **?wsk2Xx1**
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 2 - Wed Sept 2
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+Passcode: **?wsk2Xx1**
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 2 - Wed Sept 2
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 3
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 4
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 5
+  
+<p align="center">
+  <a href="">
+  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+</p>
+
+
+<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">R SESSION</a>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 
 </div>
