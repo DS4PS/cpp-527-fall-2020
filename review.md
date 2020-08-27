@@ -40,7 +40,7 @@ Feel free to schedule virtual office hours as well.
   <a href="https://asu.zoom.us/rec/share/1Z1FMbXCyXxLfYnCwUePVZUMEIToaaa813QX8vNbmUyHem5oOERd-dJXXY93Ahd8">
   <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  Passcode: **?wsk2Xx1**
+    Passcode: <h3>?wsk2Xx1</h3>
 </p>
 
 
