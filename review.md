@@ -19,6 +19,8 @@ Live review sessions will be held each week in order to:
 
 <a href='https://asu.zoom.us/j/93504639301' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
+> Add to your calendar: 
+
 <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=N2RmZWkwYzg3MWJ1YW5hYjdvZHBndTVwdDJfMjAyMDA4MjZUMjMwMDAwWiBqZGxlY3lAbQ&amp;tmsrc=jdlecy%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
 
 To make the best use of sessions I recommend starting labs ahead of time so that you can come with questions. 
