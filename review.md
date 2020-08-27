@@ -52,12 +52,12 @@ Feel free to schedule virtual office hours as well.
   <a href="https://asu.zoom.us/rec/share/1Z1FMbXCyXxLfYnCwUePVZUMEIToaaa813QX8vNbmUyHem5oOERd-dJXXY93Ahd8">
   <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  <br>Passcode: <b>?wsk2Xx1</b>
+  Passcode: <b>?wsk2Xx1</b>
 </p>
 
 
 
-<a class="uk-button uk-button-primary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+<a class="uk-button uk-button-secondary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
 
 <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">R SESSION</a>
 
@@ -73,13 +73,13 @@ Feel free to schedule virtual office hours as well.
   
 <p align="center">
   <a href="">
-  <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <img width="200" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
 </p>
 
-Passcode: **?wsk2Xx1**
 
-<a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
+
+<a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
 
 <a class="uk-button uk-button-default" href="">R SESSION</a>
 
@@ -99,7 +99,6 @@ Passcode: **?wsk2Xx1**
   <a>
 </p>
 
-Passcode: **?wsk2Xx1**
 
 <a class="uk-button uk-button-primary" href="">SAMPLE CODE</a>
 
