@@ -33,6 +33,8 @@ Feel free to schedule virtual office hours as well.
 
 <a class="uk-button uk-button-primary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
 
+<a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">R SESSION</a>
+
 
 <br>
 <br>
