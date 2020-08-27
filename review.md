@@ -53,13 +53,16 @@ Feel free to schedule virtual office hours as well.
   <img width="460" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
   Passcode: <b>?wsk2Xx1</b>
+    
+  <br>
+
+  <a class="uk-button uk-button-danger" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">SESSION CODE</a>
+
 </p>
-
-
-
-<a class="uk-button uk-button-secondary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
-
-<a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">R SESSION</a>
 
 
 <br>
