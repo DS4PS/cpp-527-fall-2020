@@ -5,6 +5,9 @@ output:
     theme: readable
     df_print: paged
     highlight: tango
+    toc: yes
+    toc_float: no
+    css: 'lab-instructions.css'
     include:
       after_body: footer.html
 ---
@@ -52,6 +55,8 @@ For the final function, however, in order to determine if the player has won we 
 
 ---
 
+
+# Game Functions 
 
 
 Here is some code to get you started. 
@@ -182,10 +187,16 @@ change_door <- function( stay=T, opened.door, a.pick )
 
 opened.door <- open_goat_door( this.game, my.initial.pick )
 
-change_door( stay=T, opened.door=opened.door, a.pick=my.initial.pick )
-change_door( stay=F, opened.door=opened.door, a.pick=my.initial.pick )
+change_door( stay=T, 
+             opened.door=opened.door, 
+             a.pick=my.initial.pick )
+change_door( stay=F, 
+             opened.door=opened.door, 
+             a.pick=my.initial.pick )
 
-my.final.pick <- change_door( stay=F, opened.door=opened.door, a.pick=my.initial.pick )
+my.final.pick <- change_door( stay=F, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
 
 this.game
 my.initial.pick
@@ -222,11 +233,19 @@ determine_winner <- function( final.pick, game )
 this.game
 my.initial.pick
 
-my.final.pick <- change_door( stay=T, opened.door=opened.door, a.pick=my.initial.pick )
-determine_winner( final.pick=my.final.pick, game=this.game )
+my.final.pick <- change_door( stay=T, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
 
-my.final.pick <- change_door( stay=F, opened.door=opened.door, a.pick=my.initial.pick )
-determine_winner( final.pick=my.final.pick, game=this.game )
+determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
+
+my.final.pick <- change_door( stay=F, 
+                              opened.door=opened.door, 
+                              a.pick=my.initial.pick )
+
+determine_winner( final.pick=my.final.pick, 
+                  game=this.game )
 ```
 
 
@@ -239,9 +258,14 @@ determine_winner( final.pick=my.final.pick, game=this.game )
 this.game <- create_game()
 my.initial.pick <- select_door()
 opened.goat.door <- open_goat_door( this.game, my.initial.pick )
+
 # save results for both strategies for the game
-my.final.pick.stay <- change_door( stay=T, opened.door=opened.goat.door, a.pick=my.initial.pick )
-my.final.pick.switch <- change_door( stay=F, opened.door=opened.goat.door, a.pick=my.initial.pick )
+my.final.pick.stay <- change_door( stay=T, 
+                                   opened.door=opened.goat.door, 
+                                   a.pick=my.initial.pick )
+my.final.pick.switch <- change_door( stay=F, 
+                                     opened.door=opened.goat.door, 
+                                     a.pick=my.initial.pick )
 
 # print game details and if you won
 
@@ -252,7 +276,8 @@ paste0( "My initial selection: ", my.initial.pick )
 paste0( "The opened goat door: ", opened.goat.door )
 paste0( "My final selection: ", my.final.pick.stay )
 paste0( "GAME OUTCOME:" )
-determine_winner( final.pick=my.final.pick.stay, game=this.game )
+determine_winner( final.pick=my.final.pick.stay, 
+                  game=this.game )
 
 # if you switched:
 paste0( "GAME SETUP" )
@@ -261,7 +286,8 @@ paste0( "My initial selection: ", my.initial.pick )
 paste0( "The opened goat door: ", opened.goat.door )
 paste0( "My final selection: ", my.final.pick.switch )
 paste0( "GAME OUTCOME:" )
-determine_winner( final.pick=my.final.pick.switch, game=this.game )
+determine_winner( final.pick=my.final.pick.switch, 
+                  game=this.game )
 ```
 
 
@@ -269,11 +295,11 @@ determine_winner( final.pick=my.final.pick.switch, game=this.game )
 <br>
 
 
-## Challenge Questions
+# Challenge Questions
 
 <br>
 
-**PART 01:**
+## PART 01:
 
 Let's change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestand decides to switch they then have to select from the two remaining doors.
 
@@ -282,7 +308,7 @@ How does this new board change the pay-off from the game? Is switching still the
 
 <br>
 
-**PART 02:**
+## PART 02:
 
 We are building functions to play a game in a static world. There are always three doors, one car, and two goats. 
 
@@ -316,12 +342,12 @@ See [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml) for
 
 <br>
 
-## Markdown Trouble?
+**Markdown Trouble?**
 
 If you are having problems with your RMD file, visit the [**RMD File Styles and Knitting Tips**](https://ds4ps.org/cpp-526-spr-2020/labs/r-markdown-files.html) manual.
 
 
-### Notes on Knitting
+**Notes on Knitting**
 
 Note that when you knit a file, it starts from a blank slate. You might have packages loaded or datasets active on your local machine, so you can run code chunks fine. But when you knit you might get errors that functions cannot be located or datasets don't exist. Be sure that you have included chunks to load these in your RMD file.
 
