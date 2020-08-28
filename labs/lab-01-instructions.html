@@ -1731,7 +1731,7 @@ summary {
 <li><a href="#step-3---host-opens-goat-door">STEP 3 - HOST OPENS GOAT DOOR</a></li>
 <li><a href="#step-4---change-doors">STEP 4 - CHANGE DOORS</a></li>
 <li><a href="#step-5---determine-if-contenstant-has-won">STEP 5 - DETERMINE IF CONTENSTANT HAS WON</a></li>
-<li><a href="#test-the-game">TEST THE GAME</a></li>
+<li><a href="#testing-your-code">TESTING YOUR CODE</a></li>
 </ul></li>
 <li><a href="#challenge-questions">Challenge Questions</a><ul>
 <li><a href="#part-01">PART 01:</a></li>
@@ -1887,42 +1887,73 @@ summary {
 <span id="cb10-18"><a href="#cb10-18"></a>                  <span class="dt">game=</span>this.game )</span></code></pre></div>
 <p><br></p>
 </div>
-<div id="test-the-game" class="section level2">
-<h2>TEST THE GAME</h2>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># your game &quot;recipe&quot; </span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>this.game &lt;-<span class="st"> </span><span class="kw">create_game</span>()</span>
-<span id="cb11-3"><a href="#cb11-3"></a>my.initial.pick &lt;-<span class="st"> </span><span class="kw">select_door</span>()</span>
-<span id="cb11-4"><a href="#cb11-4"></a>opened.goat.door &lt;-<span class="st"> </span><span class="kw">open_goat_door</span>( this.game, my.initial.pick )</span>
-<span id="cb11-5"><a href="#cb11-5"></a></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="co"># save results for both strategies for the game</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a>my.final.pick.stay &lt;-<span class="st"> </span><span class="kw">change_door</span>( <span class="dt">stay=</span>T, </span>
-<span id="cb11-8"><a href="#cb11-8"></a>                                   <span class="dt">opened.door=</span>opened.goat.door, </span>
-<span id="cb11-9"><a href="#cb11-9"></a>                                   <span class="dt">a.pick=</span>my.initial.pick )</span>
-<span id="cb11-10"><a href="#cb11-10"></a>my.final.pick.switch &lt;-<span class="st"> </span><span class="kw">change_door</span>( <span class="dt">stay=</span>F, </span>
-<span id="cb11-11"><a href="#cb11-11"></a>                                     <span class="dt">opened.door=</span>opened.goat.door, </span>
-<span id="cb11-12"><a href="#cb11-12"></a>                                     <span class="dt">a.pick=</span>my.initial.pick )</span>
-<span id="cb11-13"><a href="#cb11-13"></a></span>
-<span id="cb11-14"><a href="#cb11-14"></a><span class="co"># print game details and if you won</span></span>
-<span id="cb11-15"><a href="#cb11-15"></a></span>
-<span id="cb11-16"><a href="#cb11-16"></a><span class="co"># if you stayed:</span></span>
-<span id="cb11-17"><a href="#cb11-17"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME SETUP&quot;</span> )</span>
-<span id="cb11-18"><a href="#cb11-18"></a>this.game</span>
-<span id="cb11-19"><a href="#cb11-19"></a><span class="kw">paste0</span>( <span class="st">&quot;My initial selection: &quot;</span>, my.initial.pick )</span>
-<span id="cb11-20"><a href="#cb11-20"></a><span class="kw">paste0</span>( <span class="st">&quot;The opened goat door: &quot;</span>, opened.goat.door )</span>
-<span id="cb11-21"><a href="#cb11-21"></a><span class="kw">paste0</span>( <span class="st">&quot;My final selection: &quot;</span>, my.final.pick.stay )</span>
-<span id="cb11-22"><a href="#cb11-22"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME OUTCOME:&quot;</span> )</span>
-<span id="cb11-23"><a href="#cb11-23"></a><span class="kw">determine_winner</span>( <span class="dt">final.pick=</span>my.final.pick.stay, </span>
-<span id="cb11-24"><a href="#cb11-24"></a>                  <span class="dt">game=</span>this.game )</span>
-<span id="cb11-25"><a href="#cb11-25"></a></span>
-<span id="cb11-26"><a href="#cb11-26"></a><span class="co"># if you switched:</span></span>
-<span id="cb11-27"><a href="#cb11-27"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME SETUP&quot;</span> )</span>
-<span id="cb11-28"><a href="#cb11-28"></a>this.game</span>
-<span id="cb11-29"><a href="#cb11-29"></a><span class="kw">paste0</span>( <span class="st">&quot;My initial selection: &quot;</span>, my.initial.pick )</span>
-<span id="cb11-30"><a href="#cb11-30"></a><span class="kw">paste0</span>( <span class="st">&quot;The opened goat door: &quot;</span>, opened.goat.door )</span>
-<span id="cb11-31"><a href="#cb11-31"></a><span class="kw">paste0</span>( <span class="st">&quot;My final selection: &quot;</span>, my.final.pick.switch )</span>
-<span id="cb11-32"><a href="#cb11-32"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME OUTCOME:&quot;</span> )</span>
-<span id="cb11-33"><a href="#cb11-33"></a><span class="kw">determine_winner</span>( <span class="dt">final.pick=</span>my.final.pick.switch, </span>
-<span id="cb11-34"><a href="#cb11-34"></a>                  <span class="dt">game=</span>this.game )</span></code></pre></div>
+<div id="testing-your-code" class="section level2">
+<h2>TESTING YOUR CODE</h2>
+<p>Note that each step includes an extra chunk that allows you to run the code you just wrote to see if it works.</p>
+<p>These are examples of unit tests.</p>
+<p><strong>A UNIT TEST</strong> is code that is written to check if your code is running properly.</p>
+<p>If you are building new functions or conducting complex analysis <strong>it is never sufficient to check that the code runs without producing an error.</strong> You need to check that the code is producing the correct or expected results.</p>
+<p>This requires actually knowing what a right answer looks like. Unit tests typically test the code using multiple examples of input data that is well-understood and the answers are known. It will also include <strong>edge cases</strong>, scenarios where the data may contain extreme or unexpected values or data types.</p>
+<p>For example, we will often use log transformations to minimize the influence of extremely outliers in regression analysis. Before applying the transformation, however, we need to be sure the log transformation is defines for all values of our data.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">log</span>( <span class="dv">10000</span> )  <span class="co"># fine</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">log</span>(  <span class="dv">1000</span> )  <span class="co"># fine</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="kw">log</span>(   <span class="dv">100</span> )  <span class="co"># fine </span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="kw">log</span>(    <span class="dv">10</span> )  <span class="co"># fine </span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="kw">log</span>(     <span class="dv">1</span> )  <span class="co"># fine </span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="kw">log</span>(     <span class="dv">0</span> )  <span class="co"># uh oh</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="kw">log</span>(   <span class="dv">-10</span> )  <span class="co"># not defined </span></span></code></pre></div>
+<p>Technically the log function is defined at zero, but instead of removing outliers we have not introduced an even bigger one (negative infinity).</p>
+<p>And if we try to apply the log to negative numbers it is not defined so we are basically systematically deleting all of the cases that have negative values for that variable, thus likely introducing bias.</p>
+<p>So log transformations, it turns out, are not great when our quantitative data is not all positive and non-zero (we can actually add 1 to the vector to deal with the cases that are zero, but negative values still cause problems).</p>
+<p>If it’s been awhile since you have worked with logs and you are trying to understand their behavior <strong>the code chunk above is a great example of the type of unit test you would write to make sure you are not corrupting your data</strong> through the variable transformation.</p>
+<p>It includes typical values for your variable (x=10 to x=10000), and also edge cases (x=0 or x&lt;0). When working with numeric variables the min, the max, and zero are all possible edge cases.</p>
+<hr />
+<p>In this game edge cases might be things like picking a car on the first try.</p>
+<p>The function below prints out all of the details of a single game - the initial game set-up, the initial and final door selections, and whether the contestant won.</p>
+<p>You are checking whether your functions work by inspecting the results to see if the code follows all of the rules:</p>
+<ol style="list-style-type: decimal">
+<li>The host can’t open a car door or the current pick.</li>
+<li>If the contestant has a strategy of SWITCH does the door selection change?</li>
+<li>If the contestant has a strategy of STAY does the door selection remain the same?</li>
+<li>The second pick can’t be the first pick or the open door.</li>
+<li>The game outcome is determined by evaluating whether the final selection was a door with a car behind it.</li>
+</ol>
+<p>Since the game utilizes randomization to create the game set-up and pick the doors you should run this check several times and inspect results to ensure your solutions are robust to different scenarios.</p>
+<p><strong>TEST THE GAME</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># your game &quot;recipe&quot; </span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>this.game &lt;-<span class="st"> </span><span class="kw">create_game</span>()</span>
+<span id="cb12-3"><a href="#cb12-3"></a>my.initial.pick &lt;-<span class="st"> </span><span class="kw">select_door</span>()</span>
+<span id="cb12-4"><a href="#cb12-4"></a>opened.goat.door &lt;-<span class="st"> </span><span class="kw">open_goat_door</span>( this.game, my.initial.pick )</span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="co"># save results for both strategies for the game</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a>my.final.pick.stay &lt;-<span class="st"> </span><span class="kw">change_door</span>( <span class="dt">stay=</span>T, </span>
+<span id="cb12-8"><a href="#cb12-8"></a>                                   <span class="dt">opened.door=</span>opened.goat.door, </span>
+<span id="cb12-9"><a href="#cb12-9"></a>                                   <span class="dt">a.pick=</span>my.initial.pick )</span>
+<span id="cb12-10"><a href="#cb12-10"></a>my.final.pick.switch &lt;-<span class="st"> </span><span class="kw">change_door</span>( <span class="dt">stay=</span>F, </span>
+<span id="cb12-11"><a href="#cb12-11"></a>                                     <span class="dt">opened.door=</span>opened.goat.door, </span>
+<span id="cb12-12"><a href="#cb12-12"></a>                                     <span class="dt">a.pick=</span>my.initial.pick )</span>
+<span id="cb12-13"><a href="#cb12-13"></a></span>
+<span id="cb12-14"><a href="#cb12-14"></a><span class="co"># print game details and if you won</span></span>
+<span id="cb12-15"><a href="#cb12-15"></a></span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="co"># if you stayed:</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME SETUP&quot;</span> )</span>
+<span id="cb12-18"><a href="#cb12-18"></a>this.game</span>
+<span id="cb12-19"><a href="#cb12-19"></a><span class="kw">paste0</span>( <span class="st">&quot;My initial selection: &quot;</span>, my.initial.pick )</span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="kw">paste0</span>( <span class="st">&quot;The opened goat door: &quot;</span>, opened.goat.door )</span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="kw">paste0</span>( <span class="st">&quot;My final selection: &quot;</span>, my.final.pick.stay )</span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME OUTCOME:&quot;</span> )</span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="kw">determine_winner</span>( <span class="dt">final.pick=</span>my.final.pick.stay, </span>
+<span id="cb12-24"><a href="#cb12-24"></a>                  <span class="dt">game=</span>this.game )</span>
+<span id="cb12-25"><a href="#cb12-25"></a></span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="co"># if you switched:</span></span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME SETUP&quot;</span> )</span>
+<span id="cb12-28"><a href="#cb12-28"></a>this.game</span>
+<span id="cb12-29"><a href="#cb12-29"></a><span class="kw">paste0</span>( <span class="st">&quot;My initial selection: &quot;</span>, my.initial.pick )</span>
+<span id="cb12-30"><a href="#cb12-30"></a><span class="kw">paste0</span>( <span class="st">&quot;The opened goat door: &quot;</span>, opened.goat.door )</span>
+<span id="cb12-31"><a href="#cb12-31"></a><span class="kw">paste0</span>( <span class="st">&quot;My final selection: &quot;</span>, my.final.pick.switch )</span>
+<span id="cb12-32"><a href="#cb12-32"></a><span class="kw">paste0</span>( <span class="st">&quot;GAME OUTCOME:&quot;</span> )</span>
+<span id="cb12-33"><a href="#cb12-33"></a><span class="kw">determine_winner</span>( <span class="dt">final.pick=</span>my.final.pick.switch, </span>
+<span id="cb12-34"><a href="#cb12-34"></a>                  <span class="dt">game=</span>this.game )</span></code></pre></div>
 <p><br> <br></p>
 </div>
 </div>
