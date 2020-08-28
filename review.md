@@ -14,14 +14,26 @@ Live review sessions will be held each week in order to:
 * Introduce new topics 
 * Answer questions on the the current week's lab 
 
+
+<br> 
+<hr>
+<br>
+
+
 > **Wednesdays**    
 > **4pm AZ time** 
 
 <a href='https://asu.zoom.us/j/93504639301' target=""> <button class="zoom">JOIN ZOOM MEETING</button></a>
 
-> Add to your calendar: 
+<br>
 
-<a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=N2RmZWkwYzg3MWJ1YW5hYjdvZHBndTVwdDJfMjAyMDA4MjZUMjMwMDAwWiBqZGxlY3lAbQ&amp;tmsrc=jdlecy%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+> **Add to your calendar:** <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=N2RmZWkwYzg3MWJ1YW5hYjdvZHBndTVwdDJfMjAyMDA4MjZUMjMwMDAwWiBqZGxlY3lAbQ&amp;tmsrc=jdlecy%40gmail.com&amp;scp=ALL"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en.gif"></a>
+
+
+<br> 
+<hr>
+<br>
+
 
 To make the best use of sessions I recommend starting labs ahead of time so that you can come with questions. 
 
@@ -34,19 +46,194 @@ Feel free to schedule virtual office hours as well.
 <br>
 <br>
 
+
+
 ## Week 1 - Wed Aug 26
+  
+<p align="center">
+  <a href="https://asu.zoom.us/rec/share/1Z1FMbXCyXxLfYnCwUePVZUMEIToaaa813QX8vNbmUyHem5oOERd-dJXXY93Ahd8">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b>?wsk2Xx1</b>
+    
+  <br>
 
-<a class="uk-button uk-button-primary" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
 
-<a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">R SESSION</a>
+  <br>
+
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">SESSION CODE</a>
+
+</p>
 
 
 <br>
 <br>
 <hr>
 <br>
+<br>
 
 
+## Week 2 - Wed Sept 2
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+
+
+
+## Week 3
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 4
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+## Week 5
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+
+## Week 6
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
+
+
+
+## Week 7
+  
+<p align="center">
+  <a href="">
+  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
+  <a>
+  <br> Passcode: <b></b>
+    
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+
+</p>
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 
 </div>
