@@ -222,10 +222,10 @@ determine_winner <- function( final.pick, game )
 this.game
 my.initial.pick
 
-my.final.pick <- changeDoor( stay=T, opened.door=opened.door, a.pick=my.initial.pick )
+my.final.pick <- change_door( stay=T, opened.door=opened.door, a.pick=my.initial.pick )
 determine_winner( final.pick=my.final.pick, game=this.game )
 
-my.final.pick <- changeDoor( stay=F, opened.door=opened.door, a.pick=my.initial.pick )
+my.final.pick <- change_door( stay=F, opened.door=opened.door, a.pick=my.initial.pick )
 determine_winner( final.pick=my.final.pick, game=this.game )
 ```
 
