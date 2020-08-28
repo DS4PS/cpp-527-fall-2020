@@ -147,6 +147,13 @@ d[  ! ( gender == "male" & beard == "yes" )  ,  ]
 
 
 
+
+### CONTROL STRUCTURES
+
+
+
+
+
 ## STEP 1 - CREATE A NEW GAME
 
 ```{r}
@@ -167,9 +174,6 @@ create_game()
 create_game() 
 create_game() 
 ```
-
-
-
 
 
 

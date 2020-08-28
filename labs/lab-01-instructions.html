@@ -1929,17 +1929,21 @@ summary {
 <div id="challenge-questions" class="section level1">
 <h1>Challenge Questions</h1>
 <p><br></p>
+<p>Try these out. If you can figure out a solution include it with your submission and post it to YellowDig to get bonus admiration points from your classmates.</p>
 <div id="part-01" class="section level2">
 <h2>PART 01:</h2>
-<p>Let’s change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestand decides to switch they then have to select from the two remaining doors.</p>
+<p>Let’s change the rules a little to make outcomes more interesting. Create a board with 5 doors and 2 cars. After the contestant makes an initial selection the host will open one car door and one goat door. If the contestant decides to switch they then have to select from the two remaining doors.</p>
 <p>How does this new board change the pay-off from the game? Is switching still the best strategy?</p>
 <p><br></p>
 </div>
 <div id="part-02" class="section level2">
 <h2>PART 02:</h2>
 <p>We are building functions to play a game in a static world. There are always three doors, one car, and two goats.</p>
-<p>What happens if we are in a dynamic world? The game can have three or more doors (in a game with two doors there would be no switching so there is no strategy to study). And we can also have one or more cars up to N-2 (N being the number of doors, there always need to be at least two goats so that the host can open a goat door, even if the contestant selected a goat in the first round).</p>
-<p>How would you change the code to model this new world?</p>
+<p>What happens if we are in a dynamic world?</p>
+<p>The game can have three or more doors (in a game with two doors there would be no switching so there is no strategy to study).</p>
+<p>And we can also have one or more cars up to N-2 (N being the number of doors, there always need to be at least two goats so that the host can open a goat door, even if the contestant selected a goat in the first round).</p>
+<p>How would you change the code to build this game?</p>
+<p>Note that in the first game the user would only have to specify their strategy (stay or switch). Here the user would have to specify the game size, the number of cars, and their strategy. So game size and number of cars would be added as arguments to the <strong>build_game()</strong> function.</p>
 <hr />
 <p><br></p>
 </div>
