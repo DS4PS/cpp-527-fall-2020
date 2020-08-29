@@ -809,9 +809,7 @@ Does your code also work with the following cases?
 ```r
 x <- c("A","A","B",NA,"C","C")
 y <- c("A",NA,"B","B","C","C")
-```
-
-<br> 
+``` 
 
 ```r
 x <- c("A","A","B","B","C","C")
