@@ -977,7 +977,7 @@ In all of the examples above we were comparing two things.
 
 ```r
 # is it a nine?
-x <- c(1,9,10,19,99,09)
+x <- c( 1, 9, 10, 19, 99, 09 )
 x == 9 
 [1] FALSE  TRUE FALSE FALSE FALSE  TRUE
 
@@ -987,7 +987,7 @@ Recall that logical statements can be used to count things.
 
 ```r
 # is it a nine?
-x <- c(1,9,10,19,99,09)
+x <- c( 1, 9, 10, 19, 99, 09 )
 sum( x == 9 )
 [1] 2
 ```
