@@ -701,7 +701,7 @@ Note that in most cases X and Y will represent vectors of observations. The orde
 
 ```r
 x <- c("tom","nancy","sara")
-y <- c("male","female","female)
+y <- c("male","female","female")
 d <- data.frame( name=x, gender=y )
 ```
 
