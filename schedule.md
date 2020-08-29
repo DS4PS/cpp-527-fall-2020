@@ -596,6 +596,17 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 **Post on {{page.yellowdig.post-02}}**
 
+**UPDATE TO INSTRUCTIONS:** Please post your solution to ONE of the questions below on YellowDig (Q1-A and Q1-B each count as one question). 
+
+This gives you a chance to explain your solution a little more clearly and it minimizes duplicate solutions on the discussion board. 
+
+See what has been posted already before deciding which solution you will post. 
+
+You can then discuss solutions to problems you did not post on other pins posted by classmates. Comment if you see problems with the proposed solutions or possible alternative solutions. 
+
+
+
+
 -----
 
 
