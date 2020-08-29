@@ -1183,6 +1183,61 @@ Or alternatively, share another animation you can create using loops.
 
 
 
+<!--- 
+#########################################
+#########################################
+##########
+##########         R Package 
+##########
+#########################################
+#########################################
+-->
+
+
+# PROJECT: Build Your Own R Package
+
+**Due {{page.projects.r-package}}**
+
+
+<br>
+
+## Building Packages in R
+
+At some point you might develop a tool that you want to upload to the CRAN so it is widely available.
+
+More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. 
+
+Even if not sharing the package widely it is often a more efficient method for the team to maintain project code so that it can be easily updated and functions enhanced. Project updates are then easily shared simply by re-installing the package. 
+
+This tutorial will teach you how to build and share a package in R. You will "package" your R code from Labs 01 and 02 into a new **montyhall package** to make it easier to run simulations to evaluate game strategies. 
+
+## Instructions 
+
+<a class="uk-button uk-button-default" href="../labs/create-r-package.html">Instructions</a>
+
+**Submit to Canvas:**
+
+To receive credit for the assignment, submit the URL to your package on GitHub.
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
+
+<br>
+
+**Grading:**
+
+Your package will be installed and submitted to a series of testing scripts that ensure each function operates as expected. 
+
+The documentation will also be inspected to ensure there are complete instructions and sample code available for each of the functions. 
+
+You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
+
+
+
+
+
+
+
+
 
 <!--- 
 #########################################
@@ -1335,54 +1390,6 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 
 
-
-<!--- 
-#########################################
-#########################################
-##########
-##########         R Package 
-##########
-#########################################
-#########################################
--->
-
-
-# PROJECT: Build Your Own R Package
-
-**Due {{page.projects.r-package}}**
-
-
-<br>
-
-## Building Packages in R
-
-At some point you might develop a tool that you want to upload to the CRAN so it is widely available.
-
-More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. 
-
-Even if not sharing the package widely it is often a more efficient method for the team to maintain project code so that it can be easily updated and functions enhanced. Project updates are then easily shared simply by re-installing the package. 
-
-This tutorial will teach you how to build and share a package in R. You will "package" your R code from Labs 01 and 02 into a new **montyhall package** to make it easier to run simulations to evaluate game strategies. 
-
-## Instructions 
-
-<a class="uk-button uk-button-default" href="../labs/create-r-package.html">Instructions</a>
-
-**Submit to Canvas:**
-
-To receive credit for the assignment, submit the URL to your package on GitHub.
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
-
-<br>
-
-**Grading:**
-
-Your package will be installed and submitted to a series of testing scripts that ensure each function operates as expected. 
-
-The documentation will also be inspected to ensure there are complete instructions and sample code available for each of the functions. 
-
-You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
 
 
 
