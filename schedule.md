@@ -783,6 +783,7 @@ Note the behavior of logical operations here:
 
 
 ```r
+# missing info for both individuals
 x <- c("A",NA,"C")
 y <- c("A",NA,"C")
 
@@ -791,6 +792,7 @@ x == y
 identical( x, y )
 [1] TRUE
 
+# missing info for one individual
 x <- c("A","B","C")
 y <- c("A",NA,"C")
 
