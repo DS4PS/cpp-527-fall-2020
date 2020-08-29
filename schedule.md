@@ -682,6 +682,14 @@ x == y
 [1] TRUE TRUE TRUE
 identical( x, y )
 [1] TRUE
+
+# incorrect
+if( x == y )
+{  some code  }
+
+# correct
+if( identical( x, y ) )
+{  some code  }
 ```
 
 
