@@ -1137,7 +1137,10 @@ for( i in 1:1000 )  # iterator i
 }
 
 
-# slope descriptives from 10,000 random draws, sample size 10
+# descriptives from 10,000 random draws, sample size 10
+
+head( slopes )
+[1] 2.246041 3.979462 1.714822 4.689032 1.763237 3.107451
 
 summary( slopes )  
 #    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
