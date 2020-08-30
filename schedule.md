@@ -1085,6 +1085,117 @@ Examples of loops used to create effective data visualization:
 <br>
 
 
+**Example Loop:**
+
+![]()https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif
+
+
+
+```r
+
+# BOOTSTRAPPING TYPE II ERRORS
+# USING SIMULATIONS 
+#
+# Examine Type II Errors
+# as a function of sample size
+
+
+# load data and helper functions
+source( "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R" )
+head( d )                       # data frame with X and Y 
+get_sample_slope( d, n=10 )     # returns a single value
+test_for_null_slope( d, n=10 )  # returns a one-row data frame
+
+
+
+## EXAMINE SLOPES
+## sample size = 10
+
+
+slopes <- NULL  # collector vector 
+
+for( i in 1:1000 )  # iterator i
+{
+
+  b1 <- get_sample_slope( d, n=10 )
+  slopes[ i ] <- b1   
+ 
+}
+
+summary( slopes )  
+hist( slopes, breaks=25, col="gray20", border="white" )
+
+# slope descriptives from 10,000 random draws, sample size 10
+
+
+
+
+
+
+
+
+## EXAMINE CONFIDENCE INTERVALS
+## sample size = 10
+
+# build a results
+# data frame using 
+# row binding
+
+
+results <- NULL
+
+for( i in 1:50 )
+{
+
+  null.slope.test <- test_for_null_slope( d, n=10 )
+  results <- rbind( results, null.slope.test )
+
+}
+
+
+head( results )
+
+# confidence intervals from 50 draws, sample size 10
+
+#            b1 ci.b1.lower ci.b1.upper null.slope
+# x  -0.9783359  -4.5757086    2.619037       TRUE
+# x1  2.3897431   0.4295063    4.349980      FALSE
+# x2  2.0781628  -0.6677106    4.824036       TRUE
+# x3  2.9178206   0.7080918    5.127549      FALSE
+# x4  2.3702949   0.5238930    4.216697      FALSE
+# x5  1.9701996   0.5513491    3.389050      FALSE
+
+plot_ci( df=results )
+
+
+
+
+
+
+## alternative approach
+## the list version 
+## runs faster but it 
+## needs to be converted 
+## to a data frame afterwards
+  
+results <- list()
+
+for( i in 1:50 )
+{
+
+  null.slope.test <- test_for_null_slope( d, n=10 )
+  results[[ i ]] <- null.slope.test
+
+}
+
+## convert list to df
+results <- dplyr::bind_rows( results )
+
+head( results )
+plot_ci( df=results )
+```
+
+
 
 ## Lab 02
 
