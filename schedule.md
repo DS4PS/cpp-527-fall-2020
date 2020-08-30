@@ -1003,13 +1003,15 @@ sum( x == 9 )
 [1] 2
 ```
 
-**Q5-A: How would you count all of the elements of X that CONTAIN a nine?**
 
-For example, 19 contains a nine. 
-
-**Q5-B: How would you count all nine's in the vector?**
+**Q5-A: How would you count all nine's in the vector?**
 
 For example, 19 contains one nine, 99 contains two nines. 
+
+
+**Q5-B: How would you count all of the elements of X that CONTAIN a nine?**
+
+For example, 19 contains a nine. 
 
 **Q5-C: Count all 17's in the vector X.**
 
@@ -1023,14 +1025,17 @@ How can you count the number of times "17" occurs in the vector?
 
 For example, the number 117 contains a 17. The number 170 also contains a 17. 
 
------
+<br>
+<hr>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-
-<br>
 <hr>
 <br>
+
+
+
+
 
 
 
@@ -1318,7 +1323,11 @@ for( i in 1:1000 )
 
 **Q2-A: Create the Brownian Motion animation above**
 
-Use a loop to visualize the movement of the particle.
+Use the loop above to generate particle positions. 
+
+Create an animation to visualize the movement of the particle.
+
+Discuss the package or app you used to generate the GIF. 
 
 **Q2-B: Shadow of the past**
 
@@ -1334,14 +1343,16 @@ How would you create the trailing tail in this animation?
 
 If you are not interested in Brownian Motion, share another animation you can create using loops. 
 
-<br>
+Discuss the package or app you used to generate the GIF. 
 
-Share your ideas about solutions to these problems with your classmates. 
+<br>
+<hr>
 
 **Share your ideas with classmates on YellowDig:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
+<hr>
 <br>
 <br>
 
