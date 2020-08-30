@@ -1356,11 +1356,9 @@ Discuss the package or app you used to generate the GIF.
 
 **Q2-B: Shadow of the past**
 
-Note the trailing tail in the Brownian Motion animation above. 
-
 If animations move too quickly it will look like popcorn and it can be hard to identify the meaningful patterns in the data. 
 
-You can enhance the information value of animations by visualizing change in addition to the current model state. 
+You can enhance the information value of animations by visualizing change and in addition to the current model state include information on past stages. 
 
 How would you create the trailing tail in this animation? 
 
