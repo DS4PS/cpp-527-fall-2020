@@ -1220,11 +1220,15 @@ plot_ci( df=results )
 
 
 
+<br>
+<br>
+
+
 ## Lab 02
 
 **Due {{page.labs.lab-02}}**
 
-<br>
+<hr>
 
 This lab uses material from the simulation slides: 
 
@@ -1232,15 +1236,12 @@ This lab uses material from the simulation slides:
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
-<br>
 <hr>
-<br>
 
 **Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
-<br>
 <hr>
 <br>
 
@@ -1253,7 +1254,6 @@ This lab uses material from the simulation slides:
 
 **Post on {{page.yellowdig.post-03}}**
 
-<br>
 
 How can you make interesting animations in R? 
 
@@ -1278,7 +1278,23 @@ while( cash > 0 )
 }
 ```
 
-This is a one-dimensional outcome tracked over time. Physicists have used a similar model to examine particle motion. It is called a Brownian Motion model. It is similar to the betting model above except for each time period the particle moves in two dimensions. 
+**Q1 - How Long Does It Take to Go Broke?**
+
+Starting with $10 in the game, how long does it take the **typical** person take to go bankrupt? 
+
+If you don't want to do a complicated mathematical proof, you can create a simulation, play the game 10,000 times, then report the average period each game lasted. 
+
+What is the code to make this work? 
+
+-----
+
+
+
+A random walk is a one-dimensional outcome (cash in hand) tracked over time. 
+
+Physicists have used a similar model to examine particle movement with a Brownian Motion model. 
+
+It is similar to the betting model above except for each time period the particle moves in two dimensions. 
 
 ```r
 x <- 0  
@@ -1292,23 +1308,33 @@ for( i in 1:1000 )
 
 ![](https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2020/master/lectures/gifs/brownian_motion.gif)
 
-QUESTIONS: 
 
-Consider the two following problems. 
 
-(1) How long does the **typical** person take to go bankrupt? If you don't want to do a complicated mathematical proof, you can create a simulation, play the game 10,000 times, then report the average period each game lasted. 
+**Q2 - ANIMATIONS** 
 
-What is the code to make this work? 
+**Q2-A: Create the Brownian Motion animation above**
 
-(2) Note the trailing tail in the Brownian Motion animation. How would you create that as part of an animation? 
+Use a loop to visualize the movement of the particle.
+
+**Q2-B: Shadow of the past**
+
+Note the trailing tail in the Brownian Motion animation above. 
+
+If animations move too quickly it will look like popcorn and it can be hard to identify the meaningful patterns in the data. 
+
+You can enhance the information value of animations by visualizing change in addition to the current model state. 
+
+How would you create the trailing tail in this animation? 
+
+**Q2-C: Alternative Animations**
+
+If you are not interested in Brownian Motion, share another animation you can create using loops. 
 
 <br>
 
-**Post your ideas or solutions on YellowDig:**
-
 Share your ideas about solutions to these problems with your classmates. 
 
-Or alternatively, share another animation you can create using loops. 
+**Share your ideas with classmates on YellowDig:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
