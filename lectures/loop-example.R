@@ -93,7 +93,7 @@ test_for_null_slope <- function( d, n=10, include.plot=TRUE )
 
 
 
-plot_ci <- function( df )
+plot_ci <- function( df, n=10 )
 {
   
   min.x <- min( results$ci.b1.lower )
@@ -118,7 +118,8 @@ plot_ci <- function( df )
   type.ii.rate <- mean( results$null.slope )
 
   text( (min.x-adj.x), nrow(results),
-        paste0( "\n\nType II \nError Rate \n = ", type.ii.rate ),
+        paste0( "\n\n\n\n\n\n\nSample Size \n   = ", n, 
+                "\n\nType II \nError Rate \n  = ", type.ii.rate ),
         col="darkred", cex=1.3, pos=4 )
   
   return( NULL )
