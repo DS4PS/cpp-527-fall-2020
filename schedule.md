@@ -1294,7 +1294,7 @@ What is the code to make this work?
 
 -----
 
-
+**Q2 - ANIMATIONS** 
 
 A random walk is a one-dimensional outcome (cash in hand) tracked over time. 
 
@@ -1315,8 +1315,6 @@ for( i in 1:1000 )
 ![](https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2020/master/lectures/gifs/brownian_motion.gif)
 
 
-
-**Q2 - ANIMATIONS** 
 
 **Q2-A: Create the Brownian Motion animation above**
 
