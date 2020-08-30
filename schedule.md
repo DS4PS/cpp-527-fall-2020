@@ -1141,12 +1141,13 @@ for( i in 1:1000 )  # iterator i
  
 }
 
-summary( slopes )  
-hist( slopes, breaks=25, col="gray20", border="white" )
-
 # slope descriptives from 10,000 random draws, sample size 10
 
+summary( slopes )  
+#    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#  -2.194   1.596   2.176   2.088   2.600   4.868
 
+hist( slopes, breaks=25, col="gray20", border="white" )
 
 
 
@@ -1182,13 +1183,14 @@ head( results )
 # x5  1.9701996   0.5513491    3.389050      FALSE
 
 plot_ci( df=results )
+```
+
+![](../lectures/figures/power-test.png)
 
 
 
-
-
-
-## alternative approach
+```r
+## alternative constructor:
 ## the list version 
 ## runs faster but it 
 ## needs to be converted 
@@ -1210,8 +1212,6 @@ results <- dplyr::bind_rows( results )
 head( results )
 plot_ci( df=results )
 ```
-
-![](../lectures/figures/power-test.png)
 
 
 
