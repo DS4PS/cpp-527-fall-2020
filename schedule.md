@@ -1085,30 +1085,29 @@ Examples of loops used to create effective data visualization:
 <br>
 
 
-**Example Loop:**
+**LOOP EXAMPLE**
+
+This example demonstrates the use of loops to create a simulation to examine the how model statistics might vary for a given sampling framework.
+
+In this case we are taking repeated random draws of size N from a population, then calculating the slope and confidence interval of the slope. We want to note cases where b1 contains zero since these would represent NULL results in our study.
 
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
+ 
+These types of **bootstrapping** simulations are very useful for generating robust versions of sampling statistics when the data is irregular or closed-form solutions do not exist.
 
-This example demonstrates the use of loops in a simulation.
+In this case were are interested in statistical power as a function of sample size. In studies like drug trials it might cost $10,000 for each study participant, so drug companies want to minimize the sample size needed to veryify the effectiveness of their drugs.
 
-In this case we are taking repeated random draws of size N from a population, then calculating a sample statistic. 
+We can use previous research to ascertain a reasonable correlation between X and Y or anticipated effect size to simulate some population data. 
 
-Simulations used to generate sample statistics are commonly referred to as **bootstrapping** simulations. They are very useful for generating robust versions of sampling statistics, standard errors, and inferential tests when the data is irregular or closed-form mathematical approaches do not exist.
+Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
 
-In this case were are interested in statistical power. We can use previous research to ascertain a reasonable correlation between X and Y, and using this information we can simulate some population data and examine how our inferences change as we vary the sample size. 
-
-In studies like drug trials it might cost $10,000 for each additional study participants, so drug companies want to minimize the sample size needed to achieve statistically significant results. 
-
-Since we know the true x~y slope in this case (we coded it into the simulation data ourselves), then Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
-
-We would start with a small sample size (n=10 in this example) then increase it until we have exceeded our target Type II Error rate. 
+We would start with a small sample size (n=10 in this example) then increase it until we have exceeded a target Type II Error rate. 
 
 Some [helper functions](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R) were created to generate the proper statistics inside of the loops. 
 
-The first example below collects only the slope from each simulation, so they are stored in a collector vector. 
+Pay attention to differences in the constructors. 
 
-The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame. 
-
+The first example collects only the slope from each simulation, so results are stored in a collector vector called **slopes**. 
 
 ```r
 
@@ -1151,6 +1150,10 @@ hist( slopes, breaks=25, col="gray20", border="white" )
 ```
 
 ![](../lectures/figures/bootstrapped-sample-slopes.png)
+
+
+The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame called **results**. 
+
 
 ```r
 ## EXAMINE CONFIDENCE INTERVALS
