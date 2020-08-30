@@ -106,7 +106,7 @@ plot_ci <- function( df, true.slope=2, n=10 )
   plot( results$b1, 1:nrow(results), 
         xlim=c( min.x - adj.x, max.x + adj.x ),
         bty="n", pch=19, col=ci.color, yaxt="n",
-        xlab="Slope of B1", ylab="" )
+        xlab="Slope B1: From Y = b0 + b1(X)", ylab="" )
 
   abline( v=0 )
   
