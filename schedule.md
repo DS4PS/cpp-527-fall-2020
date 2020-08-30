@@ -592,17 +592,440 @@ In Lab 01 we will use control structures to build a virtual version of the game.
 
 
 
-## YellowDig Questions
+## YellowDig Practice Problems
 
 **Post on {{page.yellowdig.post-02}}**
 
-[coming soon]
+**UPDATE TO INSTRUCTIONS:** Please post your solution to ONE of the questions below on YellowDig (Q1-A and Q1-B each count as one question). 
+
+This gives you a chance to explain your solution a little more clearly and it minimizes duplicate solutions on the discussion board. 
+
+See what has been posted already before deciding which solution you will post. 
+
+You can then discuss solutions to problems you did not post on other pins posted by classmates. Comment if you see problems with the proposed solutions or possible alternative solutions. 
+
+
+
+
+-----
+
+
+**Q1: FACTORS**
+
+**Q1-A: Ordering Levels**
+
+By default factors created in R will order levels (categories) alphabetically. 
+
+In many cases levels have a meaningful order other than alphabetization. 
+
+For example, days of the week, months of the year, etc.
+
+How can you alter this factor so that it correctly orders the days of the week? 
+
+```r
+x <- c("MON","TUE","WED","THUR","FRI","SAT","SUN")
+vec <- sample( x, 100, replace=TRUE )
+f <- factor( vec )
+table( f )
+
+f
+ FRI  MON  SAT  SUN THUR  TUE  WED 
+  14   18   14    9   16   16   13
+```
+
+*Side note: in R the term __levels__ describes categories in a categorical variables (a factor).*
+
+*In regression, we use the term __levels__ to describe numerical dosages of a treatment, such as milligrams of caffeine in a heart rate study.*
+
+*In regression, the term __factor__ is also used synonymously with explanatory variable or __covariate__. For example, what other __factors__ might explain elevated heart rates in patients? Age could be one factor, race could be another factor. In this context __factor__ is a cause, not a categorical variable.*
+
+*Make a mental note that __factor__ and __level__ are both precise technical terms that have different meanings in computer science and statistics.* 
+
+
+**Q1-B: Empty Levels**
+
+How can we drop empty levels from a factor? 
+
+```r
+f2 <- f[ f %in% c("MON","TUE","WED","THUR","FRI") ]
+table( f2 )
+```
+
+
+**Q1-C: Counting Zeros**
+
+What about cases where counts of zeros are important? What if we wanted to note here days that events did not occur? 
+
+Create a new factor that will report levels that do not occur in a sample. 
+
+```r
+x <- c("TUE","WED","FRI","SUN")
+vec <- sample( x, 20, replace=TRUE )
+f3 <- factor( vec )
+table( f3 )
+```
+
+
+
+-----
+
+
+**Q2: COMPARISON OF SETS**
+
+Recall the structure of IF STATEMENTS:
+
+```r
+if( logical statement )
+{  code that only executes if TRUE }
+```
+
+It's important to note that the logical statement must return a SINGLE T/F value. If you use a logical vector as the argument in the IF condition then it will use the first T/F values in the vector and ignore the rest (which is problematic in many instances). 
+
+The logical **EQUALS** operator **==** compares elements in two vectors in order. It will return the same number of T/F as length(x). 
+
+If you want to test whether two vectors are the same use the **identical()** function, which always returns a single T/F value:
+
+```r
+x <- c("A","B","C")
+y <- c("A","B","C")
+
+x == y 
+[1] TRUE TRUE TRUE
+identical( x, y )
+[1] TRUE
+
+# incorrect
+if( x == y )
+{  some code  }
+
+# correct
+if( identical( x, y ) )
+{  some code  }
+```
+
+
+**Q2-A: Ignore Order**
+
+Perhaps you want to run a chunk of code only IF two vectors contain the same elements, but order is irrelevant. 
+
+Note that in most cases X and Y will represent vectors of observations. The order and position of vectors is extremely important. Changing the order or a vector will corrupt the data. 
+
+```r
+x <- c("tom","nancy","sara")
+y <- c("male","female","female")
+d <- data.frame( name=x, gender=y )
+```
+
+In this case X and Y represents **sets** of elements, so the positions are not important. 
+
+Update this case to compare the two sets X and Y to see if they contain the same elements while ignoring order.
+
+```r
+x <- c("A","B","C")
+y <- c("B","A","C")
+
+identical( x, y )
+[1] FALSE
+```
+
+**Q2-B: Ignore Vector Length**
+
+Similar to the case above, we want to compare these two sets to ensure they contain the same elements. We don't care about how many times each element occurs, just that the two sets are the same. 
+
+How can we ignore the number of elements here? 
+
+```r
+x <- c("A","B","A","C")
+y <- c("B","C","B","A","C")
+
+identical( x, y )
+[1] FALSE
+```
+
+**Q2-C: Data Types**
+
+This is an interesting case because the logical operator **==** will consider these vectors to be identical, but the **identical()** function will not.
+
+```r
+x <- c(1,2,3)
+y <- c("1","2","3")
+
+x == y 
+[1] TRUE TRUE TRUE
+identical( x, y )
+[1] FALSE
+```
+
+The reason for this is that logical operators will implicitly cast data types in order to compare two objects that have different data types. You saw this last week:
+
+```r
+5 > 10
+[1] FALSE
+
+# implicitly casts both as character vectors
+5 > "10"
+[1] TRUE
+```
+
+How would you adapt the code here so it compares the two vectors and ignores the data type. 
+
+```r
+x <- c(1,2,3)
+y <- c("1","2","3")
+identical( x, y )
+```
+
+Does you solution also work with this example? 
+
+```r
+x <- c(01,02,03)
+y <- c("01","02","03")
+```
 
 
 
 
 
+**Q2-D: Comparisons with Missing Values**
 
+Missing values are important in statistics and data analytics, but they pose some challenges for computer logic. 
+
+Note the behavior of logical operations here:
+
+
+```r
+# missing info for both individuals
+x <- c("A",NA,"C")
+y <- c("A",NA,"C")
+
+x == y 
+[1] TRUE    NA  TRUE
+identical( x, y )
+[1] TRUE
+
+# missing info for one individual
+x <- c("A","B","C")
+y <- c("A",NA,"C")
+
+x == y 
+[1] TRUE    NA  TRUE
+identical( x, y )
+[1] FALSE
+```
+
+Write a statement that compares two vectors while ignoring missing cases. 
+
+Does your code also work with the following cases? 
+
+```r
+x <- c("A","A","B",NA,"C","C")
+y <- c("A",NA,"B","B","C","C")
+``` 
+
+```r
+x <- c("A","A","B","B","C","C")
+y <- c("A",NA,"B",NA,"C","C")
+```
+
+**Q3: ROUNDING ERRORS**
+
+This is one of the most unexpected and somewhat shocking errors you can encounter in computer science: 
+
+```r
+x <- 0.5 - 0.3
+y <- 0.3 - 0.1
+
+x
+[1] 0.2
+y
+[1] 0.2
+
+
+x == y   
+[1] FALSE    
+# FALSE on most machines
+
+identical( x, y )
+[1] FALSE
+```
+
+To see what is happening here print the difference of the variables: 
+
+```r
+x - y
+[1] 2.775558e-17
+```
+
+It turns out that numbers with decimals are hard to represent in computer memory, so very tiny rounding errors can be introduced in calculations. They are not noticed unless the numbers are compared at the smallest scale. 
+
+```
+# 1.051
+# 1.052
+1.1 equals 1.1 
+1.05 equals 1.05
+1.051  does NOT equal  1.052 
+```
+
+In the example above the variables X and Y are identical up until the 17th decimal point. 
+
+The tiny difference was introduced by converting decimal numbers to their binary representation as a string of 0'a and 1's in ther computer's memory while doing the mathematical calculations behind the scenes. 
+
+This tiny tiny rounding error will tyically **only** pose a problem in logical statements. And only if the conversion introduces a rounding error, which is typically not the case: 
+
+```r
+x <- 5 - 3
+y <- 3 - 1
+x == y
+[1] TRUE
+
+x <- 0.1 + 0.1
+y <- 0.0 + 0.2
+x 
+[1] 0.2
+y
+[1] 0.2
+x == y
+[1] TRUE
+```
+
+The formal and robust solution is to use the **all.equal()** function when comparing numerical objects.  
+
+*USE THIS APPROACH IN YOUR CODE.*
+
+```r
+x <- 0.5 - 0.3
+y <- 0.3 - 0.1
+all.equal( x, y )
+[1] TRUE
+```
+
+Explain why these also work: 
+
+```r
+x <- 0.5 - 0.3
+y <- 0.3 - 0.1
+
+x2 <- round( x, 1 )
+y2 <- round( y, 1 )
+
+x2
+[1] 0.2
+y2
+[1] 0.2
+
+x2 == y2
+[1] TRUE
+
+x3 <- as.character( x )
+y3 <- as.character( y )
+
+x3
+[1] "0.2"
+y3
+[1] "0.2"
+
+x3 == y3
+[1] TRUE
+```
+
+
+
+-----
+
+
+**Q4: APPROXIMATE MATCHES**
+
+In this example vectors represent sets of traits of pairs of individuals in a study. 
+
+* race (white/minority) 
+* gender (male/female)
+* college degree? (college/highschool)
+
+We want to identify people that are similar but not necessarily identical. 
+
+Create a function that compares the two individuals and returns TRUE if they are the same on at least two traits, and false if they only match on one or zero traits. 
+
+
+
+
+
+```r
+compare_pairs <- function( x, y )
+{
+   # your code here
+}
+
+
+x1 <- c("white","female","college")
+y1 <- c("white","female","college")
+compare_pairs( x1, y1 )
+# SHOULD BE TRUE
+
+x2 <- c("minority","female","college")
+y2 <- c("white","female","college")
+compare_pairs( x2, y2 )
+# SHOULD BE TRUE
+
+x3 <- c("minority","female","college")
+y3 <- c("white","male","college")
+compare_pairs( x3, y3 )
+# SHOULD BE FALSE
+
+x4 <- c("minotity","female","college")
+y4 <- c("white","male","high school")
+compare_pairs( x4, y4 )
+# SHOULD BE FALSE
+```
+
+
+-----
+
+**CHALLENGE QUESTION**
+
+**Q5: COUNTING SUBSTRINGS**
+
+In all of the examples above we were comparing two things. 
+
+```r
+# is it a nine?
+x <- c( 1, 9, 10, 19, 99, 09 )
+x == 9 
+[1] FALSE  TRUE FALSE FALSE FALSE  TRUE
+
+```
+
+Recall that logical statements can be used to count things. 
+
+```r
+# is it a nine?
+x <- c( 1, 9, 10, 19, 99, 09 )
+sum( x == 9 )
+[1] 2
+```
+
+**Q5-A: How would you count all of the elements of X that CONTAIN a nine?**
+
+For example, 19 contains a nine. 
+
+**Q5-B: How would you count all nine's in the vector?**
+
+For example, 19 contains one nine, 99 contains two nines. 
+
+**Q5-C: Count all 17's in the vector X.**
+
+X is a vector containing the numbers 1 to 1,000.
+
+```r
+x <- 1:1000
+```
+
+How can you count the number of times "17" occurs in the vector? 
+
+For example, the number 117 contains a 17. The number 170 also contains a 17. 
+
+<br>
+<hr>
+<br>
 
 
 
@@ -662,6 +1085,135 @@ Examples of loops used to create effective data visualization:
 <br>
 
 
+**Example Loop:**
+
+![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
+
+This example demonstrates the use of loops in a simulation.
+
+In this case we are taking repeated random draws of size N from a population, then calculating a sample statistic. 
+
+Simulations used to generate sample statistics are commonly referred to as **bootstrapping** simulations. They are very useful for generating robust versions of sampling statistics, standard errors, and inferential tests when the data is irregular or closed-form mathematical approaches do not exist.
+
+In this case were are interested in statistical power. We can use previous research to ascertain a reasonable correlation between X and Y, and using this information we can simulate some population data and examine how our inferences change as we vary the sample size. 
+
+In studies like drug trials it might cost $10,000 for each additional study participants, so drug companies want to minimize the sample size needed to achieve statistically significant results. 
+
+Since we know the true x~y slope in this case (we coded it into the simulation data ourselves), then Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
+
+We would start with a small sample size (n=10 in this example) then increase it until we have exceeded our target Type II Error rate. 
+
+Some [helper functions](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R) were created to generate the proper statistics inside of the loops. 
+
+The first example below collects only the slope from each simulation, so they are stored in a collector vector. 
+
+The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame. 
+
+
+```r
+
+# BOOTSTRAPPING TYPE II ERRORS
+# USING SIMULATIONS 
+#
+# Examine Type II Errors
+# as a function of sample size
+
+
+# load data and helper functions
+source( "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R" )
+head( d )                       # data frame with X and Y 
+get_sample_slope( d, n=10 )     # returns a single value
+test_for_null_slope( d, n=10 )  # returns a one-row data frame
+
+
+
+## EXAMINE SLOPES
+## sample size = 10
+
+
+slopes <- NULL  # collector vector 
+
+for( i in 1:1000 )  # iterator i
+{
+
+  b1 <- get_sample_slope( d, n=10 )
+  slopes[ i ] <- b1   
+ 
+}
+
+summary( slopes )  
+hist( slopes, breaks=25, col="gray20", border="white" )
+
+# slope descriptives from 10,000 random draws, sample size 10
+
+
+
+
+
+## EXAMINE CONFIDENCE INTERVALS
+## sample size = 10
+
+# build a results
+# data frame using 
+# row binding
+
+
+results <- NULL
+
+for( i in 1:50 )
+{
+
+  null.slope.test <- test_for_null_slope( d, n=10 )
+  results <- rbind( results, null.slope.test )
+
+}
+
+
+head( results )
+
+# confidence intervals from 50 draws, sample size 10
+
+#            b1 ci.b1.lower ci.b1.upper null.slope
+# x  -0.9783359  -4.5757086    2.619037       TRUE
+# x1  2.3897431   0.4295063    4.349980      FALSE
+# x2  2.0781628  -0.6677106    4.824036       TRUE
+# x3  2.9178206   0.7080918    5.127549      FALSE
+# x4  2.3702949   0.5238930    4.216697      FALSE
+# x5  1.9701996   0.5513491    3.389050      FALSE
+
+plot_ci( df=results )
+
+
+
+
+
+
+## alternative approach
+## the list version 
+## runs faster but it 
+## needs to be converted 
+## to a data frame afterwards
+  
+results <- list()
+
+for( i in 1:50 )
+{
+
+  null.slope.test <- test_for_null_slope( d, n=10 )
+  results[[ i ]] <- null.slope.test
+
+}
+
+## convert list to df
+results <- dplyr::bind_rows( results )
+
+head( results )
+plot_ci( df=results )
+```
+
+![](../lectures/figures/power-test.png)
+
+
 
 ## Lab 02
 
@@ -669,22 +1221,24 @@ Examples of loops used to create effective data visualization:
 
 <br>
 
-Please review the instructions at the end of the lecture notes: 
+This lab uses material from the simulation slides: 
 
 [Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
 
-<br>
-
-
-
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
+
+<br>
+<hr>
+<br>
 
 **Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
 <br>
+<hr>
 <br>
+
 
 
 
@@ -755,6 +1309,61 @@ Or alternatively, share another animation you can create using loops.
 
 <br>
 <br>
+
+
+
+
+
+<!--- 
+#########################################
+#########################################
+##########
+##########         R Package 
+##########
+#########################################
+#########################################
+-->
+
+
+# PROJECT: Build Your Own R Package
+
+**Due {{page.projects.r-package}}**
+
+
+<br>
+
+## Building Packages in R
+
+At some point you might develop a tool that you want to upload to the CRAN so it is widely available.
+
+More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. 
+
+Even if not sharing the package widely it is often a more efficient method for the team to maintain project code so that it can be easily updated and functions enhanced. Project updates are then easily shared simply by re-installing the package. 
+
+This tutorial will teach you how to build and share a package in R. You will "package" your R code from Labs 01 and 02 into a new **montyhall package** to make it easier to run simulations to evaluate game strategies. 
+
+## Instructions 
+
+<a class="uk-button uk-button-default" href="../labs/create-r-package.html">Instructions</a>
+
+**Submit to Canvas:**
+
+To receive credit for the assignment, submit the URL to your package on GitHub.
+
+<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
+
+<br>
+
+**Grading:**
+
+Your package will be installed and submitted to a series of testing scripts that ensure each function operates as expected. 
+
+The documentation will also be inspected to ensure there are complete instructions and sample code available for each of the functions. 
+
+You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
+
+
+
 
 
 
@@ -912,54 +1521,6 @@ Note that the length of addresses can change, so you will need to use regular ex
 
 
 
-
-<!--- 
-#########################################
-#########################################
-##########
-##########         R Package 
-##########
-#########################################
-#########################################
--->
-
-
-# PROJECT: Build Your Own R Package
-
-**Due {{page.projects.r-package}}**
-
-
-<br>
-
-## Building Packages in R
-
-At some point you might develop a tool that you want to upload to the CRAN so it is widely available.
-
-More likely, if you are working with a team of analysts within an organization you will begin building a library of functions that are specific to the project. 
-
-Even if not sharing the package widely it is often a more efficient method for the team to maintain project code so that it can be easily updated and functions enhanced. Project updates are then easily shared simply by re-installing the package. 
-
-This tutorial will teach you how to build and share a package in R. You will "package" your R code from Labs 01 and 02 into a new **montyhall package** to make it easier to run simulations to evaluate game strategies. 
-
-## Instructions 
-
-<a class="uk-button uk-button-default" href="../labs/create-r-package.html">Instructions</a>
-
-**Submit to Canvas:**
-
-To receive credit for the assignment, submit the URL to your package on GitHub.
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PACKAGE</a>
-
-<br>
-
-**Grading:**
-
-Your package will be installed and submitted to a series of testing scripts that ensure each function operates as expected. 
-
-The documentation will also be inspected to ensure there are complete instructions and sample code available for each of the functions. 
-
-You will receive a grade of zero if you package cannot be installed or run, and you will lose 5 points if documentation is unavailable. 
 
 
 
