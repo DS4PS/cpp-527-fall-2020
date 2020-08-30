@@ -93,7 +93,7 @@ test_for_null_slope <- function( d, n=10, include.plot=TRUE )
 
 
 
-plot_ci <- function( df, n=10 )
+plot_ci <- function( df, true.slope=2, n=10 )
 {
   
   min.x <- min( results$ci.b1.lower )
@@ -109,6 +109,8 @@ plot_ci <- function( df, n=10 )
         xlab="Slope of B1", ylab="" )
 
   abline( v=0 )
+  
+  abline( v=true.slope, col="gray80", lty=2 )
 
   segments( x0=results$ci.b1.lower,
             x1=results$ci.b1.upper,
