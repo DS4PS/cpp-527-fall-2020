@@ -1113,19 +1113,14 @@ The second example generates the slope, confidence interval (lower and upper bou
 ```r
 
 # BOOTSTRAPPING TYPE II ERRORS
-# USING SIMULATIONS 
-#
 # Examine Type II Errors
 # as a function of sample size
-
 
 # load data and helper functions
 source( "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R" )
 head( d )                       # data frame with X and Y 
 get_sample_slope( d, n=10 )     # returns a single value
 test_for_null_slope( d, n=10 )  # returns a one-row data frame
-
-
 
 ## EXAMINE SLOPES
 ## sample size = 10
@@ -1141,6 +1136,7 @@ for( i in 1:1000 )  # iterator i
  
 }
 
+
 # slope descriptives from 10,000 random draws, sample size 10
 
 summary( slopes )  
@@ -1149,8 +1145,11 @@ summary( slopes )
 
 hist( slopes, breaks=25, col="gray20", border="white" )
 
+```
 
+![](../lectures/figures/bootstrapped-sample-slopes.png)
 
+```r
 ## EXAMINE CONFIDENCE INTERVALS
 ## sample size = 10
 
