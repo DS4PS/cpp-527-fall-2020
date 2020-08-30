@@ -1113,19 +1113,14 @@ The second example generates the slope, confidence interval (lower and upper bou
 ```r
 
 # BOOTSTRAPPING TYPE II ERRORS
-# USING SIMULATIONS 
-#
 # Examine Type II Errors
 # as a function of sample size
-
 
 # load data and helper functions
 source( "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R" )
 head( d )                       # data frame with X and Y 
 get_sample_slope( d, n=10 )     # returns a single value
 test_for_null_slope( d, n=10 )  # returns a one-row data frame
-
-
 
 ## EXAMINE SLOPES
 ## sample size = 10
@@ -1141,21 +1136,29 @@ for( i in 1:1000 )  # iterator i
  
 }
 
+
+# descriptives from 10,000 random draws, sample size 10
+
+head( slopes )
+[1] 2.246041 3.979462 1.714822 4.689032 1.763237 3.107451
+
 summary( slopes )  
+#    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+#  -2.194   1.596   2.176   2.088   2.600   4.868
+
 hist( slopes, breaks=25, col="gray20", border="white" )
 
-# slope descriptives from 10,000 random draws, sample size 10
+```
 
+![](../lectures/figures/bootstrapped-sample-slopes.png)
 
-
-
-
+```r
 ## EXAMINE CONFIDENCE INTERVALS
 ## sample size = 10
 
-# build a results
-# data frame using 
-# row binding
+# build the
+# results data frame 
+# using row binding
 
 
 results <- NULL
@@ -1182,13 +1185,14 @@ head( results )
 # x5  1.9701996   0.5513491    3.389050      FALSE
 
 plot_ci( df=results )
+```
+
+![](../lectures/figures/power-test.png)
 
 
 
-
-
-
-## alternative approach
+```r
+## alternative constructor:
 ## the list version 
 ## runs faster but it 
 ## needs to be converted 
@@ -1210,8 +1214,6 @@ results <- dplyr::bind_rows( results )
 head( results )
 plot_ci( df=results )
 ```
-
-![](../lectures/figures/power-test.png)
 
 
 
