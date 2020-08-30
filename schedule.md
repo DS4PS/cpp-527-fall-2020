@@ -1266,15 +1266,15 @@ This lab uses material from the simulation slides:
 **Post on {{page.yellowdig.post-03}}**
 
 
-How can you make interesting animations in R? 
+**Q1 - DURATION MODELS**
 
-We covered a very basic animation - a random walk - in the lecture notes. 
+We covered a very basic animation in the lecture notes - a random walk. 
 
 Start game with $10 in cash. At each step you flip a coin and win a dollar, lose a dollar, or stay the same. 
 
-How long will the average player survive before going bankrupt? 
+How long does it take for a player to lose all of their money?
 
-While loops are useful when we repeat a process until a condition is met. 
+While loops are useful when we repeat a process until a condition is met, the player being out of money in this case. 
 
 ```r
 cash <- 10  
@@ -1289,13 +1289,34 @@ while( cash > 0 )
 }
 ```
 
-**Q1 - How Long Does It Take to Go Broke?**
+
+**Q1-A: Visualize the Game**
+
+Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. 
+
+
+**Q1-B: How long does it take the typical player to go broke?**
 
 Starting with $10 in the game, how long does it take the **typical** person take to go bankrupt? 
 
 If you don't want to do a complicated mathematical proof, you can create a simulation, play the game 10,000 times, then report the average period each game lasted. 
 
-What is the code to make this work? 
+I would suggest wrapping the code above into a **play_game()** function and calling that function repeatedly inside your loop. 
+
+**Note:** the interesting edge case in this simulation is a case where a person never goes broke so your program runs forever. 
+
+Is this a likely outcome when the players all start with $10? 
+
+How would you adapt your code to account for this scenario? 
+
+**Q1-C: Finding Warren Buffet**
+
+If you run a simulation of 10,000 individuals playing the game, all starting with $10, how many individuals will **never** go broke? 
+
+Operationalize *never* in your code and explain your assumptions. 
+
+How many of these individuals did you find in your simulation? 
+
 
 -----
 
