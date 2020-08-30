@@ -1087,8 +1087,27 @@ Examples of loops used to create effective data visualization:
 
 **Example Loop:**
 
-![]()https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif
+![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
 
+This example demonstrates the use of loops in a simulation.
+
+In this case we are taking repeated random draws of size N from a population, then calculating a sample statistic. 
+
+Simulations used to generate sample statistics are commonly referred to as **bootstrapping** simulations. They are very useful for generating robust versions of sampling statistics, standard errors, and inferential tests when the data is irregular or closed-form mathematical approaches do not exist.
+
+In this case were are interested in statistical power. We can use previous research to ascertain a reasonable correlation between X and Y, and using this information we can simulate some population data and examine how our inferences change as we vary the sample size. 
+
+In studies like drug trials it might cost $10,000 for each additional study participants, so drug companies want to minimize the sample size needed to achieve statistically significant results. 
+
+Since we know the true x~y slope in this case (we coded it into the simulation data ourselves), then Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
+
+We would start with a small sample size (n=10 in this example) then increase it until we have exceeded our target Type II Error rate. 
+
+Some [helper functions](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R) were created to generate the proper statistics inside of the loops. 
+
+The first example below collects only the slope from each simulation, so they are stored in a collector vector. 
+
+The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame. 
 
 
 ```r
@@ -1126,9 +1145,6 @@ summary( slopes )
 hist( slopes, breaks=25, col="gray20", border="white" )
 
 # slope descriptives from 10,000 random draws, sample size 10
-
-
-
 
 
 
@@ -1195,6 +1211,8 @@ head( results )
 plot_ci( df=results )
 ```
 
+![](../lectures/figures/power-test.png)
+
 
 
 ## Lab 02
@@ -1203,22 +1221,24 @@ plot_ci( df=results )
 
 <br>
 
-Please review the instructions at the end of the lecture notes: 
+This lab uses material from the simulation slides: 
 
 [Building Simulations in R: Mastering Loops](../lectures/p-02-loops.html)
 
-<br>
-
-
-
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
+
+<br>
+<hr>
+<br>
 
 **Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
 <br>
+<hr>
 <br>
+
 
 
 
