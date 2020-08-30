@@ -1153,9 +1153,9 @@ hist( slopes, breaks=25, col="gray20", border="white" )
 ## EXAMINE CONFIDENCE INTERVALS
 ## sample size = 10
 
-# build a results
-# data frame using 
-# row binding
+# build the
+# results data frame 
+# using row binding
 
 
 results <- NULL
