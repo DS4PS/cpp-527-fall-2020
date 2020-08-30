@@ -1058,9 +1058,6 @@ Once you have completed this section you will be able to
 * select appropriate iterators 
 * be mindful of the collector vector needed for the loop 
 
-<br>
-<br>
-
 
 ## Assigned Reading
 
@@ -1222,6 +1219,10 @@ plot_ci( df=results )
 
 <br>
 <br>
+<br>
+<br>
+
+
 
 
 ## Lab 02
