@@ -93,6 +93,38 @@ test_for_null_slope <- function( d, n=10, include.plot=TRUE )
 
 
 
+plot_ci <- function( df )
+{
+  
+  min.x <- min( results$ci.b1.lower )
+  max.x <- max( results$ci.b1.upper )
+  range.x <- mean( results$ci.b1.upper - results$ci.b1.lower )
+  adj.x <- 0.5 * range.x
+  
+  ci.color <- ifelse( results$null.slope, "darkred", "gray70" )
+  
+  plot( results$b1, 1:nrow(results), 
+        xlim=c( min.x - adj.x, max.x + adj.x ),
+        bty="n", pch=19, col=ci.color, yaxt="n",
+        xlab="Slope of B1", ylab="" )
+
+  abline( v=0 )
+
+  segments( x0=results$ci.b1.lower,
+            x1=results$ci.b1.upper,
+            y0=1:nrow(results),
+            col=ci.color, lwd=0.7 )
+
+  type.ii.rate <- mean( results$null.slope )
+
+  text( (min.x-adj.x), nrow(results),
+        paste0( "\n\nType II \nError Rate \n = ", type.ii.rate ),
+        col="darkred", cex=1.3, pos=4 )
+  
+  return( NULL )
+}
+
+
 
 
 #################################
