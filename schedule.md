@@ -1003,13 +1003,15 @@ sum( x == 9 )
 [1] 2
 ```
 
-**Q5-A: How would you count all of the elements of X that CONTAIN a nine?**
 
-For example, 19 contains a nine. 
-
-**Q5-B: How would you count all nine's in the vector?**
+**Q5-A: How would you count all nine's in the vector?**
 
 For example, 19 contains one nine, 99 contains two nines. 
+
+
+**Q5-B: How would you count all of the elements of X that CONTAIN a nine?**
+
+For example, 19 contains a nine. 
 
 **Q5-C: Count all 17's in the vector X.**
 
@@ -1025,7 +1027,15 @@ For example, the number 117 contains a 17. The number 170 also contains a 17.
 
 <br>
 <hr>
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+<hr>
 <br>
+
+
+
+
 
 
 
@@ -1058,9 +1068,6 @@ Once you have completed this section you will be able to
 * select appropriate iterators 
 * be mindful of the collector vector needed for the loop 
 
-<br>
-<br>
-
 
 ## Assigned Reading
 
@@ -1085,30 +1092,29 @@ Examples of loops used to create effective data visualization:
 <br>
 
 
-**Example Loop:**
+**LOOP EXAMPLE**
+
+This example demonstrates the use of loops to create a simulation to examine the how model statistics might vary for a given sampling framework.
+
+In this case we are taking repeated random draws of size N from a population, then calculating the slope and confidence interval of the slope. We want to note cases where b1 contains zero since these would represent NULL results in our study.
 
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
+ 
+These types of **bootstrapping** simulations are very useful for generating robust versions of sampling statistics when the data is irregular or closed-form solutions do not exist.
 
-This example demonstrates the use of loops in a simulation.
+In this case were are interested in statistical power as a function of sample size. In studies like drug trials it might cost $10,000 for each study participant, so drug companies want to minimize the sample size needed to veryify the effectiveness of their drugs.
 
-In this case we are taking repeated random draws of size N from a population, then calculating a sample statistic. 
+We can use previous research to ascertain a reasonable correlation between X and Y or anticipated effect size to simulate some population data. 
 
-Simulations used to generate sample statistics are commonly referred to as **bootstrapping** simulations. They are very useful for generating robust versions of sampling statistics, standard errors, and inferential tests when the data is irregular or closed-form mathematical approaches do not exist.
+Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
 
-In this case were are interested in statistical power. We can use previous research to ascertain a reasonable correlation between X and Y, and using this information we can simulate some population data and examine how our inferences change as we vary the sample size. 
-
-In studies like drug trials it might cost $10,000 for each additional study participants, so drug companies want to minimize the sample size needed to achieve statistically significant results. 
-
-Since we know the true x~y slope in this case (we coded it into the simulation data ourselves), then Type II Errors represent cases that the regression fails to produce a slope that is differentiable from zero (the confidence interval of slope b1 contains zero). 
-
-We would start with a small sample size (n=10 in this example) then increase it until we have exceeded our target Type II Error rate. 
+We would start with a small sample size (n=10 in this example) then increase it until we have exceeded a target Type II Error rate. 
 
 Some [helper functions](https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/lectures/loop-example.R) were created to generate the proper statistics inside of the loops. 
 
-The first example below collects only the slope from each simulation, so they are stored in a collector vector. 
+Pay attention to differences in the constructors. 
 
-The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame. 
-
+The first example collects only the slope from each simulation, so results are stored in a collector vector called **slopes**. 
 
 ```r
 
@@ -1157,6 +1163,10 @@ hist( slopes, breaks=25, col="gray20", border="white" )
 ```
 
 ![](../lectures/figures/bootstrapped-sample-slopes.png)
+
+
+The second example generates the slope, confidence interval (lower and upper bounds), and a null significance test from each new sample. The results are stored in a data frame called **results**. 
+
 
 ```r
 ## EXAMINE CONFIDENCE INTERVALS
@@ -1223,11 +1233,19 @@ plot_ci( df=results )
 
 
 
+<br>
+<br>
+<br>
+<br>
+
+
+
+
 ## Lab 02
 
 **Due {{page.labs.lab-02}}**
 
-<br>
+<hr>
 
 This lab uses material from the simulation slides: 
 
@@ -1235,15 +1253,12 @@ This lab uses material from the simulation slides:
 
 <a class="uk-button uk-button-default" href="../labs/lab-02-instructions.html">LAB-02 Instructions</a>
 
-<br>
 <hr>
-<br>
 
 **Submit Solutions to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT LAB</a>
 
-<br>
 <hr>
 <br>
 
@@ -1256,17 +1271,16 @@ This lab uses material from the simulation slides:
 
 **Post on {{page.yellowdig.post-03}}**
 
-<br>
 
-How can you make interesting animations in R? 
+**Q1 - GAMBLING STREAKS AND DURATION MODELS**
 
-We covered a very basic animation - a random walk - in the lecture notes. 
+We covered a very basic animation in the lecture notes - a random walk. 
 
 Start game with $10 in cash. At each step you flip a coin and win a dollar, lose a dollar, or stay the same. 
 
-How long will the average player survive before going bankrupt? 
+How long does it take for a player to lose all of their money?
 
-While loops are useful when we repeat a process until a condition is met. 
+While loops are useful when we repeat a process until a condition is met, the player being out of money in this case. 
 
 ```r
 cash <- 10  
@@ -1281,7 +1295,48 @@ while( cash > 0 )
 }
 ```
 
-This is a one-dimensional outcome tracked over time. Physicists have used a similar model to examine particle motion. It is called a Brownian Motion model. It is similar to the betting model above except for each time period the particle moves in two dimensions. 
+
+**Q1-A: Visualize the Game**
+
+Similar to the lecture notes, create a visualization of the cash that a player has at each round of the game until they go broke. 
+
+
+**Q1-B: You've got to know when to fold them**
+
+Starting with $10 in the game, how long does it take the **typical** player to go bankrupt? 
+
+If you don't want to do a complicated mathematical proof,  create a simulation, play the game 10,000 times, then report the **average** duration of each game.
+
+*Side note, would the mean or the median be a better measure of the average here?*
+
+I would suggest wrapping the code above into a **play_game()** function and calling that function repeatedly inside your loop. 
+
+**Note:** the interesting edge case in this simulation is a case where a person never goes broke so your program runs forever. 
+
+Is this a likely outcome when the players all start with $10? 
+
+How would you adapt your code to account for this scenario? 
+
+
+
+**Q1-C: Finding Warren Buffet**
+
+If you run a simulation of 10,000 individuals playing the game, all starting with $10, how many individuals will **never** go broke? 
+
+Operationalize *never* in your code and explain your assumptions. 
+
+How many of these individuals did you find in your simulation? 
+
+
+-----
+
+**Q2 - ANIMATIONS** 
+
+A random walk is a one-dimensional outcome (cash in hand) tracked over time. 
+
+Physicists have used a similar model to examine particle movement with a Brownian Motion model. 
+
+It is similar to the betting model above except for each time period the particle moves in two dimensions. 
 
 ```r
 x <- 0  
@@ -1295,26 +1350,38 @@ for( i in 1:1000 )
 
 ![](https://raw.githubusercontent.com/DS4PS/cpp-527-spr-2020/master/lectures/gifs/brownian_motion.gif)
 
-QUESTIONS: 
 
-Consider the two following problems. 
 
-(1) How long does the **typical** person take to go bankrupt? If you don't want to do a complicated mathematical proof, you can create a simulation, play the game 10,000 times, then report the average period each game lasted. 
+**Q2-A: Create the Brownian Motion animation above**
 
-What is the code to make this work? 
+Use the loop above to generate particle positions. 
 
-(2) Note the trailing tail in the Brownian Motion animation. How would you create that as part of an animation? 
+Create an animation to visualize the movement of the particle.
+
+Discuss the package or app you used to generate the GIF. 
+
+**Q2-B: Shadow of the past**
+
+If animations move too quickly it will look like popcorn and it can be hard to identify the meaningful patterns in the data. 
+
+You can enhance the information value of animations by visualizing change and in addition to the current model state include information on past stages. 
+
+How would you create the trailing tail in this animation? 
+
+**Q2-C: Alternative Animations**
+
+If you are not interested in Brownian Motion, share another animation you can create using loops. 
+
+Discuss the package or app you used to generate the GIF. 
 
 <br>
+<hr>
 
-**Post your ideas or solutions on YellowDig:**
-
-Share your ideas about solutions to these problems with your classmates. 
-
-Or alternatively, share another animation you can create using loops. 
+**Share your ideas with classmates on YellowDig:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
+<hr>
 <br>
 <br>
 
