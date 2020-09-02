@@ -86,7 +86,8 @@ Feel free to schedule virtual office hours as well.
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
 <br>
 
-```r
+```r  
+
 # BOOTSTRAPPING TYPE II ERRORS
 # Examine Type II Errors
 # as a function of sample size
@@ -121,7 +122,7 @@ summary( slopes )
 #    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 #  -2.194   1.596   2.176   2.088   2.600   4.868
 
-=======
+
 summary( slopes )  
 #    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 #  -2.194   1.596   2.176   2.088   2.600   4.868
@@ -161,7 +162,8 @@ head( results )
 
 plot_ci( df=results )
 
-```
+``` 
+
 
 </p>
 
