@@ -82,6 +82,10 @@ Feel free to schedule virtual office hours as well.
   <a>
   <br> Passcode: <b></b>
     
+<br>
+![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
+<br>
+
 ```r
 # BOOTSTRAPPING TYPE II ERRORS
 # Examine Type II Errors
