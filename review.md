@@ -86,6 +86,10 @@ Feel free to schedule virtual office hours as well.
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
 <br>
 
+</p>
+
+
+
 ```r  
 
 # BOOTSTRAPPING TYPE II ERRORS
@@ -165,7 +169,8 @@ plot_ci( df=results )
 ``` 
 
 
-</p>
+
+
 
 <br>
 <br>
