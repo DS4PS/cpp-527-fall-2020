@@ -58,11 +58,11 @@ Feel free to schedule virtual office hours as well.
     
   <br>
 
-  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.R" target="_blank">SAMPLE CODE</a>
 
   <br>
 
-  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory">SESSION CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-01-control-structures.Rhistory" target="_blank">SESSION CODE</a>
 
 </p>
 
@@ -85,11 +85,11 @@ Feel free to schedule virtual office hours as well.
 
   <br>
 
-  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.R">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.R" target="_blank">SAMPLE CODE</a>
 
   <br>
 
-  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.Rhistory">SESSION CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.Rhistory" target="_blank">SESSION CODE</a>
 </p>
 
 
