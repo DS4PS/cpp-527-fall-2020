@@ -77,10 +77,10 @@ Feel free to schedule virtual office hours as well.
 ## Week 2 - Wed Sept 2
   
 <p align="center">
-  <a href="">
+  <a href="https://asu.zoom.us/rec/play/-CY8RvMAX2o0b3QC8-3auhBWGtvew9ITG-ygr8sSMDu1fZttzcu498CS6272geMX0wmElJgYDtg20Srr.nvqAQY5_OmBqFsaN?continueMode=true">
   <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  <br> Passcode: <b></b>
+  <br> Passcode: <b>?#7z@Hwq</b>
     
 
   <br>
