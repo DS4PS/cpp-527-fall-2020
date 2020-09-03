@@ -82,13 +82,19 @@ Feel free to schedule virtual office hours as well.
   <a>
   <br> Passcode: <b></b>
     
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.R">SAMPLE CODE</a>
+
+  <br>
+
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-02-loops.Rhistory">SESSION CODE</a>
+</p>
+
 <br>
 ![](https://raw.githubusercontent.com/lecy/regression-simulations/master/GIFS/confidence-interval-of-slope.gif)
 <br>
-
-</p>
-
-
 
 ```r  
 
