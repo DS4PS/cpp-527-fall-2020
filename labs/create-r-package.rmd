@@ -1,5 +1,4 @@
 ---
-title: "Create an R Package"
 output:
   html_document:
     theme: united
@@ -8,6 +7,8 @@ output:
     smart: false
     toc: yes
     toc_float: yes
+    include:
+      after_body: footer.html
 editor_options: 
   chunk_output_type: console
 ---
@@ -15,8 +16,15 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# title: Creating an R Package
+#    css: lab-instructions.css
+#    include:
+#      after_body: footer.html
 ```
 
+
+# Creating an R Package
 
 This tutorial will take you through the steps of creating a new package in R. 
 
@@ -222,9 +230,17 @@ If successful you will see messages like this:
 
 
 
-## Try It Out! 
+## Test It 
 
 In a new R session try:
+
+```{r, echo=F}
+create_game <- function()
+{
+    a.game <- sample( x=c("goat","goat","car"), size=3, replace=F )
+    return( a.game )
+} 
+```
 
 ```{r, eval=F}
 library( montyhall )
@@ -232,7 +248,8 @@ create_game()
 ```
 
 ```{r, echo=F}
-montyhall::create_game()
+# montyhall::create_game()
+create_game()
 ```
 
 
@@ -333,7 +350,7 @@ devtools::install_github( "yourGitHubName/montyhall" )
 
 
 
-# Package Creation Resources
+# Additional Resources
 
 These are a few good resources for reference: 
 
@@ -342,3 +359,12 @@ These are a few good resources for reference:
 [The official R Packages book by Hadley Wickham and Jenny Bryant](https://r-pkgs.org/index.html)
 
 [Roxygen documentation on CRAN](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html)
+
+
+<br>
+<br>
+<hr>
+<br>
+<br>
+
+
