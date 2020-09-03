@@ -12,11 +12,16 @@ test_for_null_slope( d, n=10 )  # returns a one-row data frame
 ## sample size = 10
 
 
+
+
+
 ### CONSTRUCTOR EXAMPLES
 
 # always define constructors outside the loop 
 
 slopes <- NULL  # collector vector
+
+
 
 
 
@@ -38,6 +43,10 @@ for( i in 1:1000 )  # iterator i
  
 }
 
+# sampling distribution 
+hist( slopes, breaks=25, col="gray20", border="white" )
+
+
 
 
 
@@ -50,6 +59,10 @@ x <- 1:10
 c( x, 44 )
 
 slopes <- c( slopes, b1 )
+
+
+
+
 
 
 
@@ -74,9 +87,13 @@ for( i in unique.zips )  # iterator i
 {
   d.sub <- filter( type="books", zip == i  )
   ave.cost <- mean( d.sub$cost ) 
-
-  ave.cost.per.zip[ loop.count  ] <-   ave.cost 
+  
+  # these both work
   ave.cost.per.zip <- c( ave.cost.per.zip, ave.cost )
+  ave.cost.per.zip[ loop.count  ] <- ave.cost 
+  
+  # this one doesn't because i is a zip code
+  ave.cost.per.zip[ i ] <- ave.cost 
 
   loop.count <- loop.count + 1
  
@@ -146,7 +163,7 @@ models <- list() # collector vector
 
 
 
-for( k in c("A","B","Z") )  # iterator i
+for( i in 1:10 )  # iterator i
 {
 
   m <- lm( y ~ x, data=d )
@@ -158,28 +175,6 @@ for( k in c("A","B","Z") )  # iterator i
 
 
 
-
-
-
-
-
-
-
-# descriptives from 10,000 random draws, sample size 10
-
-head( slopes )
-[1] 2.246041 3.979462 1.714822 4.689032 1.763237 3.107451
-
-summary( slopes )  
-#    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#  -2.194   1.596   2.176   2.088   2.600   4.868
-
-
-summary( slopes )  
-#    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-#  -2.194   1.596   2.176   2.088   2.600   4.868
-
-hist( slopes, breaks=25, col="gray20", border="white" )
 
 ## EXAMINE CONFIDENCE INTERVALS
 ## sample size = 10
@@ -199,43 +194,55 @@ for( i in 1:50 )
 
 }
 
-
-head( results )
-
-# confidence intervals from 50 draws, sample size 10
-
-#            b1 ci.b1.lower ci.b1.upper null.slope
-# x  -0.9783359  -4.5757086    2.619037       TRUE
-# x1  2.3897431   0.4295063    4.349980      FALSE
-# x2  2.0781628  -0.6677106    4.824036       TRUE
-# x3  2.9178206   0.7080918    5.127549      FALSE
-# x4  2.3702949   0.5238930    4.216697      FALSE
-# x5  1.9701996   0.5513491    3.389050      FALSE
-
 plot_ci( df=results )
 
 
 
 
+### WHILE LOOPS 
+#
+# while( condition is TRUE )
+# {
+#    # keep doing this  
+# }
 
+
+# RAISING A PIG
+#
+# feed the pig until it reaches 
+# 200 lbs then sell it
+
+# pig gains 1 lb each day
 feed_pig <- function( weight )
-{  weight + 1 }
+{  
+   new.weight <- weight + 1
+   return( new.weight ) 
+}
 
 
-pig.weight <- 100
+current.pig.weight <- 100
+
+# history of weights 
 old.weight <- pig.weight
 
 loop.count <- 1
 
-while( pig.weight < 110 )
+while( current.pig.weight < 200 )
 {
 
   new.weight <- feed_pig( pig.weight )
   old.weight <- c( old.weight, new.weight )
-  pig.weight <- new.weight
-  print( pig.weight )
+  current.pig.weight <- new.weight
+  
+  # to see data while loop is running 
+  # print( pig.weight )
 
 }
+
+sell_pig()
+
+
+
 
 
 
@@ -249,26 +256,37 @@ while( ! at.center(tootsie.loop) )
 
 }
 
+# how many licks did it take?
+loop.count 
 
 
 
-sell_pig()
 
 
-
+# gambling example
+#
+# casino has 1,000 tourists visit each day
+# on average they bring $10 each to gamble
+#
+# need to estimate tables needed at peak
+# 
+# must estimate average time they will spend in the casino;
+# they play roullette, each spin takes 1 minute
+#
+# they gample until they lose all of their money 
 
 cash <- 10  
 results <- NULL
-count <- 1  
+loop.count <- 1  
 
 while( cash > 0 )
 {
-  cash <- cash +   
-    sample( c(-1,0,1), size=1 )  
-  results[ count ] <- cash  
-  count <- count + 1  
+  cash <- cash +  sample( c(-1,0,1), size=1 )  
+  results[ loop.count ] <- cash  
+  loop.count <- loop.count + 1  
 
-  if( count > 100000 )
+  # in case of winning streak
+  if( loop.count > 100000 )
   { break } 
 }
 
