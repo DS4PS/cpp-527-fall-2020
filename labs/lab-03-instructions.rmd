@@ -34,7 +34,8 @@ This lab utilizes a [free Kaggle dataset](https://www.kaggle.com/dorianlazar/med
 
 
 ```{r}
-URL <- "https://www.dropbox.com/s/tizgdsat2mziod6/medium-data-utf8.csv?dl=1"
+# URL <- "https://www.dropbox.com/s/tizgdsat2mziod6/medium-data-utf8.csv?dl=1"
+URL <- "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/labs/data/medium-data-utf8.csv"
 d <- read.csv( URL )
 
 preview.these <- c("title", "subtitle", "claps", "reading_time", "publication", "date")
@@ -234,7 +235,7 @@ table( d$publication ) %>% pander()
 You are also free to add additional features of the titles that you create with regular expressions. 
 
 
-**Q:** Which factors best predict article performance overall? 
+**Q: Which factors best predict article performance overall?**
 
 
 
@@ -263,16 +264,6 @@ Remember to:
 ----
 
 <br>
-<br>
-
-
-
-
-
-<br><br>
-
----
-
 <br>
 
 

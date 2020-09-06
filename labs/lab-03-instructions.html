@@ -286,11 +286,12 @@ summary {
 <li><strong>publication</strong> - Medium community in which the blog was published</li>
 <li><strong>date</strong> - date of publication in style YYYY-MM-DD</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>URL &lt;-<span class="st"> &quot;https://www.dropbox.com/s/tizgdsat2mziod6/medium-data-utf8.csv?dl=1&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>( URL )</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a>preview.these &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;title&quot;</span>, <span class="st">&quot;subtitle&quot;</span>, <span class="st">&quot;claps&quot;</span>, <span class="st">&quot;reading_time&quot;</span>, <span class="st">&quot;publication&quot;</span>, <span class="st">&quot;date&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">head</span>( d[preview.these] ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># URL &lt;- &quot;https://www.dropbox.com/s/tizgdsat2mziod6/medium-data-utf8.csv?dl=1&quot;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>URL &lt;-<span class="st"> &quot;https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/labs/data/medium-data-utf8.csv&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>d &lt;-<span class="st"> </span><span class="kw">read.csv</span>( URL )</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>preview.these &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;title&quot;</span>, <span class="st">&quot;subtitle&quot;</span>, <span class="st">&quot;claps&quot;</span>, <span class="st">&quot;reading_time&quot;</span>, <span class="st">&quot;publication&quot;</span>, <span class="st">&quot;date&quot;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">head</span>( d[preview.these] ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</span></code></pre></div>
 <table style="width:100%;">
 <caption>Table continues below</caption>
 <colgroup>
@@ -550,7 +551,7 @@ summary {
 </tbody>
 </table>
 <p>You are also free to add additional features of the titles that you create with regular expressions.</p>
-<p><strong>Q:</strong> Which factors best predict article performance overall?</p>
+<p><strong>Q: Which factors best predict article performance overall?</strong></p>
 <p><br> <br> <br></p>
 </div>
 </div>
@@ -568,9 +569,6 @@ summary {
 <p><br> <br></p>
 <hr />
 <p><br> <br></p>
-<p><br><br></p>
-<hr />
-<p><br></p>
 <p><strong>Notes on Knitting</strong></p>
 <p>Note that when you knit a file, it starts from a blank slate. You might have packages loaded or datasets active on your local machine, so you can run code chunks fine. But when you knit you might get errors that functions cannot be located or datasets don’t exist. Be sure that you have included chunks to load these in your RMD file.</p>
 <p>Your RMD file will not knit if you have errors in your code. If you get stuck on a question, just add <code>eval=F</code> to the code chunk and it will be ignored when you knit your file. That way I can give you credit for attempting the question and provide guidance on fixing the problem.</p>
