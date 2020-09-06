@@ -1514,7 +1514,7 @@ So regular expressions can be very useful for searching large databases for gene
 
 Instructions 
 
-<a class="uk-button uk-button-default" href="">LAB-03 Instructions</a>
+<a class="uk-button uk-button-default" href="../labs/lab-03-instructions.html">LAB-03 Instructions</a>
 
 **Submit Solutions to Canvas:**
 
