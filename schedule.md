@@ -1379,10 +1379,12 @@ Discuss the package or app you used to generate the GIF.
 
 **Share your ideas with classmates on YellowDig:**
 
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+<br>
+<hr>
+
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 <hr>
-<br>
 <br>
 
 
@@ -1586,11 +1588,11 @@ Write a function that accepts the address vector **x** as the input, and returns
 Note that the length of addresses can change, so you will need to use regular expressions (instead of just a substr() function) to generate proper results. 
 
 <br>
+<hr>
 
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
-<br>
+<hr>
 <br>
 
 
@@ -1719,11 +1721,13 @@ For the discussion topic this week, I would like you to argue either:
 
 Pick a side and make your case! 
 
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
 <br>
-<br>
+<hr>
 
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+<hr>
+<br>
 
 
 
@@ -2022,13 +2026,12 @@ And share your page link on YellowDig:
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/challenge-question-02.html">PRACTICE QUESTION</a>
 
 <br>
+<hr>
 
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
-
+<hr>
 <br>
-<br>
-
 
 
 
@@ -2379,7 +2382,13 @@ as.logical( x5 )
 Which pattern would you use to match all state names with a W, no matter if the W is capital or lowercase? You are not allowed to use the *ignore.case* argument in **grep()**. 
 
 
+<br>
+<hr>
 
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
+
+<hr>
+<br>
 
 
 
