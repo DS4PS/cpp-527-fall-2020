@@ -202,7 +202,7 @@ plot_ci( df=results )
     
   <br>
 
-  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://www.dropbox.com/s/2jvyun5kunryinj/Examples.R?dl=0">SAMPLE CODE</a>
 
   <br>
 
