@@ -195,10 +195,10 @@ plot_ci( df=results )
 ## Week 3
   
 <p align="center">
-  <a href="">
+  <a href="https://asu.zoom.us/rec/play/-S4BOG1ifULrvawLY-5NNi7Ri58kZM9M6j1h95jJJzdCg-6idY0TZRkWAkmegIEB8HtO8e7lwA6Y8Zk.jBrxYuoVUBZ046Ql?continueMode=true">
   <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  <br> Passcode: <b></b>
+  <br> Passcode: <b>aAtw83!V</b>
     
   <br>
 
@@ -206,7 +206,7 @@ plot_ci( df=results )
 
   <br>
 
-  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-03-regular-expressions.Rhistory">SESSION CODE</a>
 
 </p>
 
