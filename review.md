@@ -202,13 +202,45 @@ plot_ci( df=results )
     
   <br>
 
-  <a class="uk-button uk-button-default" href="https://www.dropbox.com/s/2jvyun5kunryinj/Examples.R?dl=0">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-03-regular-expressions.R">SAMPLE CODE</a>
 
   <br>
 
   <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-03-regular-expressions.Rhistory">SESSION CODE</a>
 
 </p>
+
+<br>
+
+```r
+### REGULAR EXPRESSION EXAMPLES
+
+strings <- c("^ab", "ab", "abc", "abd", "abe", "ab 12", "ab$")
+
+# match anything that starts with ab followed by any character
+grep("ab.", strings, value = TRUE)
+
+# search for abc OR abd
+grep("abc|abd", strings, value = TRUE)
+
+# match abc OR abd OR abe
+grep("ab[c-e]", strings, value = TRUE)
+
+# match anything that is NOT abc
+grep("ab[^c]", strings, value = TRUE)
+
+# match any string where ab occurs at the beginning
+grep("^ab", strings, value = TRUE)
+
+# match any string where ab occurs at the end
+grep("ab$", strings, value = TRUE)
+
+# search for matches that contain the character ^
+grep("^", strings, value = TRUE)
+
+# try again
+grep("\\^", strings, value = TRUE)
+```
 
 
 <br>
