@@ -1533,6 +1533,9 @@ Instructions
 
 **Post on {{page.yellowdig.post-04}}**
 
+
+**WARM-UP:**
+
 The function **grep( pattern, string )** works as follows:
 
 > Search for the pattern in each of the strings in the character vector at the top, *strings*. 
@@ -1569,9 +1572,36 @@ grep( pattern="t*o", strings, value = TRUE)
 <br>
 
 
+**Q1 - Constructing Factors**
+
+Building on the lab from this week, we constructed groups of titles using the following code logic:  
+
+```r
+group.questions <- grepl( "//?$", titles )
+
+# OR 
+
+group.who <- grepl( "^Who", titles )
+group.what <- grepl( "^What", titles )
+group.where <- grepl( "^Where", titles )
+
+group.www <- group.who | group.what | group.where 
+```
+
+What if we wanted to build a single factor that has distinct levels for all of our groups? Note that you would need to define MUTUALLY EXCLUSIVE groups in order for this to make sense. If the groups are not mutually exclusive (one title could belong to multiple groups) then it would not make sense to combine them into a single factor. 
+
+```r
+group.01 <- grepl( ..., titles )  # questions
+group.02 <- grepl( ..., titles )  # colons 
+group.03 <- grepl( ..., titles )  # power lists
+
+# create factor f where each level represents a different kind of title
+# and include an "other" category for those that don't fit into above groups
+```
 
 
-**RegEx Example:**
+
+**Q2: RegEx Substring Application**
 
 We have an large database where all of the addresses and geographic coordinates are stored as follows:
 
