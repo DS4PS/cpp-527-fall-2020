@@ -49,7 +49,7 @@ head( d[preview.these] ) %>% pander()
 
 The article title text is fairly clean and needs little pre-processing, but there are a couple of important issues that need to be addressed. 
 
-1. Remove strange spaces: 
+1. Remove strange spaces 
 2. Remove HTML tags 
 3. Remove "hair space" dash marks
 
@@ -287,13 +287,67 @@ first.six.titles %>% strsplit( " " ) %>% sapply( length )
 
 
 
+**CHALLENGE QUESTION:**
+
+Is it better to use common words or unique words in your title? 
+
+Create a count of the number of times each word appears in the collection of titles. 
+
+Create a variable for the group of words that appear in the bottom quartile (0-25%) of frequencies.
+
+Create a variable for the group of words that appear in the top quartile (75-100%) of frequencies.
+
+**Q-A: Are simple titles better?** 
+
+Is performance a function of common words used? 
+
+Create a box and whisker plot showing clap scores as a function of the number of common words used. 
+
+**Q-B: Are niche titles better?** 
+
+Is performance a function of uncommon words used? 
+
+Create a box and whisker plot showing clap scores as a function of the number of uncommon words used. 
+
+**Creating top and bottom percentile categories:**
+
+```{r}
+# x <- sample( 1:100, 25, replace=T )
+# dput( sort( x ) )
+
+x <- c(1L, 2L, 19L, 19L, 20L, 21L, 23L, 24L, 31L, 34L, 36L, 40L, 48L, 
+50L, 51L, 56L, 63L, 67L, 73L, 74L, 83L, 84L, 91L, 92L, 96L)
+
+summary( x )
+# get cut points
+quantile( x, probs=c(0,0.25,0.5,0.75,1) )
+
+
+# rank x by order and percentile 
+rank.x <- rank(x)
+centile.x <- 100 * ( rank(x) / length(x) )
+
+# create variable by values break points
+x.25 <- quantile( x, probs=0.25 )
+x.75 <- quantile( x, probs=0.75 )
+top.25.x <- as.numeric( x >= x.75 )  # x >= 73
+bot.25.x <- as.numeric( x <= x.25 )  # x <= 23 
+
+# create variable by percentile break points 
+top.25.x <- as.numeric( centile.x >= 75 )  # x >= 73
+bot.25.x <- as.numeric( centile.x <= 25 )  # x <= 23 
+
+data.frame( x, rank.x, centile.x, top.25.x, bot.25.x ) %>% pander()
+```
+
+
 **CHALLENGE QUESTION:** 
 
 Find a package in R that will tabulate sentiment scores for a set of text. 
 
-These packages will return counts or percentages of words with positive salience (e.g. happiness, joy, laughed) and counts or percentages with negative salience (e.g. hate, disdain, smirk). 
+These packages will return counts or percentages of words with positive salience (e.g. *happiness, joy, laughed*) and counts or percentages with negative salience (e.g. *hate, disdain, smirk*). 
 
-Which titles perform better? Those with high positive salience? Or those with high negative salience? 
+**Which titles perform better? Those with high positive salience? Or those with high negative salience?** 
 
 
 
@@ -305,7 +359,7 @@ Does the length of the title matter?
 
 
 
-**Q3-A:** Do titles with more words get better clap scores? 
+**Q3-A: Do titles with more words get better clap scores?** 
 
 Count the number of unique words in each title. 
 
@@ -314,6 +368,7 @@ Then examine the clap score as a function of word count by regressing the clap s
 Visualize the relationship using a box and whisker plot: 
 
 ```{r}
+# creating random non-meaningful data for demo
 x <- sample( 1:10, size=1000, replace=TRUE )
 y <- 3*x - 0.5*x*x + rnorm(1000,0,5)
 f <- factor(x)
@@ -323,9 +378,11 @@ plot( f, y )
 ```
 
 
-**Q3-B:** Do longer titles get better clap scores? 
+**Q3-B: Do longer titles get better clap scores?** 
 
-Repeat the analysis from Q3-A but this time measureing title length by the number of characters in the title. 
+Repeat the analysis from Q3-A but this time measuring title length by the number of characters in the title. 
+
+
 
 
 
