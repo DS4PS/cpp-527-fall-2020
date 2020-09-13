@@ -246,17 +246,25 @@ You need to **apply** your function to each element in the list. There are sever
 word.list <- strsplit( first.six.titles, " " )
 word.count <- lapply( word.list, length )
 word.count <- unlist( word.count ) # convert to a vector
+word.count
 ```
 
 
 ```{r}
 # sapply applies the function to all titles in the vector
 # the default prints the original title with the return values
-sapply( first.six.titles, get_first_word )
 
-# add USE.NAMES=F to only print return values 
+word.list <- strsplit( first.six.titles, " " )
+sapply( word.list, length )
+```
+
+To create a vector of the first title words only would then be something like: 
+
+```{r, eval=F}
+# add USE.NAMES=F to only print return values
 sapply( first.six.titles, get_first_word, USE.NAMES=FALSE )
 ```
+
 
 The apply functions are a more efficient version of loops - the repetition of a single operation over and over on different data elements. So the logic would be equivalent to this loop version: 
 
@@ -274,7 +282,7 @@ And as you become more comfortable with lists they become easier to manage:
 
 ```{r, eval=T}
 # efficiently core R version:  
-first.six.titles %>% strsplit( " " ) %>% sapply( length, USE.NAMES=FALSE )  
+first.six.titles %>% strsplit( " " ) %>% sapply( length )  
 ```
 
 
