@@ -303,11 +303,15 @@ Is performance a function of common words used?
 
 Create a box and whisker plot showing clap scores as a function of the number of common words used. 
 
+Regress the clap score onto the numer or proportion of common words.
+
 **Q-B: Are niche titles better?** 
 
 Is performance a function of uncommon words used? 
 
 Create a box and whisker plot showing clap scores as a function of the number of uncommon words used. 
+
+Regress the clap score onto the numer or proportion of uncommon words.
 
 **Creating top and bottom percentile categories:**
 
