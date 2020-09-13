@@ -49,8 +49,16 @@ head( d[preview.these] ) %>% pander()
 
 The article title text is fairly clean and needs little pre-processing, but there are a couple of important issues that need to be addressed. 
 
-1. Remove HTML tags 
-2. Remove "hair space" dash marks
+1. Remove strange spaces: 
+2. Remove HTML tags 
+3. Remove "hair space" dash marks
+
+There are special spaces that appear randomly in some titles. They will appear identical to the invisible eye but will cause problems when you are trying to split titles into words. Replace them with regular spaces: 
+
+```{r}
+d$title <- gsub( " ", " ", d$title )
+```
+
 
 Some titles include HTML tags for emphasis. They will always occur at the start and end of the titles: 
 
@@ -142,7 +150,7 @@ Use regular expressions in order to identify all of the titles that belong in ea
 # grepl returns TRUE for all cases that 
 # match the expression and FALSE otherwise 
 
-category.members <- grepl( "expression", d$cleaned.titles )
+category.members <- grepl( "expression", titles )
 ```
 
 
@@ -167,6 +175,106 @@ Split each title into a group of distinct words.
 
 ```{r,eval=F}
 x <- tolower( x )
+```
+
+When splitting a title into words note that the string split function returns a list. 
+
+This is a sensible data structure since you want to keep the atomized words grouped by their original titles, but it makes it hard to do content analysis:
+
+```{r}
+first.six.titles <- 
+  c("A Beginner’s Guide to Word Embedding with Gensim Word2Vec Model", 
+    "Hands-on Graph Neural Networks with PyTorch & PyTorch Geometric", 
+    "How to Use ggplot2 in Python", "Databricks: How to Save Files in CSV on Your Local Computer", 
+    "A Step-by-Step Implementation of Gradient Descent and Backpropagation", 
+    "An Easy Introduction to SQL for Data Scientists")
+
+word.list <- strsplit( first.six.titles, " " )
+word.list
+```
+
+
+Similar to re-casting data types, you can convert the list to a character vector using **unlist()**:
+
+```{r}
+word.vector <- unlist( word.list )
+word.vector
+```
+
+
+**Counting the first or last words:**
+
+These questions require you to break into the list version of the results and extract either the first or last word from each. 
+
+```{r, eval=F}
+# x is a single title
+get_first_word <- function( x )
+{
+  # split title x into words
+  # unlist results
+  # select the first word
+  # return first word
+}
+
+# test your function
+x <- d$title[1]
+get_first_word( x )
+```
+
+
+```{r, echo=F}
+get_first_word <- function( x )
+{
+  words <- strsplit( x, " " )
+  first.word <- unlist( words )[1]
+  return( first.word )
+}
+```
+
+When results are stored as lists there is an extra step to the analysis.
+
+You need to **apply** your function to each element in the list. There are several versions of apply() functions in R. 
+
+* **lapply()** applies the function to a list and returns a list 
+* **sapply()** applies the function to a list and returns a vector
+
+**lapply version:**
+
+```{r}
+# lapply applies the length function to each list element and returns a list
+
+word.list <- strsplit( first.six.titles, " " )
+word.count <- lapply( word.list, length )
+word.count <- unlist( word.count ) # convert to a vector
+```
+
+
+```{r}
+# sapply applies the function to all titles in the vector
+# the default prints the original title with the return values
+sapply( first.six.titles, get_first_word )
+
+# add USE.NAMES=F to only print return values 
+sapply( first.six.titles, get_first_word, USE.NAMES=FALSE )
+```
+
+The apply functions are a more efficient version of loops - the repetition of a single operation over and over on different data elements. So the logic would be equivalent to this loop version: 
+
+```{r, eval=F}
+results <- NULL
+for( i in 1:length(d$title) )
+{
+  results[i] <- get_first_word( d$title[i] )
+}
+```
+
+Loops are effective for these types of analysis, but are extremely inefficient as the size of your dataset grows and should be avoided when possible. 
+
+And as you become more comfortable with lists they become easier to manage: 
+
+```{r, eval=T}
+# efficiently core R version:  
+first.six.titles %>% strsplit( " " ) %>% sapply( length, USE.NAMES=FALSE )  
 ```
 
 

@@ -389,12 +389,15 @@ summary {
 <h2>Text Pre-Processing Steps</h2>
 <p>The article title text is fairly clean and needs little pre-processing, but there are a couple of important issues that need to be addressed.</p>
 <ol style="list-style-type: decimal">
+<li>Remove strange spaces:</li>
 <li>Remove HTML tags</li>
 <li>Remove “hair space” dash marks</li>
 </ol>
+<p>There are special spaces that appear randomly in some titles. They will appear identical to the invisible eye but will cause problems when you are trying to split titles into words. Replace them with regular spaces:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>d<span class="op">$</span>title &lt;-<span class="st"> </span><span class="kw">gsub</span>( <span class="st">&quot; &quot;</span>, <span class="st">&quot; &quot;</span>, d<span class="op">$</span>title )</span></code></pre></div>
 <p>Some titles include HTML tags for emphasis. They will always occur at the start and end of the titles:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="st">&quot;&lt;strong class=</span><span class="ch">\&quot;</span><span class="st">markup--strong markup--h3-strong</span><span class="ch">\&quot;</span><span class="st">&gt;Why 70% of Entrepreneurs Are Ending Their Pitches the Wrong Way&lt;/strong&gt;&quot;</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="st">&quot;&lt;strong class=</span><span class="ch">\&quot;</span><span class="st">markup--strong markup--h3-strong</span><span class="ch">\&quot;</span><span class="st">&gt;Tackle Negative Core Beliefs&lt;/strong&gt;&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="st">&quot;&lt;strong class=</span><span class="ch">\&quot;</span><span class="st">markup--strong markup--h3-strong</span><span class="ch">\&quot;</span><span class="st">&gt;Why 70% of Entrepreneurs Are Ending Their Pitches the Wrong Way&lt;/strong&gt;&quot;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="st">&quot;&lt;strong class=</span><span class="ch">\&quot;</span><span class="st">markup--strong markup--h3-strong</span><span class="ch">\&quot;</span><span class="st">&gt;Tackle Negative Core Beliefs&lt;/strong&gt;&quot;</span></span></code></pre></div>
 <p>There are some stylized dashes in the text that are book-ended with “hair space” characters, which are thinner-than-usual spaces.</p>
 <p>In the UTF-8 text encoding they come out as:</p>
 <pre><code>&lt;U+200A&gt;—&lt;U+200A&gt;</code></pre>
@@ -405,14 +408,14 @@ summary {
 <p>We can track article performance in many ways. This dataset contains “claps”, which are the equivalent of a thumbs-up or like on other platforms.</p>
 <p>It also contains a responses category, but that is a little more complicated to interpret because comment might be asking for clarification because the article was poorly-written or arguing a counter-point becaue the article was controversial.</p>
 <p>We will use <strong>claps</strong> to measure article popularity, but note the skew in the raw measure:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">hist</span>( d<span class="op">$</span>clap, <span class="dt">main=</span><span class="st">&quot;Raw Clap Count&quot;</span>,</span>
-<span id="cb4-2"><a href="#cb4-2"></a>      <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">950</span>), <span class="dt">breaks=</span><span class="dv">5000</span>, <span class="dt">col=</span><span class="st">&quot;gray20&quot;</span>, <span class="dt">border=</span><span class="st">&quot;white&quot;</span> )</span></code></pre></div>
-<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">hist</span>( <span class="kw">log10</span>(d<span class="op">$</span>clap<span class="op">+</span><span class="dv">1</span>), <span class="dt">main=</span><span class="st">&quot;Logged Clap Score&quot;</span>,</span>
-<span id="cb5-2"><a href="#cb5-2"></a>      <span class="dt">col=</span><span class="st">&quot;gray20&quot;</span>, <span class="dt">border=</span><span class="st">&quot;white&quot;</span>, <span class="dt">breaks=</span><span class="dv">100</span> )</span></code></pre></div>
-<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-3-2.png" width="960" /></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">hist</span>( d<span class="op">$</span>clap, <span class="dt">main=</span><span class="st">&quot;Raw Clap Count&quot;</span>,</span>
+<span id="cb5-2"><a href="#cb5-2"></a>      <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">950</span>), <span class="dt">breaks=</span><span class="dv">5000</span>, <span class="dt">col=</span><span class="st">&quot;gray20&quot;</span>, <span class="dt">border=</span><span class="st">&quot;white&quot;</span> )</span></code></pre></div>
+<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">hist</span>( <span class="kw">log10</span>(d<span class="op">$</span>clap<span class="op">+</span><span class="dv">1</span>), <span class="dt">main=</span><span class="st">&quot;Logged Clap Score&quot;</span>,</span>
+<span id="cb6-2"><a href="#cb6-2"></a>      <span class="dt">col=</span><span class="st">&quot;gray20&quot;</span>, <span class="dt">border=</span><span class="st">&quot;white&quot;</span>, <span class="dt">breaks=</span><span class="dv">100</span> )</span></code></pre></div>
+<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-4-2.png" width="960" /></p>
 <p>Create a new <strong>clap score</strong> to measure performance using the following log transformation:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>d<span class="op">$</span>clap.score &lt;-<span class="st"> </span><span class="kw">log10</span>( d<span class="op">$</span>clap <span class="op">+</span><span class="st"> </span><span class="dv">1</span> )</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>d<span class="op">$</span>clap.score &lt;-<span class="st"> </span><span class="kw">log10</span>( d<span class="op">$</span>clap <span class="op">+</span><span class="st"> </span><span class="dv">1</span> )</span></code></pre></div>
 </div>
 </div>
 <div id="lab-questions" class="section level1">
@@ -451,10 +454,10 @@ summary {
 <p><strong>Other:</strong></p>
 <p>All other styles not included in these.</p>
 <p>Use regular expressions in order to identify all of the titles that belong in each category.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># grepl returns TRUE for all cases that </span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># match the expression and FALSE otherwise </span></span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a>category.members &lt;-<span class="st"> </span><span class="kw">grepl</span>( <span class="st">&quot;expression&quot;</span>, d<span class="op">$</span>cleaned.titles )</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="co"># grepl returns TRUE for all cases that </span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co"># match the expression and FALSE otherwise </span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a>category.members &lt;-<span class="st"> </span><span class="kw">grepl</span>( <span class="st">&quot;expression&quot;</span>, titles )</span></code></pre></div>
 <p><strong>Q1-A:</strong>What is the average performance (clap score) of each type of title?</p>
 <p><strong>Q1-B:</strong>Which style of title performs the best overall?</p>
 </div>
@@ -465,7 +468,113 @@ summary {
 <p><strong>Q2-B:</strong> What is the most common word used at the beginning of a title?</p>
 <p><strong>Q2-C:</strong> What is the most common word used at the end of a title?</p>
 <p><em>Hint: be sure to convert all words to the same case so that variants like “How” and “how” are treated the same.</em></p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>x &lt;-<span class="st"> </span><span class="kw">tolower</span>( x )</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>x &lt;-<span class="st"> </span><span class="kw">tolower</span>( x )</span></code></pre></div>
+<p>When splitting a title into words note that the string split function returns a list.</p>
+<p>This is a sensible data structure since you want to keep the atomized words grouped by their original titles, but it makes it hard to do content analysis:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>first.six.titles &lt;-<span class="st"> </span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="st">  </span><span class="kw">c</span>(<span class="st">&quot;A Beginner’s Guide to Word Embedding with Gensim Word2Vec Model&quot;</span>, </span>
+<span id="cb10-3"><a href="#cb10-3"></a>    <span class="st">&quot;Hands-on Graph Neural Networks with PyTorch &amp; PyTorch Geometric&quot;</span>, </span>
+<span id="cb10-4"><a href="#cb10-4"></a>    <span class="st">&quot;How to Use ggplot2 in Python&quot;</span>, <span class="st">&quot;Databricks: How to Save Files in CSV on Your Local Computer&quot;</span>, </span>
+<span id="cb10-5"><a href="#cb10-5"></a>    <span class="st">&quot;A Step-by-Step Implementation of Gradient Descent and Backpropagation&quot;</span>, </span>
+<span id="cb10-6"><a href="#cb10-6"></a>    <span class="st">&quot;An Easy Introduction to SQL for Data Scientists&quot;</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a>word.list &lt;-<span class="st"> </span><span class="kw">strsplit</span>( first.six.titles, <span class="st">&quot; &quot;</span> )</span>
+<span id="cb10-9"><a href="#cb10-9"></a>word.list</span></code></pre></div>
+<pre><code>## [[1]]
+##  [1] &quot;A&quot;          &quot;Beginner’s&quot; &quot;Guide&quot;      &quot;to&quot;         &quot;Word&quot;      
+##  [6] &quot;Embedding&quot;  &quot;with&quot;       &quot;Gensim&quot;     &quot;Word2Vec&quot;   &quot;Model&quot;     
+## 
+## [[2]]
+## [1] &quot;Hands-on&quot;  &quot;Graph&quot;     &quot;Neural&quot;    &quot;Networks&quot;  &quot;with&quot;      &quot;PyTorch&quot;  
+## [7] &quot;&amp;&quot;         &quot;PyTorch&quot;   &quot;Geometric&quot;
+## 
+## [[3]]
+## [1] &quot;How&quot;     &quot;to&quot;      &quot;Use&quot;     &quot;ggplot2&quot; &quot;in&quot;      &quot;Python&quot; 
+## 
+## [[4]]
+##  [1] &quot;Databricks:&quot; &quot;How&quot;         &quot;to&quot;          &quot;Save&quot;        &quot;Files&quot;      
+##  [6] &quot;in&quot;          &quot;CSV&quot;         &quot;on&quot;          &quot;Your&quot;        &quot;Local&quot;      
+## [11] &quot;Computer&quot;   
+## 
+## [[5]]
+## [1] &quot;A&quot;               &quot;Step-by-Step&quot;    &quot;Implementation&quot;  &quot;of&quot;             
+## [5] &quot;Gradient&quot;        &quot;Descent&quot;         &quot;and&quot;             &quot;Backpropagation&quot;
+## 
+## [[6]]
+## [1] &quot;An&quot;           &quot;Easy&quot;         &quot;Introduction&quot; &quot;to&quot;           &quot;SQL&quot;         
+## [6] &quot;for&quot;          &quot;Data&quot;         &quot;Scientists&quot;</code></pre>
+<p>Similar to re-casting data types, you can convert the list to a character vector using <strong>unlist()</strong>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>word.vector &lt;-<span class="st"> </span><span class="kw">unlist</span>( word.list )</span>
+<span id="cb12-2"><a href="#cb12-2"></a>word.vector</span></code></pre></div>
+<pre><code>##  [1] &quot;A&quot;               &quot;Beginner’s&quot;      &quot;Guide&quot;           &quot;to&quot;             
+##  [5] &quot;Word&quot;            &quot;Embedding&quot;       &quot;with&quot;            &quot;Gensim&quot;         
+##  [9] &quot;Word2Vec&quot;        &quot;Model&quot;           &quot;Hands-on&quot;        &quot;Graph&quot;          
+## [13] &quot;Neural&quot;          &quot;Networks&quot;        &quot;with&quot;            &quot;PyTorch&quot;        
+## [17] &quot;&amp;&quot;               &quot;PyTorch&quot;         &quot;Geometric&quot;       &quot;How&quot;            
+## [21] &quot;to&quot;              &quot;Use&quot;             &quot;ggplot2&quot;         &quot;in&quot;             
+## [25] &quot;Python&quot;          &quot;Databricks:&quot;     &quot;How&quot;             &quot;to&quot;             
+## [29] &quot;Save&quot;            &quot;Files&quot;           &quot;in&quot;              &quot;CSV&quot;            
+## [33] &quot;on&quot;              &quot;Your&quot;            &quot;Local&quot;           &quot;Computer&quot;       
+## [37] &quot;A&quot;               &quot;Step-by-Step&quot;    &quot;Implementation&quot;  &quot;of&quot;             
+## [41] &quot;Gradient&quot;        &quot;Descent&quot;         &quot;and&quot;             &quot;Backpropagation&quot;
+## [45] &quot;An&quot;              &quot;Easy&quot;            &quot;Introduction&quot;    &quot;to&quot;             
+## [49] &quot;SQL&quot;             &quot;for&quot;             &quot;Data&quot;            &quot;Scientists&quot;</code></pre>
+<p><strong>Counting the first or last words:</strong></p>
+<p>These questions require you to break into the list version of the results and extract either the first or last word from each.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># x is a single title</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a>get_first_word &lt;-<span class="st"> </span><span class="cf">function</span>( x )</span>
+<span id="cb14-3"><a href="#cb14-3"></a>{</span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="co"># split title x into words</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a>  <span class="co"># unlist results</span></span>
+<span id="cb14-6"><a href="#cb14-6"></a>  <span class="co"># select the first word</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a>  <span class="co"># return first word</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a>}</span>
+<span id="cb14-9"><a href="#cb14-9"></a></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co"># test your function</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a>x &lt;-<span class="st"> </span>d<span class="op">$</span>title[<span class="dv">1</span>]</span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="kw">get_first_word</span>( x )</span></code></pre></div>
+<p>When results are stored as lists there is an extra step to the analysis.</p>
+<p>You need to <strong>apply</strong> your function to each element in the list. There are several versions of apply() functions in R.</p>
+<ul>
+<li><strong>lapply()</strong> applies the function to a list and returns a list</li>
+<li><strong>sapply()</strong> applies the function to a list and returns a vector</li>
+</ul>
+<p><strong>lapply version:</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># lapply applies the length function to each list element and returns a list</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a>word.list &lt;-<span class="st"> </span><span class="kw">strsplit</span>( first.six.titles, <span class="st">&quot; &quot;</span> )</span>
+<span id="cb15-4"><a href="#cb15-4"></a>word.count &lt;-<span class="st"> </span><span class="kw">lapply</span>( word.list, length )</span>
+<span id="cb15-5"><a href="#cb15-5"></a>word.count &lt;-<span class="st"> </span><span class="kw">unlist</span>( word.count ) <span class="co"># convert to a vector</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># sapply applies the function to all titles in the vector</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="co"># the default prints the original title with the return values</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="kw">sapply</span>( first.six.titles, get_first_word )</span></code></pre></div>
+<pre><code>##       A Beginner’s Guide to Word Embedding with Gensim Word2Vec Model 
+##                                                                   &quot;A&quot; 
+##       Hands-on Graph Neural Networks with PyTorch &amp; PyTorch Geometric 
+##                                                            &quot;Hands-on&quot; 
+##                                          How to Use ggplot2 in Python 
+##                                                                 &quot;How&quot; 
+##           Databricks: How to Save Files in CSV on Your Local Computer 
+##                                                         &quot;Databricks:&quot; 
+## A Step-by-Step Implementation of Gradient Descent and Backpropagation 
+##                                                                   &quot;A&quot; 
+##                       An Easy Introduction to SQL for Data Scientists 
+##                                                                  &quot;An&quot;</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># add USE.NAMES=F to only print return values </span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">sapply</span>( first.six.titles, get_first_word, <span class="dt">USE.NAMES=</span><span class="ot">FALSE</span> )</span></code></pre></div>
+<pre><code>## [1] &quot;A&quot;           &quot;Hands-on&quot;    &quot;How&quot;         &quot;Databricks:&quot; &quot;A&quot;          
+## [6] &quot;An&quot;</code></pre>
+<p>The apply functions are a more efficient version of loops - the repetition of a single operation over and over on different data elements. So the logic would be equivalent to this loop version:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>results &lt;-<span class="st"> </span><span class="ot">NULL</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="cf">for</span>( i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(d<span class="op">$</span>title) )</span>
+<span id="cb20-3"><a href="#cb20-3"></a>{</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  results[i] &lt;-<span class="st"> </span><span class="kw">get_first_word</span>( d<span class="op">$</span>title[i] )</span>
+<span id="cb20-5"><a href="#cb20-5"></a>}</span></code></pre></div>
+<p>Loops are effective for these types of analysis, but are extremely inefficient as the size of your dataset grows and should be avoided when possible.</p>
+<p>And as you become more comfortable with lists they become easier to manage:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># efficiently core R version:  </span></span>
+<span id="cb21-2"><a href="#cb21-2"></a>first.six.titles <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">strsplit</span>( <span class="st">&quot; &quot;</span> ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">sapply</span>( length, <span class="dt">USE.NAMES=</span><span class="ot">FALSE</span> )  </span></code></pre></div>
+<pre><code>## [1] 10  9  6 11  8  8</code></pre>
 <p><strong>CHALLENGE QUESTION:</strong></p>
 <p>Find a package in R that will tabulate sentiment scores for a set of text.</p>
 <p>These packages will return counts or percentages of words with positive salience (e.g. happiness, joy, laughed) and counts or percentages with negative salience (e.g. hate, disdain, smirk).</p>
@@ -478,13 +587,13 @@ summary {
 <p>Count the number of unique words in each title.</p>
 <p>Then examine the clap score as a function of word count by regressing the clap score onto word count.</p>
 <p>Visualize the relationship using a box and whisker plot:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>x &lt;-<span class="st"> </span><span class="kw">sample</span>( <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size=</span><span class="dv">1000</span>, <span class="dt">replace=</span><span class="ot">TRUE</span> )</span>
-<span id="cb9-2"><a href="#cb9-2"></a>y &lt;-<span class="st"> </span><span class="dv">3</span><span class="op">*</span>x <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>,<span class="dv">0</span>,<span class="dv">5</span>)</span>
-<span id="cb9-3"><a href="#cb9-3"></a>f &lt;-<span class="st"> </span><span class="kw">factor</span>(x)</span>
-<span id="cb9-4"><a href="#cb9-4"></a></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="co"># plot( factor, numeric.vector )</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="kw">plot</span>( f, y )</span></code></pre></div>
-<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-7-1.png" width="960" /></p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>x &lt;-<span class="st"> </span><span class="kw">sample</span>( <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">size=</span><span class="dv">1000</span>, <span class="dt">replace=</span><span class="ot">TRUE</span> )</span>
+<span id="cb23-2"><a href="#cb23-2"></a>y &lt;-<span class="st"> </span><span class="dv">3</span><span class="op">*</span>x <span class="op">-</span><span class="st"> </span><span class="fl">0.5</span><span class="op">*</span>x<span class="op">*</span>x <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1000</span>,<span class="dv">0</span>,<span class="dv">5</span>)</span>
+<span id="cb23-3"><a href="#cb23-3"></a>f &lt;-<span class="st"> </span><span class="kw">factor</span>(x)</span>
+<span id="cb23-4"><a href="#cb23-4"></a></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># plot( factor, numeric.vector )</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="kw">plot</span>( f, y )</span></code></pre></div>
+<p><img src="lab-03-instructions_files/figure-html/unnamed-chunk-16-1.png" width="960" /></p>
 <p><strong>Q3-B:</strong> Do longer titles get better clap scores?</p>
 <p>Repeat the analysis from Q3-A but this time measureing title length by the number of characters in the title.</p>
 </div>
@@ -503,7 +612,7 @@ summary {
 <li>Months since it was published</li>
 <li>The Medium community in which the blog appears:</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">table</span>( d<span class="op">$</span>publication ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">table</span>( d<span class="op">$</span>publication ) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pander</span>()</span></code></pre></div>
 <table>
 <caption>Table continues below</caption>
 <colgroup>
