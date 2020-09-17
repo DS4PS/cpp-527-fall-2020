@@ -35,7 +35,7 @@ This lab utilizes a [free Kaggle dataset](https://www.kaggle.com/dorianlazar/med
 
 ```{r}
 # URL <- "https://www.dropbox.com/s/tizgdsat2mziod6/medium-data-utf8.csv?dl=1"
-URL <- "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/labs/data/medium-data-utf8.csv"
+URL <- "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/labs/data/medium-data-utf8-v2.csv"
 d <- read.csv( URL )
 
 preview.these <- c("title", "subtitle", "claps", "reading_time", "publication", "date")
