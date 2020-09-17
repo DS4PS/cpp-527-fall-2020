@@ -253,21 +253,170 @@ grep("\\^", strings, value = TRUE)
 ## Week 4
   
 <p align="center">
-  <a href="">
+  <a href="https://asu.zoom.us/rec/play/hH-YOpN4OnqB-cge3Q_jIQgygiCiOGr8jOLx0b2NhDMFIYrQ6pl39f-2pgWrWbnFpjsyeoYSls9GMV5q._g4VRgVOgM1QKfdl?continueMode=true&_x_zm_rtaid=rnqDigXNQam5KfvV9jW9Yw.1600311541996.8f0673d10b5752a35b52b9d0e1aaaa9b&_x_zm_rhtaid=929">
   <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  <br> Passcode: <b></b>
+  <br> Passcode: <b>iTU78!JC</b>
     
   <br>
 
-  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-04-list-loops-and-apply.R">SAMPLE CODE</a>
 
   <br>
 
-  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-04-regular-expressions.Rhistory">SESSION CODE</a>
 
 </p>
 
+
+```r
+######################################
+###
+###   TITLE DATA
+###
+######################################
+
+
+
+URL <- "https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/labs/data/medium-data-utf8-v2.csv"
+d <- read.csv( URL )
+
+# replace weird spaces with regular spaces
+d$title <- gsub( " ", " ", d$title )
+d$title <- gsub( "\\s", " ", d$title )
+
+# note the use of single-quote marks since double-quotes appear in the text
+d$title <- gsub( '<strong class=\"markup--strong markup--h3-strong\">', "", d$title )
+d$title <- gsub( '</strong>', "", d$title )
+
+# must use double-escape in front of the plus sign
+# since it is an operator in reg-ex
+# <U+200A>—<U+200A>
+d$title <- gsub( "<U\\+200A>—<U\\+200A>", "", d$title )
+
+
+
+
+######################################
+###
+###   WORKING WITH LISTS
+###
+######################################
+
+
+
+titles <- tolower( d$title ) # convert to lower case
+titles <- gsub( "[0-9]", "", titles )  # remove numbers
+
+words <- strsplit( titles, " " )
+
+head( titles )
+head( words )
+
+length( titles ) == length( words )
+
+
+one.sentence <- words[[1]]
+first.word <- one.sentence[1]
+last.word <- one.sentence[ length(one.sentence) ]
+
+one.sentence <- words[[2]]
+first.word <- one.sentence[1]
+last.word <- one.sentence[ length(one.sentence) ]
+
+one.sentence <- words[[3]]
+first.word <- one.sentence[1]
+last.word <- one.sentence[ length(one.sentence) ]
+
+
+
+
+
+######################################
+###
+###   COUNT WORDS (SENTENCE LENGTH)
+###
+######################################
+
+# LOOP VERSION
+
+
+
+results <- NULL
+
+for( i in 1:length(words) )
+{
+   # extract vector from list position i
+   one.sentence <- words[[i]]
+   
+   # analysis with one sentence at a time
+   num.words <- length( one.sentence )
+
+   # save results
+   results[i] <- num.words
+}
+
+
+
+# APPLY VERSIONS
+
+apply(  list,  function )
+
+results <- lapply( words, length )
+results <- unlist( results )
+
+results <- sapply( words, length )
+
+
+
+
+
+
+####################################
+###
+###   GET FIRST AND LAST WORDS
+###
+####################################
+
+
+results <- NULL
+
+for( i in 1:length(words) )
+{
+   # extract vector from list position i
+   one.sentence <- words[[i]]
+   
+   # analysis with one sentence at a time
+   first.word <- one.sentence[1]
+
+   # save results
+   results[i] <- first.word
+}
+
+
+# CUSTOM FUNCTIONS 
+
+get_first_word <- function( x )
+{
+  first.word <- x[1]
+  return( first.word )
+}
+
+get_last_word <- function( x )
+{
+  last.word <- x[ length(x) ]
+  return( last.word )
+}
+
+
+one.sentence <- words[[2]]
+get_first_word( one.sentence )
+get_last_word( one.sentence )
+
+
+results <- sapply( words, get_last_word )
+
+```
 
 <br>
 <br>
