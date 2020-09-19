@@ -37,10 +37,49 @@ There are five primary tasks:
 5. Upload the package to GitHub. 
 
 
-The examples below will walk you through the steps. You will also need to download the Monty Hall Problem functions that we completed during Labs 01 and 02. This script contains some roxygen text to get you started with the process of documentation. 
+**It is recommended to complete this lab in a regular R console, NOT in R Studio.** You can do it using RMD docs as well, but some of the steps will be different and it complicates things. 
+
+The five steps are explained below, but the entire script you will need will look something like this: 
+
+
+```{r, eval=F}
+# set your working directory
+# if you don't want to create
+# the package in your default 
+# working directory
+
+getwd()   # default directory, usually my documents 
+library(devtools)
+
+# step 1
+usethis::create_package( "montyhall" )
+
+# step 2 move R script to montyhall/R folder
+# after completing documentation fields 
+
+# step 3
+setwd( "montyhall" )
+devtools::document()
+
+# step 4
+setwd( ".." )
+devtools::install( "montyhall" )
+library( montyhall )
+create_game()
+
+# step 5: close R and re-open new console
+devtools::install_github( "yourGitHubName/montyhall" )
+```
+
+
+
+The examples below will walk you through the steps. You will also need to download the Monty Hall Problem functions that we completed during Labs 01 and 02 from the link below. This script contains some roxygen text to get you started with the process of documentation. 
 
 [Download R Script](https://www.dropbox.com/s/u8k1co2bb7eldzj/monty-hall-problem.R?dl=1)
 
+Note that you will update this script and place it in the montyhall/R folder after you complete Step 01 and the package skeleton has been created (the working directories for your package are built). 
+
+The package code has been provided for you. You just need to complete the documentation and develop the test code for each function (you can adapt these from the unit testing examples in the labs). You place the **montyhall.R** script directly in the folder. You should not be using RMD files in this assignment. 
 
 
 ## Install Development Packages
@@ -106,6 +145,7 @@ You will now have a directory in your current folder called **montyhall**. This 
 
 ![](images/new-r-package.png)
 
+*Note, some of these files like gitignore are from GitHub - they will appear after completing Step 05. Files may vary by operating system, but you should at the very least have the R folder, a DESCRIPTION file, and a NAMESPACE file.
 
 ## Document Your Functions
 
@@ -168,6 +208,8 @@ You should see:
 ```
 
 You will see some errors as well if you have not yet finished documenting your functions. Ignore them for now. 
+
+_**Depending upon your OS and your R devtools version you may be required to complete ALL documentation before preceding to the next steps. At the very least each function should have a title.**_
 
 You will now have a new folder in your *montyhall* directory called "man", short for "manuals". The documentation files have an .Rd (R documentation) extension. 
 
