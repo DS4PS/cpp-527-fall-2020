@@ -1839,9 +1839,9 @@ Skim the following chapters, reading to get a general sense of concepts and the 
 
 [Introduction to Web Programming](https://internetingishard.com/html-and-css/introduction/)
 
-[Hello CSS](https://internetingishard.com/html-and-css/hello-css/)
+[Hello CSS](https://www.internetingishard.com/html-and-css/hello-css/)
 
-[Responsive Design](https://internetingishard.com/html-and-css/responsive-design/)
+[Responsive Design](https://www.internetingishard.com/html-and-css/responsive-design/)
 
 [Bootstrap (wikipedia entry)](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework))
 
