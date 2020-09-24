@@ -428,23 +428,18 @@ results <- sapply( words, get_last_word )
 ## Week 5
   
 <p align="center">
-  <a href="">
+  <a href="https://asu.zoom.us/rec/share/F_ucMUAGSZVs75lkPAPV-YEp2krmrSAHGQjW2yziXhnZwj0Ng04EKctxbsoqzd5l.s_Yof3CfBYcVzD8B">
   <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
   <a>
-  <br> Passcode: <b></b>
+  <br> Passcode: <b>d7i71V!z</b>
     
   <br>
 
-  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
-
-  <br>
-
-  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
 
 </p>
 
 
-[NOTES](https://github.com/DS4PS/cpp-527-fall-2020/raw/master/lectures/github-pages.pdf)
+[NOTES ON GITHUB PAGES](https://github.com/DS4PS/cpp-527-fall-2020/raw/master/lectures/github-pages.pdf)
 
 **Useful Vocabulary:**
 
