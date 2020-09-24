@@ -444,6 +444,24 @@ results <- sapply( words, get_last_word )
 </p>
 
 
+[NOTES](https://github.com/DS4PS/cpp-527-fall-2020/raw/master/lectures/github-pages.pdf)
+
+**Useful Vocabulary:**
+
+* GitHub Pages
+  - "static" pages 
+  - jekyll framework (coded with ruby)
+  - can use liquid tags 
+* Basic HTML Page Elements 
+  - head.html 
+  - header.html 
+  - body {{content}} 
+  - footer.html 
+* Style Elements 
+  - Cascading Style Sheets (CSS) 
+  - Templates 
+
+
 <br>
 <br>
 <hr>
