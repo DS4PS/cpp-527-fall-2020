@@ -1909,7 +1909,7 @@ footer-link-col: "#404040"
 
 You have forked the master branch of the website, which does not include the "getting started" page on the live site menu:
 
-Navigate to the [getting started page](https://github.com/daattali/beautiful-jekyll/blob/gh-pages/getstarted.md) located on another branch, and copy this file to the main folder on your site. I would copy the text from the **raw** view of the page and just create a new file called **getstarted.md** on your site. 
+Navigate to the [getting started content](https://github.com/daattali/beautiful-jekyll/blob/master/README.md) located in the README.md file in the BeautifulJekyll repo, and copy the file content (the raw markdown text) to a new file called **getstarted.md** in the main folder on your site. Be sure to copy text from the **raw** view of the page with the markdown code and not the formatted version that does not include markdown tags. 
 
 Now update the navigation bar and add another option called "Getting Started" under "Resources". You will use the text "getstarted" for the URL, excluding the *.md* markdown extension. GitHub pages converts all markdown files to HTML files in the background, so you want to direct the user to the HTML version, which does not require an explicit extension to work in browsers:
 
