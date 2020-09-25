@@ -1952,7 +1952,7 @@ Here is a 40-second video ....
 
 <img src="../img/install-steps.gif" style="width:100%;" alt="Installation steps" />
 
-<div class="gs-section-01" markdown=”1”>
+<div class="gs-section-01" markdown="1">
 
 ### 1. Fork the Beautiful Jekyll repository 
 
