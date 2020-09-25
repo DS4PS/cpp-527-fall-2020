@@ -1869,11 +1869,31 @@ The animation in the Unit Overview above shows how simple it is to activate GitH
 
 If we want a website with a bit more functionality, however, we will need to start from an existing template and adapt it. 
 
-For this lab you will be asked to fork the **beautiful-jekyll** website template:
+For this lab you will copy and then adapt an existing GitHub pages websites. 
+
+Start by forking the **beautiful-jekyll** website template:
 
 [Beautiful Jekyll Website Template on GitHub](https://deanattali.com/beautiful-jekyll/)
 
-Follow the instructions in the README file to begin customizing your page. 
+**Update:**
+
+The Beautiful Jekyll site has been adding new features and additional complexity. For this assignment it helps to start simple. 
+
+I would recommend **cloning** a simple site that was built using Beautiful Jekyll such as: 
+
+[Tea Time by Melyanna](https://melyanna.github.io/about/)
+
+[Website Files on GitHub](https://github.com/Melyanna/Melyanna.github.io)
+
+*Note that forking a project on GitHub creates a copy of the project on your account. You can update files without impacting the originals. Forking a project retains the link back to the original project so that you can add updates from the original version and if desired send pull requests back to the original with code updates that improve their project (this is how contributions to open-source projects are made).*
+
+*When you clone a site, you copy all of the files to your account (similar to forking), but you sever ties between the two projects. This is done if you want to take the code as it exists and then modify it to create a new project that is distinct from the original. It means you can't incorporate updates from the original project and you can't send suggested code updates back to the original project.*
+
+*You fork a project when you want to continue to contribute back to the original or continue to incorporate updates made in the original project. You clone a repository if you want to take the code as it stands and adapt it as something new. You still need to attribute the original project after cloning, but there will be no formal link between the repositories on GitHub after cloning.*
+
+-----
+
+After forking or cloning a site, follow the instructions in the README file to begin customizing your page. 
 
 In the **`_config.yml`** file in the default directory do the following: 
 
@@ -2084,8 +2104,8 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
-    - Getting Started: "getstarted"                         # ADD THIS LINK
-  Table Demo: "table-demo"
+    - Getting Started: "getstarted"                         
+  Table Demo: "table-demo"              # ADD THIS LINK
 ```
 
 When these steps are done, submit a link to (1) your live site and (2) your GitHub repo where the website lives. 
