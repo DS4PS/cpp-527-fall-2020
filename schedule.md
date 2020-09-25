@@ -2562,6 +2562,7 @@ Begin by reading about the process:
 
 [Automated Reporting](https://ds4ps.org/cpp-527-spr-2020/lectures/report-automation.html)
 
+[Parameterized Reports in R Markdown](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F)  
 
 **Instructions** 
 
