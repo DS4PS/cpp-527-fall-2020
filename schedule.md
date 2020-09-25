@@ -1962,6 +1962,42 @@ by clicking the Fork button on the top right corner in GitHub.
 </div>
 ```
 
+Note that in order to render markdown text between HTML `<div>` tags you need to do two things:
+
+(1) Make sure your file is a markdown .md file type and not an HTML .html file.
+
+Either will work with GitHub pages, but only the .md files are automatically converted from MD to HTML on the GitHub (kramdown) servers. If you add markdown elements to an HTML file type they will not be converted. 
+
+(2) Add a markdown="1" attribute or double-squirrely brackets 
+
+By default any markdown that occurs between HTML div tags is not converted to HTML. To instruct the server-side parser to process the text as markdown you need to add the **markdown="1"** attribute to the div tag, or wrap the markdown text in double-squirrely brackets. 
+
+**Option 1:**
+
+```
+<div class="gs-section-01" markdown="1">
+
+### 1. Fork the Beautiful Jekyll repository 
+
+Fork the [repository](https://github.com/daattali/beautiful-jekyll) 
+by clicking the Fork button on the top right corner in GitHub.
+
+</div>
+```
+
+**Option 2:**
+
+```
+<div class="gs-section-01"> {{
+
+### 1. Fork the Beautiful Jekyll repository 
+
+Fork the [repository](https://github.com/daattali/beautiful-jekyll) 
+by clicking the Fork button on the top right corner in GitHub.
+
+}} </div>
+```
+
 Follow the [Barebones Jekyll example](http://ds4ps.org/barebones-jekyll/page1) for customizing a page style by adding a CSS style sheet the bottom of the Getting Started page:
 
 ```
