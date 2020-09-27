@@ -2147,9 +2147,47 @@ constructed in bizarre ways. I have spent countless hours struggling to get such
 
 ---
 
-Read pages 1-8 and skim the rest of the article: 
+The basic idea is that data should be _**selectable**_ with code, so attributes should not be coded as row or column names. They should be represented as distinct variables. 
+
+This makes data exploration and manipulation feasible and efficient. 
+
+You have seen that there are many **tidyverse** functions (from the **dplyr** package especially) that replicate core R functions, but return tidy results instead of default formats:
+
+```r
+table( dat$Gender_Drv1, dat$Gender_Drv2 )
+         
+          Female Male Unknown
+  Female    4622 5463      85
+  Male      5637 7707      96
+  Unknown    776  835      25
+  
+dplyr::count( dat, Gender_Drv1, Gender_Drv2 )
+
+  Gender_Drv1 Gender_Drv2    n
+1      Female      Female 4622
+2      Female        Male 5463
+3      Female     Unknown   85
+4        Male      Female 5637
+5        Male        Male 7707
+6        Male     Unknown   96
+7     Unknown      Female  776
+8     Unknown        Male  835
+9     Unknown     Unknown   25
+
+```
+
+These two tables are equivalent, but in the second case we can do things like drill down further into the data by isolating accidents caused by male drivers (Driver 1), or we can color-code male and female data on a graph using a driver attribute with *col=factor(Gender_Drv2)*. 
+
+In the default table version we can't even get a range of group size since we can't analyze table values *easily* (you can always re-convert the table object back to vectors and extract column and row attributes, but it takes some work). 
+
+When attributes are built into the table as row names and column names they can no longer be manipulated directly. This is the general idea of tidy data - retain all of the information and store it in a way that makes it useful for subsequent analysis. In the tidyverse specifically, most analytical and graphical packages will assume that your data is in a tidy format as the default way to organize data. That is not true with older R packages. The convention has gained traction, though, and there is a big movement toward using tidy data as the standard for data frames and function outputs in R. 
+
+To learn more, read pages 1-8 and skim the rest of the article: 
 
 [Tidy Data by Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
+
+
+----
 
 Practice the concept with the problems below: 
 
@@ -2308,6 +2346,46 @@ structure(list(Y = c(54L, 27L, 35L, 19L, 99L, 84L, 34L, 29L),
 ```
 
 Bonus: after you have created a single STATE factor, identify a function that will re-convert the factor into dummy variables. 
+
+
+<br>
+<hr>
+<br>
+
+**Challenge Question:**
+
+Convert this dplyr count table into a regular table format that can be included in a report. 
+
+```r
+d2
+  Gender_Drv1 Gender_Drv2    n
+1      Female      Female 4622
+2      Female        Male 5463
+3      Female     Unknown   85
+4        Male      Female 5637
+5        Male        Male 7707
+6        Male     Unknown   96
+7     Unknown      Female  776
+8     Unknown        Male  835
+9     Unknown     Unknown   25
+
+d2 <-
+structure(list(Gender_Drv1 = structure(c(1L, 1L, 1L, 2L, 2L, 
+2L, 3L, 3L, 3L), .Label = c("Female", "Male", "Unknown"), class = "factor"), 
+    Gender_Drv2 = structure(c(1L, 2L, 3L, 1L, 2L, 3L, 1L, 2L, 
+    3L), .Label = c("Female", "Male", "Unknown"), class = "factor"), 
+    n = c(4622L, 5463L, 85L, 5637L, 7707L, 96L, 776L, 835L, 25L
+    )), row.names = c(NA, -9L), class = "data.frame")
+```
+
+Regular format: 
+
+```r
+          Female Male Unknown
+  Female    4622 5463      85
+  Male      5637 7707      96
+  Unknown    776  835      25
+```
 
 
 <br>
