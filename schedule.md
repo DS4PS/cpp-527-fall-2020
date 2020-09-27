@@ -2128,6 +2128,193 @@ And share your page link on YellowDig:
 
 <br>
 
+**TIDY DATA:**
+
+This exercises introduces the _**extremely important but simple**_ concept of **tidy data**. 
+
+---
+
+*The development of tidy data has been driven by my experience working with real-world datasets. With few, if any, constraints on their organisation, such datasets are often 
+constructed in bizarre ways. I have spent countless hours struggling to get such datasets organised in a way that makes data analysis possible, let alone easy. I have also struggled to impart these skills to my students so they could tackle real-world datasets on their own. In the course of these struggles I developed the reshape and reshape2 (Wickham 2007) packages. While I could intuitively use the tools and teach them through examples, I lacked the framework to make my intuition explicit. This paper provides that framework. It provides a comprehensive “philosophy of data”: one that underlies my work in the plyr (Wickham 2011) and ggplot2 (Wickham 2009) packages.*
+
+*Tidy data is a standard way of mapping the meaning of a dataset to its structure. A dataset is messy or tidy depending on how rows, columns and tables are matched up with observations, variables and types.* 
+
+*In tidy data:*
+
+1. *Each variable forms a column.*  
+2. *Each observation forms a row.*  
+3. *Each type of observational unit forms a table.*  
+
+---
+
+Read pages 1-8 and skim the rest of the article: 
+
+[Tidy Data by Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
+
+Practice the concept with the problems below: 
+
+**Q1: Table Conversion**
+
+R contains some built-in datasets that consist of pre-tabulated data.  
+
+**Manually** convert one of these tables to a single tidy dataset.
+
+Manually = create a set of vectors with the appropriate values and combine them into a data frame. 
+
+*Note that it is a conceptual exercise, not a programming exercise. The goal is to get the table structure correct, not find a function that can automate the process (the paper presents some automation steps you can ignore for now).*  
+
+
+
+```r
+Titanic
+, , Age = Child, Survived = No
+
+      Sex
+Class  Male Female
+  1st     0      0
+  2nd     0      0
+  3rd    35     17
+  Crew    0      0
+
+, , Age = Adult, Survived = No
+
+      Sex
+Class  Male Female
+  1st   118      4
+  2nd   154     13
+  3rd   387     89
+  Crew  670      3
+
+, , Age = Child, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st     5      1
+  2nd    11     13
+  3rd    13     14
+  Crew    0      0
+
+, , Age = Adult, Survived = Yes
+
+      Sex
+Class  Male Female
+  1st    57    140
+  2nd    14     80
+  3rd    75     76
+  Crew  192     20
+
+
+HairEyeColor
+, , Sex = Male
+
+       Eye
+Hair    Brown Blue Hazel Green
+  Black    32   11    10     3
+  Brown    53   50    25    15
+  Red      10   10     7     7
+  Blond     3   30     5     8
+
+, , Sex = Female
+
+       Eye
+Hair    Brown Blue Hazel Green
+  Black    36    9     5     2
+  Brown    66   34    29    14
+  Red      16    7     7     7
+  Blond     4   64     5     8
+
+
+UCBAdmissions
+, , Dept = A
+
+          Gender
+Admit      Male Female
+  Admitted  512     89
+  Rejected  313     19
+
+, , Dept = B
+
+          Gender
+Admit      Male Female
+  Admitted  353     17
+  Rejected  207      8
+
+, , Dept = C
+
+          Gender
+Admit      Male Female
+  Admitted  120    202
+  Rejected  205    391
+
+, , Dept = D
+
+          Gender
+Admit      Male Female
+  Admitted  138    131
+  Rejected  279    244
+
+, , Dept = E
+
+          Gender
+Admit      Male Female
+  Admitted   53     94
+  Rejected  138    299
+
+, , Dept = F
+
+          Gender
+Admit      Male Female
+  Admitted   22     24
+  Rejected  351    317
+
+```
+
+
+<br>
+<hr>
+<br>
+
+**Q2: Dummy Variable Conversion**
+
+This data frame contains some outcome Y for observations in four states. 
+
+```r
+dat
+   Y NY AL FL MN
+1 54  1  0  0  0
+2 27  1  0  0  0
+3 35  0  1  0  0
+4 19  0  1  0  0
+5 99  0  0  1  0
+6 84  0  0  1  0
+7 34  0  0  0  1
+8 29  0  0  0  1
+```
+
+The states are currently presented as dummy variables. 
+
+To make the dataset tidy convert the four dummy variables into a single STATE factor. 
+
+This problem should be done programmatically. There are several ways to do this effectively. 
+
+```r
+# dput( dat )
+dat <- 
+structure(list(Y = c(54L, 27L, 35L, 19L, 99L, 84L, 34L, 29L), 
+    NY = c(1, 1, 0, 0, 0, 0, 0, 0), AL = c(0, 0, 1, 1, 0, 0, 
+    0, 0), FL = c(0, 0, 0, 0, 1, 1, 0, 0), MN = c(0, 0, 0, 0, 
+    0, 0, 1, 1)), class = "data.frame", row.names = c(NA, -8L
+))
+```
+
+Bonus: after you have created a single STATE factor, identify a function that will re-convert the factor into dummy variables. 
+
+
+<br>
+<hr>
+<br>
+
+
 <a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/challenge-question-02.html">PRACTICE QUESTION</a>
 
 <br>
