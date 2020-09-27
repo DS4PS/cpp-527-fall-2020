@@ -2182,9 +2182,13 @@ These two tables are equivalent, but in the second case we can do things like dr
 
 In the default table version we can't even get a range of group size since we can't analyze table values *easily* (you can always re-convert the table object back to vectors and extract column and row attributes, but it takes some work). 
 
-When attributes are built into the table as row names and column names they can no longer be manipulated directly. This is the general idea of tidy data - retain all of the information and store it in a way that makes it useful for subsequent analysis. In the tidyverse specifically, most analytical and graphical packages will assume that your data is in a tidy format as the default way to organize data. That is not true with older R packages. The convention has gained traction, though, and there is a big movement toward using tidy data as the standard for data frames and function outputs in R. 
+When attributes are built into the table as row names and column names they can no longer be manipulated directly. This is the general idea of tidy data - retain all of the information and store it in a way that makes it useful for subsequent analysis. 
 
-To learn more, read pages 1-8 and skim the rest of the article: 
+In the tidyverse specifically, most analytical and graphical packages will assume that your data is in a tidy format as the default way to organize data. That is not true with older R packages. 
+
+The convention has gained traction, though, and there is a big movement toward using tidy data as the standard for data frames and function outputs in R. This makes work-flow much easier! Using pipes to create a data recipe, for example, is possible primarily because of tidy conventions. 
+
+To learn more, read pages 1-8 of the article that introduced this concept focusing on understand what a tidy dataset looks like (the examples of tidy versus non-tidy datasets are most useful). You can skim the remaining pages that discuss some advanced approaches to automate conversion from non-tidy to tidy formats. For now understanding the concept is more important than automation of conversion steps.  
 
 [Tidy Data by Hadley Wickham](https://vita.had.co.nz/papers/tidy-data.pdf)
 
