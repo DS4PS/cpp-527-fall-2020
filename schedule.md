@@ -2126,6 +2126,8 @@ And share your page link on YellowDig:
 
 ## YellowDig Practice Problems
 
+**Post on {{page.yellowdig.post-06}}**
+
 <br>
 
 **TIDY DATA:**
@@ -2393,7 +2395,6 @@ Regular format:
 <br>
 
 
-<a class="uk-button uk-button-default" href="https://ds4ps.org/cpp-527-spr-2020/labs/challenge-question-02.html">PRACTICE QUESTION</a>
 
 <br>
 <hr>
