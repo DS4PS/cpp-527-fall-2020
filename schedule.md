@@ -2430,7 +2430,7 @@ Regular format:
 -->
 
 
-#  Week 6 - Data APIs & Tidy Data
+#  Week 6 - Data APIs 
 
 
 
@@ -2704,6 +2704,19 @@ get_census_data <- function( VINTAGE, API.NAME, VARIABLE, STATE, KEY )
 ```
 
 *If you are curious, you can view the [source code for the __censusapi__ package](https://github.com/hrecht/censusapi/tree/master/R) to see how the code is actually constructed. It is more complicated because it has to account for combinations of all of the different arguments using all of the APIs, along with error-checking. The devil is always in the details!*
+
+<br> 
+
+
+**Additional Reading:**
+
+* [Getting Started with APIs in R](https://www.dataquest.io/blog/r-api-tutorial/)  
+* [Querying APIs in R](https://medium.com/@traffordDataLab/querying-apis-in-r-39029b73d5f1)  
+* [Best practices for developing API packages in R](https://cran.r-project.org/web/packages/httr/vignettes/api-packages.html)  
+
+If you have an important dataset that you would like to share with the world, you can also build your own API in R: 
+
+* [How to Build a REST API Using R](https://medium.com/@conalldalydev/part-1-how-to-build-a-rest-api-using-r-ad54d683f3bd)  
 
 <br>
 <br>
