@@ -2672,12 +2672,12 @@ You are doing this:
 But manually by building your API query like this: 
 
 ```r
-KEY <- "your.unique.census.key.goes.here"
-API.BASE <- "https://api.census.gov/data"
-VINTAGE <- "2015"
-API.NAME <- "acs/acs5"
-VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE <- "04"                  # AZ STATE FIPS CODE
+KEY       <- "your.unique.census.key.goes.here"
+API.BASE  <- "https://api.census.gov/data"
+VINTAGE   <- "2015"
+API.NAME  <- "acs/acs5"
+VARIABLE  <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE     <- "04"               # AZ STATE FIPS CODE
 
 BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
 FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
