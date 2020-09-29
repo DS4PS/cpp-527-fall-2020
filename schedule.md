@@ -2396,12 +2396,6 @@ Regular format:
 
 <br>
 <hr>
-<br>
-
-
-
-<br>
-<hr>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
