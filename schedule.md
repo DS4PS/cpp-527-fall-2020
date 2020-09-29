@@ -2499,12 +2499,12 @@ library( httr )
 ####      API QUERY:
 ##################################################################
 
-KEY <- "your.unique.census.key.goes.here"
+KEY      <- "your.unique.census.key.goes.here"
 API.BASE <- "https://api.census.gov/data"
-VINTAGE <- "2015"
+VINTAGE  <- "2015"
 API.NAME <- "acs/acs5"
 VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE <- "04"                  # AZ STATE FIPS CODE
+STATE    <- "04"               # AZ STATE FIPS CODE
 
 ##################################################################
 
