@@ -2932,11 +2932,9 @@ for( i in city.names )
 
 **Post on {{page.yellowdig.post-07}}**
 
-<br>
+-----  
 
-**Data APIs in R:**
-
-<br>
+**DATA APIs IN R:**
 
 For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
 
