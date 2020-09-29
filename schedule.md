@@ -2458,7 +2458,7 @@ These mostly have user interfaces where you paste some input data into a search 
 
 For example, you can type an address and it will return a set of latitude and longitude coordinates. 
 
-Alternatively, if you want to query news sources for stories on specific topics: [Examples of News APIs](https://newsapi.org/).
+Alternatively, if you want to query news sources for stories on specific topics try: [News API Examples](https://newsapi.org/).
 
 
 **How do APIs Work?**
