@@ -2743,6 +2743,8 @@ If you have an important dataset that you would like to share with the world, yo
 
 ## Lab 06
 
+**Due {{page.labs.lab-06}}**
+
 <br>
 
 <hr>
