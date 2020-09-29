@@ -2201,11 +2201,17 @@ Practice the concept with the problems below:
 
 R contains some built-in datasets that consist of pre-tabulated data.  
 
-**Manually** convert one of these tables to a single tidy dataset.
+Convert one of the three sets of tables to a tidy dataset.
 
-Manually = create a set of vectors with the appropriate values and combine them into a data frame. 
+* Titanic 
+* HairEyeColor 
+* UCBAdmissions 
 
-*Note that it is a conceptual exercise, not a programming exercise. The goal is to get the table structure correct, not find a function that can automate the process (the paper presents some automation steps you can ignore for now).*  
+Share the tidy dataset (not the code) on YellowDig. 
+
+*Note that it is a conceptual exercise, not a programming exercise. The goal is to get the tidy table structure correct, not find a function that can automate the process (the paper presents some automation steps you can ignore for now).* 
+
+*You can do the exercise in Excel, or you can build vectors manually and combine them into a data frame. You just need to share the tidy table, not the process used to create it.* 
 
 
 
