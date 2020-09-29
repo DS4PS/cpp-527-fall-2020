@@ -2730,17 +2730,43 @@ If you have an important dataset that you would like to share with the world, yo
 
 
 <br>
+<hr>
+<br>
 
 
+## YellowDig Practice Problems
+
+**Post on {{page.yellowdig.post-07}}**
+
+<br>
+
+**Data APIs in R:**
+
+<br>
+
+For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
+
+If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
+
+*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
+
+Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
+
+https://cran.r-project.org/web/views/WebTechnologies.html
+
+This is hardly an exhaustive list, but a good place to start. 
+
+Once you have identified an API package, show some very basic functionality by explaining what data is available, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
+
+Share your insights with classmates on YellowDig. 
 
 <br>
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
-<br><br>
-
-
-
+<br>
+<hr>
+<br>
 
 
 ## Lab 06
