@@ -2501,16 +2501,16 @@ library( httr )
 ####      API QUERY:
 ##################################################################
 
-KEY      <- "your.unique.census.key.goes.here"
-API.BASE <- "https://api.census.gov/data"
-VINTAGE  <- "2015"
-API.NAME <- "acs/acs5"
-VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE    <- "04"               # AZ STATE FIPS CODE
+API.BASE     <- "https://api.census.gov/data"
+API.VINTAGE  <- "2015"
+API.NAME     <- "acs/acs5"
+VARIABLE     <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE        <- "04"               # AZ STATE FIPS CODE
+KEY          <- "your.unique.census.key.goes.here"
 
 ##################################################################
 
-BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
+BASE.URL <- paste( API.NAME, API.VINTAGE, API.NAME, sep="/" )
 BASE.URL
 
 # [1] "https://api.census.gov/data/2015/acs/acs5"
@@ -2598,14 +2598,14 @@ data.as.matrix
 Another example grabbing data from all of the states instead of one at a time: 
 
 ```r
-KEY       <- "your.unique.census.key.goes.here"
-API.BASE  <- "https://api.census.gov/data"
-VINTAGE   <- "2015"
-API.NAME  <- "acs/acs5"
-VARIABLE  <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE     <- "*"                # ALL STATES
+KEY           <- "your.unique.census.key.goes.here"
+API.NAME      <- "https://api.census.gov/data"
+API.VINTAGE   <- "2015"
+API.NAME      <- "acs/acs5"
+VARIABLE      <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE         <- "*"                # ALL STATES
 
-BASE.URL <- paste( BASE, VINTAGE, NAME, sep="/" )
+BASE.URL <- paste( API.NAME, API.VINTAGE, API.NAME, sep="/" )
 FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
 
 api.data.raw <- httr::GET( FULL.URL )
@@ -2678,14 +2678,14 @@ You are doing this:
 But manually by building your API query like this: 
 
 ```r
-KEY       <- "your.unique.census.key.goes.here"
-API.BASE  <- "https://api.census.gov/data"
-VINTAGE   <- "2015"
-API.NAME  <- "acs/acs5"
-VARIABLE  <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE     <- "04"               # AZ STATE FIPS CODE
+KEY           <- "your.unique.census.key.goes.here"
+API.BASE      <- "https://api.census.gov/data"
+API.VINTAGE   <- "2015"
+API.NAME      <- "acs/acs5"
+VARIABLE      <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE         <- "04"               # AZ STATE FIPS CODE
 
-BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
+BASE.URL <- paste( API.BASE, API.VINTAGE, API.NAME, sep="/" )
 FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
 FULL.URL
 
@@ -2702,7 +2702,7 @@ The best part is that most useful APIs have already been turned into packages in
 get_census_data <- function( VINTAGE, API.NAME, VARIABLE, STATE, KEY )
 {
    API.BASE <- "https://api.census.gov/data"
-   BASE.URL <- paste( BASE, VINTAGE, NAME, sep="/" )
+   BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
    FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
    api.data.raw <- httr::GET( FULL.URL )
    df <- json_to_data_frame( api.data.raw )
