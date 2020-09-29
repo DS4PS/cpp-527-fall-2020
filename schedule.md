@@ -2454,11 +2454,13 @@ The Data Science Toolkit site has a lot of nice examples of these type of APIs i
 
 These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
 
-[WWW dot Data Science Toolkit dot ORG](http://www.datasciencetoolkit.org/)
+[Data Science Toolkit](http://www.datasciencetoolkit.org/)
 
 For example, you can type an address and it will return a set of latitude and longitude coordinates. 
 
-Alternatively, if you want to query news sources for stories on specific topics try: [News API Examples](https://newsapi.org/).
+Alternatively, if you want to query news sources for stories on specific topics check out: 
+
+[News API Examples](https://newsapi.org/)  
 
 
 **How do APIs Work?**
