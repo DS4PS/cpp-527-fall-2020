@@ -2540,9 +2540,13 @@ The data is returned in a JSON format:
 ["Arizona","6641928","04"]]
 ```
 
-That's it! It's that easy. Just like functions in R, you will look up the API arguments in the documentation. 
+That's it! It's that easy. 
 
-It should also tell you the format of values that each argument expects. For example, the state geography uses FIPS codes (state:04) instead of the normal two-letter abbreviation (state:AZ). 
+Just like functions in R, you will look up the API arguments in the documentation. 
+
+The documentation should also tell you the types of values that each argument expects. For example, the state geography uses FIPS codes (state:04) instead of the normal two-letter abbreviation (state:AZ). 
+
+----
 
 In order to import the data into R we need a couple more steps. 
 
