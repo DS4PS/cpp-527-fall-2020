@@ -2957,12 +2957,13 @@ Once you have identified an API package, show some very basic functionality by e
 Share your insights with classmates on YellowDig. 
 
 <br>
+<hr>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 <hr>
 <br>
-<hr>
+
 
 
 
