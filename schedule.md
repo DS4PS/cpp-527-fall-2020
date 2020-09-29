@@ -2574,11 +2574,12 @@ json_to_data_frame <- function( api.data.raw )
 }
 
 
-json_to_data_frame( api.data.raw )
-#      NAME B01001_001E state
-# 2 Arizona     6641928    04
+json_to_data_frame( api.data.raw )  # returns a data frame 
+     NAME   B01001_001E   state
+2 Arizona       6641928      04
 
 # intermediate data formats for reference 
+
 data.as.json
 [1] "[[\"NAME\",\"B01001_001E\",\"state\"],\n[\"Arizona\",\"6246816\",\"04\"]]"
 
@@ -2591,12 +2592,12 @@ data.as.matrix
 Another example grabbing data from all of the states instead of one at a time: 
 
 ```r
-KEY <- "your.unique.census.key.goes.here"
-API.BASE <- "https://api.census.gov/data"
-VINTAGE <- "2015"
-API.NAME <- "acs/acs5"
-VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
-STATE <- "*"                   # ALL STATES
+KEY       <- "your.unique.census.key.goes.here"
+API.BASE  <- "https://api.census.gov/data"
+VINTAGE   <- "2015"
+API.NAME  <- "acs/acs5"
+VARIABLE  <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE     <- "*"                # ALL STATES
 
 BASE.URL <- paste( BASE, VINTAGE, NAME, sep="/" )
 FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
