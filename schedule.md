@@ -2729,40 +2729,6 @@ If you have an important dataset that you would like to share with the world, yo
 
 
 
-<br>
-<hr>
-<br>
-
-
-## YellowDig Practice Problems
-
-**Post on {{page.yellowdig.post-07}}**
-
-<br>
-
-**Data APIs in R:**
-
-<br>
-
-For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
-
-If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
-
-*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
-
-Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
-
-https://cran.r-project.org/web/views/WebTechnologies.html
-
-This is hardly an exhaustive list, but a good place to start. 
-
-Once you have identified an API package, show some very basic functionality by explaining what data is available, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
-
-Share your insights with classmates on YellowDig. 
-
-<br>
-
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
 
 <br>
 <hr>
@@ -2957,101 +2923,44 @@ for( i in city.names )
 
 
 
+<br>
+<hr>
+<br>
+
 
 ## YellowDig Practice Problems
 
-<br>
-
-**Casting**
-
-If you recall some of the rules with implicit casting, R will try to select the data type that preserves the most information. 
-
-```r
-> x <- 1:3
-> y <- c("a","b","c")
-> c( x, y )
-[1] "1" "2" "3" "a" "b" "c"
-
-> x.as.string <- as.character( x )
-> x.as.string
-[1] "1" "2" "3"
-> as.numeric( x.as.string )
-[1] 1 2 3
-
-> as.numeric( y )
-[1] NA NA NA
-Warning message:
-NAs introduced by coercion 
-```
-
-Note the rules for conversion when you combine numeric and logical vectors: 
-
-```r
-> x <- c(TRUE,FALSE,TRUE)
-> c( x, FALSE )
-[1]  TRUE FALSE  TRUE FALSE
-
-> c( x, 1 )
-[1] 1 0 1 1
-
-> c( x, "ONE" )
-[1] "TRUE"  "FALSE" "TRUE"  "ONE"  
-
-> x2 <- c( x, 1 )
-> as.logical( x2 )
-[1]  TRUE FALSE  TRUE  TRUE
-
-> x3 <- c( x, 2 )
-> as.logical( x3 )
-[1]  TRUE FALSE  TRUE  TRUE
-
-> x4 <- c( x, 0 )
-> as.logical( x4 )
-[1]  TRUE FALSE  TRUE FALSE
-```
-
-Try to guess how it treats the following cases before you run the code:
-
-```r
-x <- c(TRUE,FALSE,TRUE)
-c( x, 2 )
-
-x2 <- c( x, 1.1 )
-as.logical( x2 )
-
-x3 <- c( x, 0.9 )
-as.logical( x3 )
-
-x4 <- c( x, log(1) )
-as.logical( x4 )
-
-x5 <- c( x, -1 )
-as.logical( x5 )
-```
-
-
-**RegEx Practice** 
-
-```r
-# How many of these state names contain a W? 
-> states <- c("New Mexico","New York","Washington","West Virginia")
-> grep( pattern = "w", x = states, value = TRUE )
-[1] "New Mexico" "New York"  
-> grep( pattern = "W", x = states, value = TRUE )
-[1] "Washington"    "West Virginia"
-```
-
-Which pattern would you use to match all state names with a W, no matter if the W is capital or lowercase? You are not allowed to use the *ignore.case* argument in **grep()**. 
-
+**Post on {{page.yellowdig.post-07}}**
 
 <br>
-<hr>
+
+**Data APIs in R:**
+
+<br>
+
+For your YellowDig assignment this week, find an API package in R and demonstrate it's functionality.
+
+If you are curious about specific APIs I would start by finding a cool public API then searching around to see if someone has created an R package to make it easier to use. 
+
+*Public here means that the API is not a paid service behind a firewall, though many free APIs require a registered account, a key, or authentication of some sort.*
+
+Alternatively, you can visit the CRAN Task View for Web Technologies and search for API on the page:
+
+https://cran.r-project.org/web/views/WebTechnologies.html
+
+This is hardly an exhaustive list, but a good place to start. 
+
+Once you have identified an API package, show some very basic functionality by explaining what data is available, what a get_data() function looks like in the package, what the arguments do, and what the returned data looks like. 
+
+Share your insights with classmates on YellowDig. 
+
+<br>
 
 <a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 <hr>
 <br>
-
+<hr>
 
 
 
