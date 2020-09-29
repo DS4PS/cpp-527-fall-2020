@@ -2438,25 +2438,272 @@ Regular format:
 
 <br>
 
+**Introduction:**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s7wmiS2mSXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 **Nice Overview of APIs**
 
 [Data journalists describe the value of APIs.](https://medium.com/trendct-data/a-gentle-guide-to-apis-for-data-journalists-2a6b0e6fcc1a)
 
-**Tutorial on DataUSA APIs**
+**Example APIs:**
 
-Members of the MIT Media Lab spun out a company called Datawheel. Their goal is to make public data more accessible as well as useful. Their team boasts a number of graphic design experts and data visualization geniuses. They have found ways to take large and confusing government datasets, and make them interesting and accessible. 
+There is one API that you likely use every single day: Google. Your query takes the form of the search words you type into the box, and the data is sent back as a nicely-formatted list of websites: the page title, URL, and the first few sentences of text on the page. 
 
-One cool aspect of their [DataUSA](https://datausa.io/) project is that to make it work they ended up downloading a bunch of large and clumbsy US government open datasets, cleaning up their formats, and hosting new copies on their own servers. In order for their website to function, each city view must be able to pull data from over a dozen databases quickly, so they have architected the new data structures so that users can query data at different levels like city, county, or state. Data is quickly aggregated accordingly. 
+The Data Science Toolkit site has a lot of nice examples of these type of APIs in action. 
 
-The really great part, though, is that they have made their API endpoints freely available to the public. Since they have cleaned up over a dozen government datasets and how host them on their fast servers, they have made it easy to access a lot of statistics quickly. 
+These mostly have user interfaces where you paste some input data into a search box and it returns data based upon your inputs. 
 
-The lab this week will draw from a Gist that explains the structure of the DataUSA API, and teached the basics of how data APIs function. 
+[WWW dot Data Science Toolkit dot ORG](http://www.datasciencetoolkit.org/)
 
-[DataUSA API Tutorial](https://gist.github.com/lecy/0aa782a873cd174573f32d243233ca5b)
+For example, you can type an address and it will return a set of latitude and longitude coordinates. 
 
-We will also look at some different types of APIs, such as the Census Bureau's automatic geocoding tool that allows you to upload a spreadsheet with 10,000 addresses, and will return a new spreadsheet with all addresses geocoded and matched to Census tracts. 
+Alternatively, if you want to query news sources for stories on specific topics: [Examples of News APIs](https://newsapi.org/).
 
-This tool is not technically an API, but you can still automate calls by writing an R script that will upload files to the site for your so that you can batch process more than 10,000 addresses at a time. 
+
+**How do APIs Work?**
+
+APIs function like calls to a database. You send parameters, and the server sends the appropriate response - the data that matches your query. 
+
+The interface for many APIs functions a lot like a dplyr::filter call. You specify which slice of data you would like through the values you designate:
+
+```r
+data %>% 
+  filter(  gender=="male"   &  age=="20-25"  &  state %in% c("AZ","NY","PA") )
+```
+
+The main difference is that this is a filter function manipulating data on your own computer. Data APIs allow you to query a database that lives on a server.
+
+Data APIs consist of a base URL that serves as the address of the data on the server and a set of allowable queries. 
+
+Each API defines it's own set of allowable queries. Similar to a filter() function there are rules about how to construct your statements so they identify the proper slice of data. Unlike R, if you violate the defined rules of the API then instead of an error you just get an empty set with no data. 
+
+For demonstration purposes, assume that we want to download some census data from a nice Graphical User Interface (GUI) someone has created for us in order to make the Census API easier to use. It might look something like this: 
+
+![](https://github.com/DS4PS/cpp-527-fall-2020/blob/master/assets/img/census-api-gui.png?raw=true)
+
+All we need to do is select options from drop-down lists and click "download" to receive all of the data as a CSV file. 
+
+APIs operate basically the same, but we would use the API documentation to convert the same query in this GUI into the API URL directly.
+
+To run this example, you will need to get your own free [Census API key](https://api.census.gov/data/key_signup.html) and replace "your.unique.census.key.goes.here" with the actual key you receive from the Census. 
+
+I have selected the population variable B01001_001E but you can find other variable names in the Census catalog: [https://api.census.gov/data/2015/acs/acs5/variables.html](https://api.census.gov/data/2015/acs/acs5/variables.html).
+
+```r
+library( censusapi )
+library( jsonlite )
+library( httr )
+
+##################################################################
+####      API QUERY:
+##################################################################
+
+KEY <- "your.unique.census.key.goes.here"
+API.BASE <- "https://api.census.gov/data"
+VINTAGE <- "2015"
+API.NAME <- "acs/acs5"
+VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE <- "04"                  # AZ STATE FIPS CODE
+
+##################################################################
+
+BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
+BASE.URL
+
+# [1] "https://api.census.gov/data/2015/acs/acs5"
+
+FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
+FULL.URL
+
+# [1] "https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here"
+
+```
+
+Now, pasting this URL into a browser is the equivalent of sending a query to a database. Similar to the filter() function you are referencing variable names and specific values (logical statements) and separating them with an &:
+
+```
+?get=                  # start of the query
+NAME,B01001_001E       # list of variable names 
+&
+for=state:04           # geography
+&
+key=your.unique.census.key.goes.here
+```
+
+[https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here](https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=b431c35dad89e2863681311677d12581e8f24c24)
+
+The data is returned in a JSON format: 
+
+```
+[["NAME","B01001_001E","state"],
+["Arizona","6641928","04"]]
+```
+
+That's it! It's that easy. Just like functions in R, you will look up the API arguments in the documentation. 
+
+It should also tell you the format of values that each argument expects. For example, the state geography uses FIPS codes (state:04) instead of the normal two-letter abbreviation (state:AZ). 
+
+In order to import the data into R we need a couple more steps. 
+
+1. We need to retrieve the data from the API URL that we have built. 
+2. We need to convert from JSON to a matrix, then the matrix to a data frame. 
+
+We can write a couple of functions to make this easier: 
+
+```r
+api.data.raw <- httr::GET( FULL.URL )
+
+matrix_to_df <- function( m )
+{
+  d <- as.data.frame(m)
+  col.names <- d[ 1, ]    # get first row
+  names(d) <- col.names   # assign as column names 
+  d <- d[ -1 , ]          # delete first row
+  return(d)
+}
+
+
+json_to_data_frame <- function( api.data.raw )
+{
+    data.as.json <- httr::content( api.data.raw, as = "text" )
+    data.as.matrix <- jsonlite::fromJSON( data.as.json )
+    data.as.df <- matrix_to_df( data.as.matrix )
+    return( data.as.df )
+
+}
+
+
+json_to_data_frame( api.data.raw )
+#      NAME B01001_001E state
+# 2 Arizona     6641928    04
+
+# intermediate data formats for reference 
+data.as.json
+[1] "[[\"NAME\",\"B01001_001E\",\"state\"],\n[\"Arizona\",\"6246816\",\"04\"]]"
+
+data.as.matrix
+     [,1]      [,2]          [,3]   
+[1,] "NAME"    "B01001_001E" "state"
+[2,] "Arizona" "6246816"     "04"   
+```
+
+Another example grabbing data from all of the states instead of one at a time: 
+
+```r
+KEY <- "your.unique.census.key.goes.here"
+API.BASE <- "https://api.census.gov/data"
+VINTAGE <- "2015"
+API.NAME <- "acs/acs5"
+VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE <- "*"                   # ALL STATES
+
+BASE.URL <- paste( BASE, VINTAGE, NAME, sep="/" )
+FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
+
+api.data.raw <- httr::GET( FULL.URL )
+
+json_to_data_frame( api.data.raw )
+
+                   NAME B01001_001E state
+2               Alabama     4830620    01
+3                Alaska      733375    02
+4               Arizona     6641928    04
+5              Arkansas     2958208    05
+6            California    38421464    06
+7              Colorado     5278906    08
+8           Connecticut     3593222    09
+9              Delaware      926454    10
+...etc
+
+```
+
+You can drill down further and further depending upon the API options. For example to get the population of every county in the US we would use the following geography:
+
+```
+for=county:*&in=state:*
+```
+
+The Census API gets complicated quickly because there are several hundred datasets you can query, several dozen [allowable geographies](https://api.census.gov/data/2015/acs/acs5/geography.html) for each variable, and [several thousand variables](https://api.census.gov/data/2015/acs/acs5/variables.html) to choose from. 
+
+This is why packages like **censusapi** will include a bunch of functions that just list API options: 
+
+```r
+apis <- censusapi::listCensusApis()
+head( apis[,1:3], 25 )
+                                                                  title              name vintage
+451                     Annual Economic Surveys: Annual Business Survey             abscb    2017
+454                     Annual Economic Surveys: Annual Business Survey            abscbo    2017
+458                     Annual Economic Surveys: Annual Business Survey             abscs    2017
+391 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2005
+395 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2006
+397 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2007
+399 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2008
+403 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2009
+71                                           ACS 1-Year Detailed Tables          acs/acs1    2010
+86                                           ACS 1-Year Detailed Tables          acs/acs1    2011
+97                                           ACS 1-Year Detailed Tables          acs/acs1    2012
+179                                          ACS 1-Year Detailed Tables          acs/acs1    2013
+202                                          ACS 1-Year Detailed Tables          acs/acs1    2014
+243                                          ACS 1-Year Detailed Tables          acs/acs1    2015
+265                                          ACS 1-Year Detailed Tables          acs/acs1    2016
+288                                          ACS 1-Year Detailed Tables          acs/acs1    2017
+365 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2018
+501 American Community Survey: 1-Year Estimates: Detailed Tables 1-Year          acs/acs1    2019
+72                                       ACS 1-Year Comparison Profiles acs/acs1/cprofile    2010
+87                                       ACS 1-Year Comparison Profiles acs/acs1/cprofile    2011
+100                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2012
+177                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2013
+204                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2014
+245                                      ACS 1-Year Comparison Profiles acs/acs1/cprofile    2015
+266                                       ACS 1-Year Comparison Profile acs/acs1/cprofile    2016
+
+```
+
+-----
+
+In summary, this lecture introduces the basic concepts behind a data API. 
+
+You are doing this: 
+
+![](https://github.com/DS4PS/cpp-527-fall-2020/blob/master/assets/img/census-api-gui.png?raw=true)
+
+But manually by building your API query like this: 
+
+```r
+KEY <- "your.unique.census.key.goes.here"
+API.BASE <- "https://api.census.gov/data"
+VINTAGE <- "2015"
+API.NAME <- "acs/acs5"
+VARIABLE <- "B01001_001E"      # TOTAL POPULATION (E for Estimate)
+STATE <- "04"                  # AZ STATE FIPS CODE
+
+BASE.URL <- paste( API.BASE, VINTAGE, API.NAME, sep="/" )
+FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
+FULL.URL
+
+# [1] "https://api.census.gov/data/2015/acs/acs5?get=NAME,B01001_001E&for=state:04&key=your.unique.census.key.goes.here"
+```
+
+Data APIs are often the fastest way to get data, but more importantly they also document the process used to acquire the data. 
+
+That makes the process easy to replicate later, and also easy to inspect if there are problems with the data. 
+
+The best part is that most useful APIs have already been turned into packages in R, so you don't even need to read all of the documentation. You can download the package then use R functions directly. For example, the function for the Census API might look something like this: 
+
+```r
+get_census_data <- function( VINTAGE, API.NAME, VARIABLE, STATE, KEY )
+{
+   API.BASE <- "https://api.census.gov/data"
+   BASE.URL <- paste( BASE, VINTAGE, NAME, sep="/" )
+   FULL.URL <- paste( BASE.URL, "?get=NAME,", VARIABLE, "&for=state:", STATE, "&key=", KEY, sep="" )
+   api.data.raw <- httr::GET( FULL.URL )
+   df <- json_to_data_frame( api.data.raw )
+   return( df )
+}
+```
+
+*If you are curious, you can view the [source code for the __censusapi__ package](https://github.com/hrecht/censusapi/tree/master/R) to see how the code is actually constructed. It is more complicated because it has to account for combinations of all of the different arguments using all of the APIs, along with error-checking. The devil is always in the details!*
 
 <br>
 <br>
