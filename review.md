@@ -475,7 +475,7 @@ results <- sapply( words, get_last_word )
     
   <br>
 
-  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
+  <a class="uk-button uk-button-default" href="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/review-sessions/week-06-data-apis.R">SAMPLE CODE</a>
 
   <br>
 
