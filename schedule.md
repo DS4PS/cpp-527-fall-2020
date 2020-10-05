@@ -2770,7 +2770,7 @@ The geoJSON files can also be read into R directly from GitHub, making it easy t
 library( geojsonio )
 library( sp )
 github <- "https://raw.githubusercontent.com/benbalter/dc-maps/master/maps/2006-traffic-volume.geojson"
-traffic <- geojson_read( x=github, method="local", what="sp" )
+traffic <- geojson_read( x=github, what="sp" )
 plot( traffic, col="steelblue" )
 ```
 
