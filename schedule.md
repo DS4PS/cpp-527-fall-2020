@@ -3008,7 +3008,7 @@ Add your codethrough files (the HTML specifically) to your new website on GitHub
 
 **Post on Yellowdig:**
 
-<a class="uk-button uk-button-primary" href="{{page.canvas.yellowdig_url}}">YELLOWDIG</a>
+<a class="uk-button uk-button-primary" href="{{page.yellowdig_url}}">YELLOWDIG</a>
 
 <br>
 <br>
