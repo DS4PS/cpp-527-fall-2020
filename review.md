@@ -494,25 +494,6 @@ results <- sapply( words, get_last_word )
 
 
 
-## Week 7
-  
-<p align="center">
-  <a href="">
-  <img width="300" src="https://raw.githubusercontent.com/DS4PS/cpp-527-fall-2020/master/assets/img/play-video-icon2.png">
-  <a>
-  <br> Passcode: <b></b>
-    
-  <br>
-
-  <a class="uk-button uk-button-default" href="">SAMPLE CODE</a>
-
-  <br>
-
-  <a class="uk-button uk-button-default" href="">SESSION CODE</a>
-
-</p>
-
-
 <br>
 <br>
 <hr>
