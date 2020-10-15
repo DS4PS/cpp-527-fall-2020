@@ -3037,6 +3037,8 @@ Begin by reading about the process:
 
 [Parameterized Reports in R Markdown](https://rmarkdown.rstudio.com/developer_parameterized_reports.html%23parameter_types%2F)  
 
+[GitHub Pages Jekyll Tools Library](https://github.com/cagrimmett/jekyll-tools)
+
 **Instructions** 
 
 For this assignment you will need to clone Nick Strayer's CV project: 
