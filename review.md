@@ -450,7 +450,7 @@ results <- sapply( words, get_last_word )
 * Basic HTML Page Elements 
   - head.html 
   - header.html 
-  - body {{content}} 
+  - body `{{content}}` 
   - footer.html 
 * Style Elements 
   - Cascading Style Sheets (CSS) 
