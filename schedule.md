@@ -3086,6 +3086,8 @@ For the assignment submit the following:
 
 Consider creating a GitHub site to host a portfolio of projects you are working on. You can add the CV and your code-through assignments to the site. 
 
+*Side note:* If you want to take this exercise to the next level consider developing [A/B Testing for your resume](https://www.r-bloggers.com/2020/11/a-b-testing-my-resume/), which you can do when your resume is generated from templates. 
+
 
 **Submit to Canvas:****
 
