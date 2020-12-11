@@ -3086,10 +3086,11 @@ For the assignment submit the following:
 
 Consider creating a GitHub site to host a portfolio of projects you are working on. You can add the CV and your code-through assignments to the site. 
 
-*Side note:* If you want to take this exercise to the next level consider developing [A/B Testing for your resume](https://www.r-bloggers.com/2020/11/a-b-testing-my-resume/), which you can do when your resume is generated from templates. 
+*Side note:* If you want to take this exercise to the next level consider developing [A/B Testing for your resume](https://davidlindelof.com/a-b-testing-my-resume/), which you can do when your resume is generated from templates. 
 
+*How would you create a template for the following resume format in R Markdown?* [**two page resume**](https://davidlindelof.com/wp-content/uploads/2020/11/Lindelof_CV.pdf)
 
-**Submit to Canvas:****
+**Submit to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
 
