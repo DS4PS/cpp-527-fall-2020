@@ -3090,9 +3090,13 @@ Consider creating a GitHub site to host a portfolio of projects you are working 
 
 *How would you create a template for the following resume format in R Markdown?* [**two page resume**](https://davidlindelof.com/wp-content/uploads/2020/11/Lindelof_CV.pdf)
 
+---
+
 **Submit to Canvas:**
 
 <a class="uk-button uk-button-primary" href="{{page.canvas.assignment_url}}">SUBMIT PROJECT</a>
+
+---
 
 <br>
 <br>
