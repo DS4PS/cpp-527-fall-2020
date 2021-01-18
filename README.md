@@ -1,6 +1,6 @@
 # cpp-527-fall-2020
 
-Course shell for CPP 527 Foundations of Data Science II for Spring 2020.
+Course shell for CPP 527 Foundations of Data Science II for Spring 2021.
 
 
 # Program Requirements: 
